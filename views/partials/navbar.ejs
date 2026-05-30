@@ -1,0 +1,192 @@
+<header class="navbar" id="navbar">
+  <!-- Logo -->
+  <a href="/" class="nav-logo">
+    <img
+      src="/images/logo-atas.png"
+      alt="Suka-Suka Web"
+      class="h-10 w-auto mx-auto"
+    />
+  </a>
+
+  <!-- Desktop Nav -->
+  <nav class="hidden md:flex items-center gap-1">
+    <a href="/#beranda" class="nav-link">Beranda</a>
+    <a href="/#layanan" class="nav-link">Layanan</a>
+    <a href="/#portofolio" class="nav-link">Portofolio</a>
+    <a href="/#kontak" class="nav-link">Kontak</a>
+  </nav>
+
+  <!-- Right Side -->
+  <div class="flex items-center gap-4">
+    <div class="hidden lg:flex items-center gap-2">
+      <span class="status-dot"></span>
+      <span
+        class="font-mono text-[var(--text-xs)] text-[var(--color-text-muted)] tracking-widest uppercase"
+      >
+        Open for Project
+      </span>
+    </div>
+    <a
+      href="https://wa.me/6281234567890"
+      target="_blank"
+      class="btn btn-primary btn-sm"
+    >
+      Mulai Proyek
+    </a>
+    <!-- Hamburger (mobile) -->
+    <button
+      id="menuBtn"
+      class="md:hidden flex flex-col gap-1.5 p-1.5 rounded-md hover:bg-[var(--color-bg-tertiary)] transition-colors"
+      aria-label="Menu"
+    >
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="mobile-menu">
+  <nav class="flex flex-col gap-1 p-4">
+    <a href="/#beranda" class="mobile-nav-link">Beranda</a>
+    <a href="/#layanan" class="mobile-nav-link">Layanan</a>
+    <a href="/#portofolio" class="mobile-nav-link">Portofolio</a>
+    <a href="/#kontak" class="mobile-nav-link">Kontak</a>
+  </nav>
+  <div class="px-4 pb-6">
+    <a
+      href="https://wa.me/6281234567890"
+      target="_blank"
+      class="btn btn-primary w-full justify-center"
+    >
+      Mulai Proyek →
+    </a>
+  </div>
+</div>
+
+<style>
+  .nav-link {
+    position: relative;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text-muted);
+    padding: 0.5rem 0.875rem;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition:
+      color var(--duration-base) var(--ease-default),
+      background var(--duration-base) var(--ease-default);
+  }
+  .nav-link:hover {
+    color: var(--color-text-brand);
+    background: rgba(123, 94, 167, 0.07);
+  }
+  .nav-link.active {
+    color: var(--color-text-brand);
+  }
+
+  .hamburger-line {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--color-text-muted);
+    border-radius: 2px;
+    transition:
+      transform var(--duration-base) var(--ease-spring),
+      opacity var(--duration-base) var(--ease-default);
+  }
+  #menuBtn.open .hamburger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  #menuBtn.open .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  #menuBtn.open .hamburger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--color-bg-overlay);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--color-border);
+    z-index: calc(var(--z-sticky) - 1);
+    padding-top: 5rem;
+    transform: translateY(-110%);
+    transition: transform var(--duration-slow) var(--ease-spring);
+    box-shadow: var(--shadow-lg);
+  }
+  .mobile-menu.open {
+    transform: translateY(0);
+  }
+
+  .mobile-nav-link {
+    display: block;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    padding: 0.875rem 1rem;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    transition:
+      color var(--duration-base),
+      background var(--duration-base);
+  }
+  .mobile-nav-link:hover {
+    color: var(--color-text-brand);
+    background: rgba(123, 94, 167, 0.07);
+  }
+</style>
+
+<script>
+  // Scroll effect
+  const navbar = document.getElementById("navbar");
+  window.addEventListener("scroll", () => {
+    navbar.classList.toggle("scrolled", window.scrollY > 20);
+  });
+
+  // Mobile menu toggle
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  menuBtn.addEventListener("click", () => {
+    const isOpen = mobileMenu.classList.toggle("open");
+    menuBtn.classList.toggle("open", isOpen);
+    document.body.style.overflow = isOpen ? "hidden" : "";
+  });
+
+  // Close on link click
+  mobileMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.remove("open");
+      menuBtn.classList.remove("open");
+      document.body.style.overflow = "";
+    });
+  });
+
+  // Active link highlight
+  const navLinks = document.querySelectorAll(".nav-link");
+  const sections = document.querySelectorAll("section[id]");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navLinks.forEach((link) => {
+            link.classList.toggle(
+              "active",
+              link.getAttribute("href") === "/#" + entry.target.id,
+            );
+          });
+        }
+      });
+    },
+    { threshold: 0.4 },
+  );
+  sections.forEach((s) => observer.observe(s));
+</script>

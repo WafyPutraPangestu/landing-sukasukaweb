@@ -1,0 +1,15 @@
+# 1. Dependensi Node (WAJIB DIABAIKAN)
+node_modules/
+
+# 2. File Rahasia / Environment Variables (PENTING)
+.env
+.env.local
+
+# 3. File Log (Sampah terminal)
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 4. File Sampah Sistem Operasi (Mac / Windows)
+.DS_Store
+Thumbs.db

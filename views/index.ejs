@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <%- include('partials/head') %>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Suka-Suka Web",
+        "description": "Software House Indonesia — membangun Web Apps, Landing Page, dan Sistem Digital modern untuk UMKM dan Perusahaan.",
+        "url": "https://sukasukaweb.com",
+        "areaServed": "Indonesia",
+        "serviceType": ["Web Development", "UI/UX Design", "Software House"]
+      }
+    </script>
+  </head>
+  <body class="flex flex-col min-h-screen">
+    <%- include('partials/navbar') %>
+
+    <main class="flex-grow">
+      <section
+        id="beranda"
+        class="relative flex items-center min-h-screen pt-28 pb-20 overflow-hidden"
+        aria-label="Hero — Suka-Suka Web"
+      >
+        <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
+        <div class="hero-blob hero-blob-2" aria-hidden="true"></div>
+        <div class="hero-blob hero-blob-3" aria-hidden="true"></div>
+        <div class="hero-grid" aria-hidden="true"></div>
+
+        <div class="container relative z-10">
+          <div class="max-w-4xl mx-auto text-center">
+            <div
+              class="inline-flex items-center gap-2 badge badge-brand animate-fade-up mb-8"
+            >
+              <span class="status-dot"></span>
+              Open for Project — Indonesia
+            </div>
+
+            <div class="flex justify-center mb-8 animate-fade-up delay-1">
+              <div class="logo-img-wrap">
+                <img
+                  src="/images/logo-atas.png"
+                  alt="Suka-Suka Web"
+                  class="h-16 w-auto mx-auto"
+                />
+                <!-- <div class="logo-placeholder">
+                  <span>Logo</span>
+                  <small>/images/logo.png</small>
+                </div> -->
+              </div>
+            </div>
+
+            <h1 class="animate-fade-up delay-1 mb-6 text-balance hero-heading">
+              Wujudkan Ide Bisnismu<br />
+              Jadi <em class="hero-italic">Sistem Digital</em> yang<br />
+              <span class="text-gradient">Cerdas & Modern</span>
+            </h1>
+
+            <p
+              class="text-lg md:text-xl text-[var(--color-text-muted)] animate-fade-up delay-2 mb-10 text-balance max-w-2xl mx-auto leading-relaxed"
+            >
+              Kami bantu
+              <strong class="text-[var(--color-text)]"
+                >UMKM dan Perusahaan</strong
+              >
+              membangun Web App, Company Profile, hingga Sistem Kasir yang
+              cepat, modern, dan ramah mesin pencari.
+            </p>
+
+            <div
+              class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up delay-3"
+            >
+              <a
+                href="https://wa.me/6285706193924"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-primary btn-lg"
+              >
+                💬 Konsultasi Gratis
+              </a>
+              <a href="#paket" class="btn btn-secondary btn-lg">
+                Lihat Paket Harga →
+              </a>
+            </div>
+
+            <div
+              class="hero-scroll-hint animate-fade-up delay-4"
+              aria-hidden="true"
+            >
+              <div class="scroll-line"></div>
+              <span>Scroll</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        aria-label="Klien kami"
+        class="py-12 border-y border-[var(--color-border-soft)] bg-[var(--color-bg-secondary)] overflow-hidden"
+      >
+        <div class="container mb-5 text-center reveal">
+          <p
+            class="font-mono text-[var(--text-xs)] text-[var(--color-text-subtle)] tracking-widest uppercase"
+          >
+            Dipercaya oleh
+          </p>
+        </div>
+        <div class="marquee-outer" aria-hidden="true">
+          <div class="marquee-inner" id="clientMarquee">
+            <div class="client-logo">Klien A</div>
+            <div class="client-logo">UMKM B</div>
+            <div class="client-logo">Toko C</div>
+            <div class="client-logo">Corporate D</div>
+            <div class="client-logo">Startup E</div>
+            <div class="client-logo">Brand F</div>
+            <div class="client-logo">Klien A</div>
+            <div class="client-logo">UMKM B</div>
+            <div class="client-logo">Toko C</div>
+            <div class="client-logo">Corporate D</div>
+            <div class="client-logo">Startup E</div>
+            <div class="client-logo">Brand F</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="tentang" class="section" aria-labelledby="about-heading">
+        <div class="container">
+          <div class="about-grid">
+            <div class="about-visual reveal">
+              <div class="about-frame">
+                <div class="about-frame-deco" aria-hidden="true"></div>
+                <img src="/images/tim.jpeg" alt="" />
+                <!-- <div class="about-img-placeholder">
+                  <span>📸</span>
+                  <p>Foto Tim</p>
+                  <small>/images/team.jpg</small>
+                </div> -->
+                <div class="about-badge">
+                  <span class="status-dot"></span>
+                  <span>Open for Project</span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <p class="section-tag reveal">Tentang Kami</p>
+              <h2 id="about-heading" class="reveal delay-1 mb-6">
+                Passion untuk<br />
+                <em
+                  style="
+                    font-family: var(--font-serif);
+                    font-style: italic;
+                    color: var(--color-text-brand);
+                  "
+                  >Craft Digital</em
+                >
+              </h2>
+              <p
+                class="text-[var(--color-text-muted)] leading-relaxed mb-5 reveal delay-2"
+              >
+                <strong class="text-[var(--color-text)]">Suka-Suka Web</strong>
+                adalah software house berbasis di Indonesia yang fokus membangun
+                produk digital berkualitas tinggi. Kami percaya teknologi
+                seharusnya mempermudah bisnis, bukan mempersulitnya.
+              </p>
+              <div class="about-stats reveal delay-3">
+                <div class="about-stat">
+                  <span class="about-stat-num" data-count="42">0</span>
+                  <span class="about-stat-label">Proyek Selesai</span>
+                </div>
+                <div class="about-stat-divider" aria-hidden="true"></div>
+                <div class="about-stat">
+                  <span class="about-stat-num" data-count="3">0</span>
+                  <span class="about-stat-label">Tahun Pengalaman</span>
+                </div>
+                <div class="about-stat-divider" aria-hidden="true"></div>
+                <div class="about-stat">
+                  <span class="about-stat-num" data-count="30">0</span>
+                  <span class="about-stat-label">Klien Puas</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="portofolio"
+        class="section bg-[var(--color-bg-secondary)]"
+        aria-labelledby="porto-heading"
+      >
+        <div class="container">
+          <div
+            class="flex flex-col md:flex-row justify-between items-end mb-14 gap-6"
+          >
+            <div>
+              <p class="section-tag reveal">Karya Kami</p>
+              <h2 id="porto-heading" class="reveal delay-1">Proyek Pilihan</h2>
+            </div>
+            <span class="badge badge-neutral reveal delay-2"
+              >More coming soon</span
+            >
+          </div>
+
+          <div class="porto-grid">
+            <article
+              class="porto-card reveal delay-1"
+              role="button"
+              tabindex="0"
+              onclick="
+                openModal({
+                  img: '/images/porto-1.jpg',
+                  title: 'Landing Page Produk X',
+                  desc: 'Website marketing super cepat untuk kampanye digital produk X.',
+                  tags: ['Landing Page', 'SEO'],
+                  link: '#',
+                })
+              "
+            >
+              <div class="porto-img-wrap">
+                <img
+                  src="/images/porto-1.jpg"
+                  alt=""
+                  class="porto-img"
+                  loading="lazy"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'flex';
+                  "
+                />
+                <div class="porto-img-placeholder">
+                  <span>🖼️</span>
+                  <p>Upload Screenshot</p>
+                  <small>/images/porto-1.jpg</small>
+                </div>
+                <div class="porto-overlay">
+                  <span class="btn btn-primary btn-sm">Lihat Detail</span>
+                </div>
+              </div>
+              <div class="porto-info">
+                <div class="flex gap-2 flex-wrap mb-3">
+                  <span class="badge badge-brand">Live Project</span>
+                  <span class="badge badge-neutral">Landing Page</span>
+                </div>
+                <h3 class="text-xl porto-title">Landing Page Produk X</h3>
+              </div>
+            </article>
+
+            <article
+              class="porto-card reveal delay-2"
+              role="button"
+              tabindex="0"
+              onclick="
+                openModal({
+                  img: '/images/porto-2.jpg',
+                  title: 'Sistem Kasir (POS)',
+                  desc: 'Manajemen stok dan kasir berbasis web yang responsif dan mudah digunakan.',
+                  tags: ['Web App', 'POS'],
+                  link: '#',
+                })
+              "
+            >
+              <div class="porto-img-wrap">
+                <img
+                  src="/images/porto-2.jpg"
+                  alt=""
+                  class="porto-img"
+                  loading="lazy"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'flex';
+                  "
+                />
+                <div class="porto-img-placeholder">
+                  <span>🖼️</span>
+                  <p>Upload Screenshot</p>
+                  <small>/images/porto-2.jpg</small>
+                </div>
+                <div class="porto-overlay">
+                  <span class="btn btn-primary btn-sm">Lihat Detail</span>
+                </div>
+              </div>
+              <div class="porto-info">
+                <div class="flex gap-2 flex-wrap mb-3">
+                  <span class="badge badge-accent">Demo App</span>
+                  <span class="badge badge-neutral">Web App</span>
+                </div>
+                <h3 class="text-xl porto-title">Sistem Kasir (POS) Modern</h3>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="paket" class="section" aria-labelledby="paket-heading">
+        <div class="container max-w-[1400px]">
+          <div class="text-center mb-16 reveal">
+            <p class="section-tag justify-center">Harga & Layanan</p>
+            <h2 id="paket-heading" class="mb-4">
+              Pilih Paket Sesuai Kebutuhan
+            </h2>
+            <p class="text-[var(--color-text-muted)] max-w-2xl mx-auto">
+              Dari paket praktis untuk UMKM, hingga paket kerjasama VIP jangka
+              panjang tanpa batas untuk Perusahaan Anda.
+            </p>
+          </div>
+
+          <!-- Layout 4 Kolom -->
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch"
+          >
+            <!-- Paket 1 -->
+            <div class="card flex flex-col h-full reveal delay-1 p-6">
+              <h3 class="text-xl font-bold mb-2">Paket Suka-Suka 1</h3>
+              <p class="text-[var(--color-text-muted)] text-sm mb-6 h-10">
+                Praktis untuk UMKM, Jasa perorangan, dan Portofolio.
+              </p>
+              <div class="mb-6">
+                <span class="text-xs text-[var(--color-text-subtle)]"
+                  >Mulai dari</span
+                >
+                <div class="text-3xl font-black text-[var(--color-text)] mt-1">
+                  Rp 1,2 Jt
+                </div>
+              </div>
+              <div class="divider mb-6"></div>
+              <ul class="flex flex-col gap-3 mb-8 flex-grow">
+                <li
+                  class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
+                >
+                  <span class="text-[var(--color-success)] mt-0.5">✔</span> 1
+                  Halaman (Landing Page)
+                </li>
+                <li
+                  class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
+                >
+                  <span class="text-[var(--color-success)] mt-0.5">✔</span>
+                  Gratis Domain & Hosting 1 Thn
+                </li>
+                <li
+                  class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
+                >
+                  <span class="text-[var(--color-success)] mt-0.5">✔</span>
+                  Desain Mobile-Friendly & SSL
+                </li>
+                <li
+                  class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
+                >
+                  <span class="text-[var(--color-success)] mt-0.5">✔</span>
+                  Tombol langsung ke WhatsApp
+                </li>
+                <li
+                  class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
+                >
+                  <span class="text-[var(--color-success)] mt-0.5">✔</span>
+                  Revisi maksimal 2x
+                </li>
+              </ul>
+              <a
+                href="https://wa.me/6285706193924?text=Halo%20Suka-Suka%20Web,%20saya%20tertarik%20dengan%20Paket%20Suka-Suka%201"
+                target="_blank"
+                class="btn btn-secondary w-full text-sm"
+                >Pilih Paket 1</a
+              >
+            </div>
+
+            <!-- Paket 2 -->
+            <div
+              class="card relative flex flex-col h-full reveal delay-2 p-6"
+              style="
+                border-color: var(--color-brand-500);
+                box-shadow: var(--shadow-brand);
+              "
+            >
+              <div
+                class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[var(--color-brand-500)] text-white text-[0.65rem] font-bold px-4 py-1 rounded-full uppercase tracking-widest whitespace-nowrap shadow-md"
+              >
+                Paling Laris
+              </div>
+              <h3 class="text-xl font-bold mb-2 text-gradient">
+                Paket Suka-Suka 2
+              </h3>
+              <p class="text-[var(--color-text-muted)] text-sm mb-6 h-10">
+                Profil profesional untuk Klinik, Sekolah, & Perusahaan.
+              </p>
+              <div class="mb-6">
+                <span class="text-xs text-[var(--color-text-subtle)]"
+                  >Mulai dari</span
+                >
+                <div class="text-3xl font-black text-[var(--color-text)] mt-1">
+                  Rp 3,5 Jt
+                </div>
+              </div>
+              <div class="divider-brand mb-6"></div>
+              <ul class="flex flex-col gap-3 mb-8 flex-grow">
+                <li
+                  class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
+                >
+                  <span class="text-[var(--color-brand-500)] mt-0.5">✔</span> 5
+                  – 7 Halaman Web
+                </li>
+                <li
+                  class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
+                >
+                  <span class="text-[var(--color-brand-500)] mt-0.5">✔</span>
+                  Domain & Hosting Besar
+                </li>
+                <li
+                  class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
+                >
+                  <span class="text-[var(--color-brand-500)] mt-0.5">✔</span>
+                  Form Kontak & Sosmed
+                </li>
+                <li
+                  class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
+                >
+                  <span class="text-[var(--color-brand-500)] mt-0.5">✔</span>
+                  Fitur Artikel/Blog & SEO
+                </li>
+                <li
+                  class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
+                >
+                  <span class="text-[var(--color-brand-500)] mt-0.5">✔</span>
+                  Revisi 4x + Video Tutorial
+                </li>
+              </ul>
+              <a
+                href="https://wa.me/6285706193924?text=Halo%20Suka-Suka%20Web,%20saya%20tertarik%20dengan%20Paket%20Suka-Suka%202"
+                target="_blank"
+                class="btn btn-primary w-full text-sm"
+                >Pilih Paket 2</a
+              >
+            </div>
+
+            <!-- Paket 3 -->
+            <div class="card flex flex-col h-full reveal delay-3 p-6">
+              <h3 class="text-xl font-bold mb-2">Paket Suka-Suka 3</h3>
+              <p class="text-[var(--color-text-muted)] text-sm mb-6 h-10">
+                Advanced sistem untuk Toko Online & Sistem Booking.
+              </p>
+              <div class="mb-6">
+                <span class="text-xs text-[var(--color-text-subtle)]"
+                  >Mulai dari</span
+                >
+                <div class="text-3xl font-black text-[var(--color-text)] mt-1">
+                  Rp 7,5 Jt
+                </div>
+              </div>
+              <div class="divider mb-6"></div>
+              <ul class="flex flex-col gap-3 mb-8 flex-grow">
+                <li
+                  class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
+                >
+                  <span class="text-[var(--color-success)] mt-0.5">✔</span>
+                  Halaman & Fitur Kustom Bebas
+                </li>
+                <li
+                  class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
+                >
+                  <span class="text-[var(--color-success)] mt-0.5">✔</span>
+                  Server VPS Kinerja Tinggi
+                </li>
+                <li
+                  class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
+                >
+                  <span class="text-[var(--color-success)] mt-0.5">✔</span>
+                  Payment Gateway (QRIS, VA)
+                </li>
+                <li
+                  class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
+                >
+                  <span class="text-[var(--color-success)] mt-0.5">✔</span> Cek
+                  Ongkir Otomatis
+                </li>
+                <li
+                  class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
+                >
+                  <span class="text-[var(--color-success)] mt-0.5">✔</span>
+                  Revisi 7x + Garansi Bug 3 Bln
+                </li>
+              </ul>
+              <a
+                href="https://wa.me/6285706193924?text=Halo%20Suka-Suka%20Web,%20saya%20tertarik%20dengan%20Paket%20Suka-Suka%203"
+                target="_blank"
+                class="btn btn-secondary w-full text-sm"
+                >Pilih Paket 3</a
+              >
+            </div>
+
+            <!-- Paket 4: VIP / Kerjasama -->
+            <div
+              class="card relative flex flex-col h-full reveal delay-4 p-6 bg-[var(--color-brand-900)] text-white border-none overflow-hidden"
+              style="box-shadow: var(--shadow-xl)"
+            >
+              <!-- Latar Glowing -->
+              <div
+                class="absolute top-[-50px] right-[-50px] w-32 h-32 bg-[var(--color-accent-500)] rounded-full mix-blend-screen filter blur-[60px] opacity-40"
+              ></div>
+
+              <h3
+                class="text-xl font-bold mb-2 relative z-10 text-[var(--color-brand-200)]"
+              >
+                Paket Suka-Suka <br /><span class="text-white text-2xl"
+                  >Banget 🚀</span
+                >
+              </h3>
+              <p
+                class="text-[var(--color-brand-200)] opacity-90 text-sm mb-6 h-10 relative z-10"
+              >
+                Kemitraan eksklusif untuk maintenance & pengembangan jangka
+                panjang.
+              </p>
+
+              <div class="mb-6 relative z-10">
+                <span class="text-xs text-[var(--color-brand-200)] opacity-70"
+                  >Sistem Kontrak Berjalan</span
+                >
+                <div class="text-3xl font-black text-white mt-3">Negosiasi</div>
+              </div>
+
+              <!-- Garis Divider Transparan -->
+              <div class="w-full h-[1px] bg-white/20 mb-6 relative z-10"></div>
+
+              <ul class="flex flex-col gap-3 mb-8 flex-grow relative z-10">
+                <li
+                  class="flex items-start gap-3 text-sm text-[var(--color-brand-50)]"
+                >
+                  <span class="text-[var(--color-accent-400)] mt-0.5">✦</span>
+                  Super Unlimited Revisi & Fitur
+                </li>
+                <li
+                  class="flex items-start gap-3 text-sm text-[var(--color-brand-50)]"
+                >
+                  <span class="text-[var(--color-accent-400)] mt-0.5">✦</span>
+                  Bebas Request Custom Sistem
+                </li>
+                <li
+                  class="flex items-start gap-3 text-sm text-[var(--color-brand-50)]"
+                >
+                  <span class="text-[var(--color-accent-400)] mt-0.5">✦</span>
+                  Dedicated Management (Misal: 1 Thn)
+                </li>
+                <li
+                  class="flex items-start gap-3 text-sm text-[var(--color-brand-50)]"
+                >
+                  <span class="text-[var(--color-accent-400)] mt-0.5">✦</span>
+                  Setup & Rawat Infrastruktur Server
+                </li>
+                <li
+                  class="flex items-start gap-3 text-sm text-[var(--color-brand-50)]"
+                >
+                  <span class="text-[var(--color-accent-400)] mt-0.5">✦</span>
+                  Prioritas Utama Teknisi 24/7
+                </li>
+              </ul>
+              <a
+                href="https://wa.me/6285706193924?text=Halo%20Suka-Suka%20Web,%20saya%20ingin%20mengajukan%20kerjasama%20untuk%20Paket%20Suka-Suka%20Banget"
+                target="_blank"
+                class="btn relative z-10 w-full text-sm"
+                style="
+                  background: var(--color-accent-500);
+                  color: white;
+                  border: none;
+                  box-shadow: 0 4px 15px rgba(249, 115, 22, 0.4);
+                "
+              >
+                Ajukan Kerjasama
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="proses"
+        class="section bg-[var(--color-bg-secondary)]"
+        aria-labelledby="proses-heading"
+      >
+        <div class="container">
+          <p class="section-tag reveal">Cara Kerja</p>
+          <h2 id="proses-heading" class="reveal delay-1 mb-14">
+            Dari Ide ke Produk<br />dalam 4 Langkah
+          </h2>
+          <div class="proses-grid">
+            <div class="proses-item reveal delay-1">
+              <div class="proses-num">01</div>
+              <h3 class="text-lg mb-2">Pilih Paket & Diskusi</h3>
+              <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
+                Pilih paket Suka-Suka yang sesuai. Kami akan kirimkan proposal
+                resmi dan mendiskusikan kebutuhan detail Anda.
+              </p>
+            </div>
+            <div class="proses-connector" aria-hidden="true"></div>
+            <div class="proses-item reveal delay-2">
+              <div class="proses-num">02</div>
+              <h3 class="text-lg mb-2">Pembayaran DP 50%</h3>
+              <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
+                Setelah sepakat, pembayaran DP 50% dilakukan untuk pembelian
+                domain, hosting, dan dimulainya proses desain UI/UX.
+              </p>
+            </div>
+            <div class="proses-connector" aria-hidden="true"></div>
+            <div class="proses-item reveal delay-3">
+              <div class="proses-num">03</div>
+              <h3 class="text-lg mb-2">Tahap Development</h3>
+              <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
+                Proses coding dimulai. Kami akan memberikan update berkala dan
+                revisi sesuai kuota paket yang dipilih.
+              </p>
+            </div>
+            <div class="proses-connector" aria-hidden="true"></div>
+            <div class="proses-item reveal delay-4">
+              <div class="proses-num">04</div>
+              <h3 class="text-lg mb-2">Pelunasan & Launching</h3>
+              <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
+                Setelah website disetujui 100%, pelunasan 50% dilakukan dan
+                website siap di-launching ke publik beserta serah terima akses.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="section" aria-labelledby="faq-heading">
+        <div class="container max-w-3xl mx-auto">
+          <p class="section-tag reveal">FAQ</p>
+          <h2 id="faq-heading" class="reveal delay-1 mb-12">
+            Pertanyaan yang Sering Ditanyakan
+          </h2>
+
+          <div class="faq-list reveal delay-2">
+            <details class="faq-item">
+              <summary class="faq-question">
+                Bagaimana sistem pembayarannya?
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  Sistem kami mewajibkan <strong>DP 50% di awal</strong> untuk
+                  mengikat komitmen serta modal pembelian domain dan hosting
+                  Anda. Pelunasan 50% sisanya dilakukan setelah website selesai
+                  dan siap online.
+                </p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-question">
+                Apakah ada biaya perpanjangan tahunan?
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  <strong>Ya, ada.</strong> Biaya yang Anda bayarkan di awal
+                  sudah termasuk gratis Domain dan Hosting untuk tahun pertama.
+                  Untuk tahun kedua dan seterusnya, akan ada biaya perpanjangan
+                  server dan domain yang nominalnya bergantung pada paket yang
+                  Anda pilih.
+                </p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-question">
+                Berapa lama waktu pengerjaan website?
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  Paket Praktis (Landing Page) memakan waktu
+                  <strong>3–7 hari kerja</strong>. Paket Bisnis 1-2 minggu, dan
+                  Paket Kustom menyesuaikan tingkat kerumitan sistem.
+                </p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-question">Apakah ada proposal resmi?</summary>
+              <div class="faq-answer">
+                <p>
+                  Tentu. Setelah Anda menghubungi kami via WhatsApp, kami akan
+                  mengirimkan format penawaran (proposal) ringkas namun
+                  profesional yang mencakup keuntungan, detail paket, dan
+                  langkah kerja.
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="py-16 bg-[var(--color-brand-50)] border-y border-[var(--color-border-brand)]"
+      >
+        <div class="container max-w-4xl mx-auto reveal">
+          <div class="text-center mb-10">
+            <h2 class="text-3xl text-[var(--color-brand-900)] mb-4">
+              Mulai Proyek Anda Hari Ini
+            </h2>
+            <p class="text-[var(--color-text-muted)]">
+              Untuk mempercepat proses, silakan siapkan jawaban dari 6
+              pertanyaan berikut sebelum menghubungi kami via WhatsApp:
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-8 rounded-[var(--radius-xl)] shadow-sm border border-[var(--color-border-soft)]"
+          >
+            <ul class="space-y-4">
+              <li class="flex gap-4">
+                <div
+                  class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-brand-100)] text-[var(--color-brand-600)] flex items-center justify-center font-bold"
+                >
+                  1
+                </div>
+                <div>
+                  <p class="text-[var(--color-text)] font-medium">
+                    Apa nama bisnis / perusahaan Anda?
+                  </p>
+                </div>
+              </li>
+              <li class="flex gap-4">
+                <div
+                  class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-brand-100)] text-[var(--color-brand-600)] flex items-center justify-center font-bold"
+                >
+                  2
+                </div>
+                <div>
+                  <p class="text-[var(--color-text)] font-medium">
+                    Nama domain (alamat web) apa yang diinginkan?
+                    <span
+                      class="text-sm text-[var(--color-text-subtle)] font-normal"
+                      >(Contoh: bisnisanda.com)</span
+                    >
+                  </p>
+                </div>
+              </li>
+              <li class="flex gap-4">
+                <div
+                  class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-brand-100)] text-[var(--color-brand-600)] flex items-center justify-center font-bold"
+                >
+                  3
+                </div>
+                <div>
+                  <p class="text-[var(--color-text)] font-medium">
+                    Paket Suka-Suka mana yang Anda pilih?
+                    <span
+                      class="text-sm text-[var(--color-text-subtle)] font-normal"
+                      >(Praktis / Bisnis / Kustom)</span
+                    >
+                  </p>
+                </div>
+              </li>
+              <li class="flex gap-4">
+                <div
+                  class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-brand-100)] text-[var(--color-brand-600)] flex items-center justify-center font-bold"
+                >
+                  4
+                </div>
+                <div>
+                  <p class="text-[var(--color-text)] font-medium">
+                    Apa tujuan utama website ini?
+                    <span
+                      class="text-sm text-[var(--color-text-subtle)] font-normal"
+                      >(Jualan produk / Profil / Cari Leads WA)</span
+                    >
+                  </p>
+                </div>
+              </li>
+              <li class="flex gap-4">
+                <div
+                  class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-brand-100)] text-[var(--color-brand-600)] flex items-center justify-center font-bold"
+                >
+                  5
+                </div>
+                <div>
+                  <p class="text-[var(--color-text)] font-medium">
+                    Punya 2-3 contoh website kompetitor yang Anda sukai
+                    tampilannya?
+                  </p>
+                </div>
+              </li>
+              <li class="flex gap-4">
+                <div
+                  class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-brand-100)] text-[var(--color-brand-600)] flex items-center justify-center font-bold"
+                >
+                  6
+                </div>
+                <div>
+                  <p class="text-[var(--color-text)] font-medium">
+                    Apakah aset seperti Logo, Foto Produk, dan Teks Penjelasan
+                    sudah siap?
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="kontak"
+        class="section pt-10"
+        aria-labelledby="kontak-heading"
+      >
+        <div class="container">
+          <div class="cta-box reveal">
+            <div class="cta-blob cta-blob-1" aria-hidden="true"></div>
+            <div class="cta-blob cta-blob-2" aria-hidden="true"></div>
+
+            <div class="relative z-10 max-w-2xl mx-auto text-center">
+              <h2
+                id="kontak-heading"
+                class="text-white text-3xl md:text-5xl mb-6 leading-tight"
+              >
+                Sudah Menyiapkan Jawabannya?
+              </h2>
+              <p
+                class="text-[var(--color-brand-200)] text-lg mb-10 leading-relaxed"
+              >
+                Klik tombol di bawah ini. Mari wujudkan aset digital yang akan
+                meningkatkan kredibilitas dan omzet bisnis Anda.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="https://wa.me/6285706193924?text=Halo%20Suka-Suka%20Web,%20saya%20ingin%20berkonsultasi%20mengenai%20pembuatan%20website."
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-lg"
+                  style="
+                    background: white;
+                    color: var(--color-brand-900);
+                    font-weight: 700;
+                  "
+                >
+                  💬 Hubungi via WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include('partials/footer') %>
+
+    <div
+      id="projectModal"
+      class="modal-backdrop"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+      hidden
+    >
+      <div
+        class="modal-overlay"
+        onclick="closeModal()"
+        aria-hidden="true"
+      ></div>
+      <div class="modal-box" id="modalBox">
+        <button
+          class="modal-close"
+          onclick="closeModal()"
+          aria-label="Tutup modal"
+        >
+          ✕
+        </button>
+        <div class="modal-img-wrap">
+          <img id="modalImage" src="" alt="" class="modal-img" />
+          <div
+            class="modal-img-placeholder"
+            id="modalImgPlaceholder"
+            style="display: none"
+          >
+            <span>🖼️</span>
+            <p>Screenshot belum tersedia</p>
+          </div>
+        </div>
+        <div class="modal-content">
+          <div id="modalTags" class="flex gap-2 flex-wrap mb-4"></div>
+          <h3
+            id="modalTitle"
+            class="text-2xl md:text-3xl text-gradient inline-block mb-3"
+          ></h3>
+          <p
+            id="modalDesc"
+            class="text-[var(--color-text-muted)] leading-relaxed"
+          ></p>
+          <div class="flex gap-3 mt-6">
+            <a
+              id="modalLink"
+              href="#"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-primary btn-sm"
+              >🔗 Lihat Live Demo</a
+            >
+            <button onclick="closeModal()" class="btn btn-ghost btn-sm">
+              Tutup
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      /* HERO */
+      .hero-blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(100px);
+        pointer-events: none;
+      }
+      .hero-blob-1 {
+        width: 500px;
+        height: 500px;
+        top: -15%;
+        left: -10%;
+        background: var(--color-brand-200);
+        opacity: 0.35;
+        animation: float 12s ease-in-out infinite;
+      }
+      .hero-blob-2 {
+        width: 400px;
+        height: 400px;
+        bottom: -10%;
+        right: -10%;
+        background: var(--color-accent-200);
+        opacity: 0.3;
+        animation: float 15s ease-in-out infinite reverse;
+      }
+      .hero-blob-3 {
+        width: 250px;
+        height: 250px;
+        top: 50%;
+        left: 55%;
+        background: var(--color-yellow-200);
+        opacity: 0.25;
+        animation: float 10s ease-in-out infinite 3s;
+      }
+      .hero-grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(var(--color-border-soft) 1px, transparent 1px),
+          linear-gradient(90deg, var(--color-border-soft) 1px, transparent 1px);
+        background-size: 60px 60px;
+        -webkit-mask-image: radial-gradient(
+          ellipse at center,
+          black 0%,
+          transparent 70%
+        );
+        mask-image: radial-gradient(
+          ellipse at center,
+          black 0%,
+          transparent 70%
+        );
+      }
+      .hero-heading {
+        font-size: clamp(2.5rem, 6vw, 5.5rem);
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        line-height: 1.05;
+      }
+      .hero-italic {
+        font-family: var(--font-serif);
+        font-style: italic;
+        color: var(--color-text-brand);
+      }
+      .hero-scroll-hint {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 4rem;
+        font-family: var(--font-mono);
+        font-size: 0.65rem;
+        color: var(--color-text-subtle);
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+      .scroll-line {
+        width: 1px;
+        height: 48px;
+        background: linear-gradient(
+          to bottom,
+          var(--color-brand-400),
+          transparent
+        );
+        animation: scrollLine 2s ease-in-out infinite;
+      }
+      @keyframes scrollLine {
+        0% {
+          transform: scaleY(0);
+          transform-origin: top;
+        }
+        49% {
+          transform: scaleY(1);
+          transform-origin: top;
+        }
+        50% {
+          transform: scaleY(1);
+          transform-origin: bottom;
+        }
+        100% {
+          transform: scaleY(0);
+          transform-origin: bottom;
+        }
+      }
+
+      /* LOGO PLACEHOLDER */
+      .logo-img-wrap {
+        display: inline-block;
+      }
+      .logo-placeholder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+        background: var(--color-bg-tertiary);
+        border: 2px dashed var(--color-border-strong);
+        border-radius: var(--radius-md);
+        padding: 0.75rem 2rem;
+        color: var(--color-text-subtle);
+        font-size: 0.75rem;
+        font-family: var(--font-mono);
+      }
+      .logo-placeholder span {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--color-text-muted);
+      }
+
+      /* MARQUEE */
+      .marquee-outer {
+        overflow: hidden;
+      }
+      .marquee-inner {
+        display: flex;
+        align-items: center;
+        gap: 0;
+        width: max-content;
+        animation: marquee 20s linear infinite;
+      }
+      .marquee-outer:hover .marquee-inner {
+        animation-play-state: paused;
+      }
+      .client-logo {
+        padding: 0 3rem;
+        font-family: var(--font-serif);
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--color-text-subtle);
+        white-space: nowrap;
+        transition: color var(--duration-base);
+      }
+      .client-logo:hover {
+        color: var(--color-text-brand);
+      }
+      @keyframes marquee {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* ABOUT */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: center;
+      }
+      @media (max-width: 768px) {
+        .about-grid {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+      }
+      .about-frame {
+        position: relative;
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        background: var(--color-bg-tertiary);
+        border: 1px solid var(--color-border);
+        aspect-ratio: 4/5;
+      }
+      .about-img-placeholder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        inset: 0;
+        position: absolute;
+        gap: 0.5rem;
+        color: var(--color-text-subtle);
+        font-size: 0.75rem;
+        font-family: var(--font-mono);
+      }
+      .about-img-placeholder span {
+        font-size: 2.5rem;
+      }
+      .about-frame-deco {
+        position: absolute;
+        top: -0.75rem;
+        left: -0.75rem;
+        z-index: 10;
+        width: 64px;
+        height: 64px;
+        border-top: 2px solid var(--color-brand-400);
+        border-left: 2px solid var(--color-brand-400);
+        border-radius: 4px 0 0 0;
+        pointer-events: none;
+      }
+      .about-badge {
+        position: absolute;
+        bottom: 1.25rem;
+        right: -1rem;
+        background: var(--color-bg-card);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-full);
+        padding: 0.6rem 1.1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.78rem;
+        font-weight: 600;
+        box-shadow: var(--shadow-md);
+      }
+      .about-stats {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        padding: 1.5rem;
+        background: var(--color-bg-secondary);
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--color-border);
+      }
+      .about-stat {
+        text-align: center;
+        flex: 1;
+      }
+      .about-stat-num {
+        display: block;
+        font-size: 2.25rem;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        background: var(--gradient-brand);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .about-stat-label {
+        font-size: 0.72rem;
+        color: var(--color-text-subtle);
+        font-family: var(--font-mono);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .about-stat-divider {
+        width: 1px;
+        height: 40px;
+        background: var(--color-border);
+        flex-shrink: 0;
+      }
+
+      /* PORTOFOLIO */
+      .porto-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+      @media (max-width: 640px) {
+        .porto-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .porto-card {
+        background: var(--color-bg-card);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        cursor: pointer;
+        transition:
+          transform var(--duration-slow) var(--ease-spring),
+          box-shadow var(--duration-slow) var(--ease-default),
+          border-color var(--duration-base);
+      }
+      .porto-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-xl);
+        border-color: var(--color-border-brand);
+      }
+      .porto-card:focus-visible {
+        outline: 2px solid var(--color-brand-500);
+        outline-offset: 3px;
+      }
+      .porto-img-wrap {
+        position: relative;
+        aspect-ratio: 16/9;
+        overflow: hidden;
+        background: var(--color-bg-tertiary);
+      }
+      .porto-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform var(--duration-slower) var(--ease-default);
+      }
+      .porto-card:hover .porto-img {
+        transform: scale(1.04);
+      }
+      .porto-img-placeholder {
+        position: absolute;
+        inset: 0;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+        color: var(--color-text-subtle);
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+      }
+      .porto-img-placeholder span {
+        font-size: 2rem;
+      }
+      .porto-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(4px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity var(--duration-base);
+      }
+      .porto-card:hover .porto-overlay {
+        opacity: 1;
+      }
+      .porto-info {
+        padding: 1.5rem;
+      }
+      .porto-title {
+        transition: color var(--duration-base);
+      }
+      .porto-card:hover .porto-title {
+        color: var(--color-text-brand);
+      }
+
+      /* PROSES */
+      .proses-grid {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+        gap: 0;
+        align-items: start;
+      }
+      @media (max-width: 768px) {
+        .proses-grid {
+          grid-template-columns: 1fr;
+        }
+        .proses-connector {
+          width: 2px;
+          height: 40px;
+          background: var(--gradient-brand);
+          margin: 0 0 0 1.5rem;
+        }
+      }
+      .proses-item {
+        padding: 0 1rem;
+      }
+      .proses-connector {
+        width: 60px;
+        height: 2px;
+        background: var(--gradient-brand);
+        margin-top: 1.5rem;
+        flex-shrink: 0;
+        border-radius: var(--radius-full);
+      }
+      .proses-num {
+        font-family: var(--font-mono);
+        font-size: 2rem;
+        font-weight: 800;
+        background: var(--gradient-brand);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1;
+        margin-bottom: 0.75rem;
+      }
+
+      /* FAQ */
+      .faq-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+      }
+      .faq-item {
+        border-bottom: 1px solid var(--color-border);
+      }
+      .faq-item:last-child {
+        border-bottom: none;
+      }
+      .faq-question {
+        list-style: none;
+        cursor: pointer;
+        padding: 1.25rem 1.5rem;
+        font-weight: 700;
+        font-size: 0.95rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        background: var(--color-bg-card);
+        transition:
+          background var(--duration-base),
+          color var(--duration-base);
+        user-select: none;
+      }
+      .faq-question::-webkit-details-marker {
+        display: none;
+      }
+      .faq-question::after {
+        content: "+";
+        font-size: 1.25rem;
+        color: var(--color-text-brand);
+        flex-shrink: 0;
+        transition: transform var(--duration-base) var(--ease-spring);
+      }
+      .faq-item[open] .faq-question {
+        color: var(--color-text-brand);
+        background: var(--color-brand-50);
+      }
+      .faq-item[open] .faq-question::after {
+        transform: rotate(45deg);
+      }
+      .faq-answer {
+        padding: 0 1.5rem 1.25rem;
+        background: var(--color-brand-50);
+      }
+      .faq-answer p {
+        font-size: 0.9rem;
+        color: var(--color-text-muted);
+        line-height: 1.8;
+      }
+
+      /* CTA BOX */
+      .cta-box {
+        background: var(--color-brand-900);
+        border-radius: var(--radius-2xl);
+        padding: 5rem 2rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        box-shadow: var(--shadow-xl);
+      }
+      .cta-blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        pointer-events: none;
+      }
+      .cta-blob-1 {
+        width: 350px;
+        height: 350px;
+        top: -100px;
+        right: -50px;
+        background: var(--color-brand-500);
+        opacity: 0.4;
+      }
+      .cta-blob-2 {
+        width: 250px;
+        height: 250px;
+        bottom: -80px;
+        left: -30px;
+        background: var(--color-accent-500);
+        opacity: 0.25;
+      }
+
+      /* MODAL */
+      .modal-backdrop {
+        position: fixed;
+        inset: 0;
+        z-index: var(--z-modal);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        opacity: 0;
+        transition: opacity var(--duration-base);
+      }
+      .modal-backdrop:not([hidden]) {
+        display: flex;
+      }
+      .modal-backdrop.modal-open {
+        opacity: 1;
+      }
+      .modal-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(6px);
+      }
+      .modal-box {
+        position: relative;
+        z-index: 1;
+        background: var(--color-bg-card);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-xl);
+        width: 100%;
+        max-width: 860px;
+        max-height: 90vh;
+        overflow-y: auto;
+        transform: scale(0.94) translateY(16px);
+        transition: transform var(--duration-slow) var(--ease-spring);
+        box-shadow: var(--shadow-xl);
+      }
+      .modal-backdrop.modal-open .modal-box {
+        transform: scale(1) translateY(0);
+      }
+      .modal-close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 10;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: var(--color-bg-secondary);
+        border: 1px solid var(--color-border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        cursor: pointer;
+        color: var(--color-text-muted);
+        transition:
+          background var(--duration-base),
+          color var(--duration-base);
+      }
+      .modal-close:hover {
+        background: var(--color-danger-soft);
+        color: var(--color-danger);
+      }
+      .modal-img-wrap {
+        position: relative;
+        aspect-ratio: 16/9;
+        background: var(--color-bg-tertiary);
+        border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+        overflow: hidden;
+      }
+      .modal-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .modal-img-placeholder {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        color: var(--color-text-subtle);
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+      }
+      .modal-img-placeholder span {
+        font-size: 2.5rem;
+      }
+      .modal-content {
+        padding: 2rem;
+      }
+    </style>
+
+    <script>
+      // ── MODAL
+      const modalEl = document.getElementById("projectModal");
+      const modalBox = document.getElementById("modalBox");
+      const modalImg = document.getElementById("modalImage");
+      const modalImgPh = document.getElementById("modalImgPlaceholder");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalDesc = document.getElementById("modalDesc");
+      const modalTags = document.getElementById("modalTags");
+      const modalLink = document.getElementById("modalLink");
+
+      function openModal({ img, title, desc, tags = [], link = "#" }) {
+        modalImg.src = img;
+        modalImg.alt = title;
+        modalImg.style.display = "block";
+        modalImgPh.style.display = "none";
+        modalImg.onerror = () => {
+          modalImg.style.display = "none";
+          modalImgPh.style.display = "flex";
+        };
+        modalTitle.textContent = title;
+        modalDesc.textContent = desc;
+        modalLink.href = link;
+        modalTags.innerHTML = tags
+          .map((t) => `<span class="badge badge-neutral">${t}</span>`)
+          .join("");
+        modalEl.removeAttribute("hidden");
+        document.body.style.overflow = "hidden";
+        requestAnimationFrame(() => modalEl.classList.add("modal-open"));
+      }
+
+      function closeModal() {
+        modalEl.classList.remove("modal-open");
+        document.body.style.overflow = "";
+        setTimeout(() => modalEl.setAttribute("hidden", ""), 300);
+      }
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && !modalEl.hasAttribute("hidden")) closeModal();
+      });
+      document.querySelectorAll(".porto-card").forEach((card) => {
+        card.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            card.click();
+          }
+        });
+      });
+
+      // ── SCROLL REVEAL
+      document.addEventListener("DOMContentLoaded", () => {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add("visible");
+              io.unobserve(entry.target);
+            });
+          },
+          { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+        );
+        document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+      });
+
+      // ── COUNT UP
+      function countUp(el, target) {
+        let start,
+          dur = 1800;
+        const step = (ts) => {
+          if (!start) start = ts;
+          const p = Math.min((ts - start) / dur, 1);
+          const e = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.floor(e * target) + "+";
+          if (p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      }
+      const countIO = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              countUp(e.target, parseInt(e.target.dataset.count));
+              countIO.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.6 },
+      );
+      document
+        .querySelectorAll("[data-count]")
+        .forEach((el) => countIO.observe(el));
+    </script>
+  </body>
+</html>

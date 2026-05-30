@@ -1,0 +1,136 @@
+<footer
+  class="relative mt-auto pt-20 pb-8 border-t border-[var(--color-border-soft)] bg-[var(--color-bg-secondary)] overflow-hidden"
+>
+  <!-- Decorative bg blob -->
+  <div
+    class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[var(--color-brand-100)] rounded-full blur-[120px] opacity-40 pointer-events-none"
+  ></div>
+
+  <div class="container relative z-10">
+    <!-- Top: Brand + Links -->
+    <div class="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-16 mb-16">
+      <!-- Brand Column -->
+      <div class="max-w-xs">
+        <a href="/" class="nav-logo text-2xl mb-5 inline-block">WebSukaSuka.</a>
+        <p
+          class="text-[var(--color-text-muted)] text-[var(--text-sm)] leading-relaxed mb-6"
+        >
+          Membangun sistem digital modern, cepat, dan handal untuk membawa
+          bisnismu ke level selanjutnya.
+        </p>
+        <div class="flex items-center gap-3 mb-6">
+          <span class="status-dot"></span>
+          <span
+            class="font-mono text-[var(--text-xs)] text-[var(--color-text-muted)] tracking-widest uppercase"
+          >
+            Open for Project
+          </span>
+        </div>
+        <a
+          href="https://wa.me/6281234567890"
+          target="_blank"
+          class="inline-flex items-center gap-2 btn btn-primary btn-sm"
+        >
+          💬 Chat WhatsApp
+        </a>
+      </div>
+
+      <!-- Links Columns -->
+      <div class="flex gap-16 md:gap-20">
+        <!-- Navigasi -->
+        <div>
+          <p class="footer-col-title">Navigasi</p>
+          <ul class="footer-links">
+            <li><a href="/#beranda">Beranda</a></li>
+            <li><a href="/#layanan">Layanan</a></li>
+            <li><a href="/#portofolio">Portofolio</a></li>
+            <li><a href="/#kontak">Kontak</a></li>
+          </ul>
+        </div>
+        <!-- Layanan -->
+        <div>
+          <p class="footer-col-title">Layanan</p>
+          <ul class="footer-links">
+            <li><a href="/#layanan">Custom Web App</a></li>
+            <li><a href="/#layanan">Landing Page</a></li>
+            <li><a href="/#layanan">Sistem Kasir</a></li>
+            <li><a href="/#layanan">Maintenance</a></li>
+          </ul>
+        </div>
+        <!-- Sosial -->
+        <div>
+          <p class="footer-col-title">Sosial</p>
+          <ul class="footer-links">
+            <li><a href="#" target="_blank">Instagram</a></li>
+            <li><a href="#" target="_blank">LinkedIn</a></li>
+            <li><a href="#" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="divider-brand mb-8"></div>
+
+    <!-- Bottom bar -->
+    <div
+      class="flex flex-col sm:flex-row justify-between items-center gap-3 font-mono text-[var(--text-xs)] text-[var(--color-text-subtle)]"
+    >
+      <p>
+        &copy; <%= new Date().getFullYear() %> WebSukaSuka. All rights reserved.
+      </p>
+      <p>
+        Crafted with <span class="text-[var(--color-danger)]">♥</span> in
+        Indonesia 🇮🇩
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer-col-title {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text-brand);
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+  }
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+  .footer-links a {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition:
+      color var(--duration-base) var(--ease-default),
+      transform var(--duration-base) var(--ease-spring);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .footer-links a::before {
+    content: "→";
+    font-size: 0.65rem;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition:
+      opacity var(--duration-base),
+      transform var(--duration-base) var(--ease-spring);
+    color: var(--color-text-brand);
+  }
+  .footer-links a:hover {
+    color: var(--color-text-brand);
+    transform: translateX(4px);
+  }
+  .footer-links a:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+  }
+</style>
