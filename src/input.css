@@ -265,10 +265,10 @@
 @layer components {
   /* Container */
   .container {
-    width: 100%;
-    max-width: 1280px;
-    margin-inline: auto;
-    padding-inline: var(--spacing-container);
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    max-width: 100vw;
+    box-sizing: border-box;
   }
 
   /* Section */
