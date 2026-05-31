@@ -1482,7 +1482,10 @@
         flex: 1;
       }
       .about-stat-num {
-        display: block;
+        display: inline-block; /* Diubah dari block agar min-width bekerja akurat di tengah */
+        min-width: 80px; /* Mengunci lebar kotak agar tidak melebar saat digit bertambah */
+        font-variant-numeric: tabular-nums; /* Membuat semua angka punya lebar yang sama (monospace) */
+
         font-size: 2.25rem;
         font-weight: 800;
         letter-spacing: -0.03em;
