@@ -1746,6 +1746,21 @@
         border: 1px solid var(--color-border);
         overflow: hidden; /* cegah isi meluber */
       }
+      @media (max-width: 640px) {
+        .about-stats {
+          flex-wrap: wrap; /* Ini kunci utamanya: izinkan elemen turun baris */
+          justify-content: center;
+          gap: 1.25rem 0.5rem;
+          padding: 1.25rem;
+        }
+        .about-stat {
+          flex: 1 1 45%; /* Jadikan 2 kotak di atas, 1 kotak di bawah */
+          min-width: 120px; /* Beri ruang bernapas untuk teks "Node.js" */
+        }
+        .about-stat-divider {
+          display: none; /* Sembunyikan garis vertikal di layar HP agar tidak berantakan */
+        }
+      }
       @media (max-width: 480px) {
         .about-stats {
           gap: 0.5rem;
@@ -1760,7 +1775,7 @@
       .about-stat-num {
         display: block; /* block agar text-align: center bekerja */
         font-variant-numeric: tabular-nums;
-        font-size: clamp(1.5rem, 4vw, 2.25rem); /* responsive font size */
+        font-size: clamp(1.2rem, 3.5vw, 1.8rem); /* responsive font size */
         font-weight: 800;
         letter-spacing: -0.03em;
         background: var(--gradient-brand);
@@ -1775,7 +1790,7 @@
         font-family: var(--font-mono);
         text-transform: uppercase;
         letter-spacing: 0.06em;
-        white-space: nowrap; /* jaga label tidak wrap aneh */
+        line-height: 1.4;
       }
       .about-stat-divider {
         width: 1px;
