@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://sukasukaweb.com/sitemap.xml
+
+# Larang halaman yang tidak perlu diindex
+Disallow: /node_modules/

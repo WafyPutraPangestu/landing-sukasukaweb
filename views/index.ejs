@@ -3,26 +3,116 @@
   <head>
     <%- include('partials/head') %>
 
+    <!-- ═══════════════════════════════════════════
+         SCHEMA MARKUP — Ditingkatkan dengan lebih banyak properti
+         agar Google tampilkan rich result
+         ═══════════════════════════════════════════ -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Suka-Suka Web",
-        "description": "Software House Indonesia — membangun Web Apps, Landing Page, dan Sistem Digital modern untuk UMKM dan Perusahaan.",
-        "url": "https://sukasukaweb.com",
-        "areaServed": "Indonesia",
-        "serviceType": ["Web Development", "UI/UX Design", "Software House"]
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://sukasukaweb.com/#business",
+            "name": "WebSukaSuka",
+            "alternateName": "Suka-Suka Web",
+            "description": "Software house Indonesia spesialis pembuatan web app, company profile, landing page, dan sistem kasir modern untuk UMKM dan perusahaan.",
+            "url": "https://sukasukaweb.com",
+            "telephone": "+6285706193924",
+            "email": "halo@sukasukaweb.com",
+            "foundingDate": "2022",
+            "areaServed": {
+              "@type": "Country",
+              "name": "Indonesia"
+            },
+            "serviceType": [
+              "Pembuatan Website",
+              "Web App Development",
+              "Landing Page",
+              "Company Profile",
+              "Sistem Kasir POS",
+              "UI/UX Design",
+              "Software House"
+            ],
+            "priceRange": "Rp 1.200.000 - Negosiasi",
+            "currenciesAccepted": "IDR",
+            "paymentAccepted": "Bank Transfer, QRIS",
+            "sameAs": [
+              "https://instagram.com/sukasukaweb",
+              "https://linkedin.com/company/sukasukaweb",
+              "https://github.com/sukasukaweb"
+            ],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5",
+              "reviewCount": "30"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://sukasukaweb.com/#website",
+            "url": "https://sukasukaweb.com",
+            "name": "WebSukaSuka",
+            "description": "Jasa pembuatan website profesional Indonesia",
+            "inLanguage": "id-ID",
+            "publisher": {
+              "@id": "https://sukasukaweb.com/#business"
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Bagaimana sistem pembayaran pembuatan website di WebSukaSuka?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sistem kami mewajibkan DP 50% di awal untuk mengikat komitmen serta modal pembelian domain dan hosting. Pelunasan 50% sisanya dilakukan setelah website selesai dan siap online."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Apakah ada biaya perpanjangan tahunan untuk website?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Ya, ada. Biaya yang Anda bayarkan di awal sudah termasuk gratis Domain dan Hosting untuk tahun pertama. Untuk tahun kedua dan seterusnya, akan ada biaya perpanjangan server dan domain."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Berapa lama waktu pengerjaan website?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Paket Landing Page memakan waktu 3-7 hari kerja. Paket Bisnis 1-2 minggu, dan Paket Kustom menyesuaikan tingkat kerumitan sistem."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Apakah WebSukaSuka memberikan proposal resmi?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Tentu. Setelah Anda menghubungi kami via WhatsApp, kami akan mengirimkan format penawaran (proposal) ringkas namun profesional yang mencakup keuntungan, detail paket, dan langkah kerja."
+                }
+              }
+            ]
+          }
+        ]
       }
     </script>
   </head>
+
   <body class="flex flex-col min-h-screen">
     <%- include('partials/navbar') %>
 
-    <main class="flex-grow">
+    <main class="flex-grow" id="main-content">
+      <!-- ═══════════════════════════════════════════
+           HERO — H1 mengandung keyword utama
+           "jasa pembuatan website" + "Indonesia"
+           ═══════════════════════════════════════════ -->
       <section
         id="beranda"
         class="relative flex items-center min-h-screen pt-28 pb-20 overflow-hidden"
-        aria-label="Hero — Suka-Suka Web"
+        aria-labelledby="hero-heading"
       >
         <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
         <div class="hero-blob hero-blob-2" aria-hidden="true"></div>
@@ -33,8 +123,9 @@
           <div class="max-w-4xl mx-auto text-center">
             <div
               class="inline-flex items-center gap-2 badge badge-brand animate-fade-up mb-8"
+              aria-live="polite"
             >
-              <span class="status-dot"></span>
+              <span class="status-dot" aria-hidden="true"></span>
               Open for Project — Indonesia
             </div>
 
@@ -42,20 +133,22 @@
               <div class="logo-img-wrap">
                 <img
                   src="/images/logo-atas.png"
-                  alt="Suka-Suka Web"
+                  alt="Logo WebSukaSuka — Software House Indonesia"
                   class="h-16 w-auto mx-auto"
+                  width="200"
+                  height="64"
                 />
-                <!-- <div class="logo-placeholder">
-                  <span>Logo</span>
-                  <small>/images/logo.png</small>
-                </div> -->
               </div>
             </div>
 
-            <h1 class="animate-fade-up delay-1 mb-6 text-balance hero-heading">
-              Wujudkan Ide Bisnismu<br />
-              Jadi <em class="hero-italic">Sistem Digital</em> yang<br />
-              <span class="text-gradient">Cerdas & Modern</span>
+            <!-- H1 — satu halaman cukup satu H1, keyword ada di sini -->
+            <h1
+              id="hero-heading"
+              class="animate-fade-up delay-1 mb-6 text-balance hero-heading"
+            >
+              Jasa Pembuatan Website<br />
+              Profesional <em class="hero-italic">Modern</em> untuk<br />
+              <span class="text-gradient">Bisnis Indonesia</span>
             </h1>
 
             <p
@@ -65,22 +158,27 @@
               <strong class="text-[var(--color-text)]"
                 >UMKM dan Perusahaan</strong
               >
-              membangun Web App, Company Profile, hingga Sistem Kasir yang
-              cepat, modern, dan ramah mesin pencari.
+              membangun Web App, Company Profile, hingga Sistem Kasir (POS) yang
+              cepat, modern, dan ramah mesin pencari (SEO-ready).
             </p>
 
             <div
               class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up delay-3"
             >
               <a
-                href="https://wa.me/6285706193924"
+                href="https://wa.me/6285706193924?text=Halo%20WebSukaSuka,%20saya%20ingin%20konsultasi%20gratis%20pembuatan%20website."
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 class="btn btn-primary btn-lg"
+                aria-label="Konsultasi gratis pembuatan website via WhatsApp"
               >
                 💬 Konsultasi Gratis
               </a>
-              <a href="#paket" class="btn btn-secondary btn-lg">
+              <a
+                href="#paket"
+                class="btn btn-secondary btn-lg"
+                aria-label="Lihat paket harga pembuatan website"
+              >
                 Lihat Paket Harga →
               </a>
             </div>
@@ -96,15 +194,19 @@
         </div>
       </section>
 
+      <!-- ═══════════════════════════════════════════
+           KLIEN — social proof, perkuat kepercayaan
+           ═══════════════════════════════════════════ -->
       <section
-        aria-label="Klien kami"
+        id="klien"
+        aria-label="Klien yang sudah mempercayai WebSukaSuka"
         class="py-12 border-y border-[var(--color-border-soft)] bg-[var(--color-bg-secondary)] overflow-hidden"
       >
         <div class="container mb-5 text-center reveal">
           <p
             class="font-mono text-[var(--text-xs)] text-[var(--color-text-subtle)] tracking-widest uppercase"
           >
-            Dipercaya oleh
+            Dipercaya oleh 30+ Klien
           </p>
         </div>
         <div class="marquee-outer" aria-hidden="true">
@@ -125,20 +227,25 @@
         </div>
       </section>
 
+      <!-- ═══════════════════════════════════════════
+           TENTANG — H2 jelas, keyword "software house"
+           alt text gambar tim diisi dengan deskripsi
+           ═══════════════════════════════════════════ -->
       <section id="tentang" class="section" aria-labelledby="about-heading">
         <div class="container">
           <div class="about-grid">
             <div class="about-visual reveal">
               <div class="about-frame">
                 <div class="about-frame-deco" aria-hidden="true"></div>
-                <img src="/images/tim.jpeg" alt="" />
-                <!-- <div class="about-img-placeholder">
-                  <span>📸</span>
-                  <p>Foto Tim</p>
-                  <small>/images/team.jpg</small>
-                </div> -->
-                <div class="about-badge">
-                  <span class="status-dot"></span>
+                <img
+                  src="/images/tim.jpeg"
+                  alt="Tim WebSukaSuka — developer dan desainer software house Indonesia"
+                  width="480"
+                  height="600"
+                  loading="lazy"
+                />
+                <div class="about-badge" aria-live="polite">
+                  <span class="status-dot" aria-hidden="true"></span>
                   <span>Open for Project</span>
                 </div>
               </div>
@@ -146,38 +253,64 @@
 
             <div>
               <p class="section-tag reveal">Tentang Kami</p>
+              <!-- H2 — jangan pakai H1 lagi, pakai H2 dari sini -->
               <h2 id="about-heading" class="reveal delay-1 mb-6">
-                Passion untuk<br />
+                Software House Indonesia<br />
+                dengan
                 <em
                   style="
                     font-family: var(--font-serif);
                     font-style: italic;
                     color: var(--color-text-brand);
                   "
-                  >Craft Digital</em
+                  >Passion Tinggi</em
                 >
               </h2>
               <p
                 class="text-[var(--color-text-muted)] leading-relaxed mb-5 reveal delay-2"
               >
-                <strong class="text-[var(--color-text)]">Suka-Suka Web</strong>
+                <strong class="text-[var(--color-text)]">WebSukaSuka</strong>
                 adalah software house berbasis di Indonesia yang fokus membangun
-                produk digital berkualitas tinggi. Kami percaya teknologi
-                seharusnya mempermudah bisnis, bukan mempersulitnya.
+                produk digital berkualitas tinggi — mulai dari
+                <strong class="text-[var(--color-text)]"
+                  >web app, landing page, company profile</strong
+                >, hingga
+                <strong class="text-[var(--color-text)]"
+                  >sistem kasir (POS)</strong
+                >. Kami percaya teknologi seharusnya mempermudah bisnis, bukan
+                mempersulitnya.
               </p>
-              <div class="about-stats reveal delay-3">
+              <div
+                class="about-stats reveal delay-3"
+                aria-label="Statistik WebSukaSuka"
+              >
                 <div class="about-stat">
-                  <span class="about-stat-num" data-count="42">0</span>
+                  <span
+                    class="about-stat-num"
+                    data-count="42"
+                    aria-label="42 proyek selesai"
+                    >0</span
+                  >
                   <span class="about-stat-label">Proyek Selesai</span>
                 </div>
                 <div class="about-stat-divider" aria-hidden="true"></div>
                 <div class="about-stat">
-                  <span class="about-stat-num" data-count="3">0</span>
+                  <span
+                    class="about-stat-num"
+                    data-count="3"
+                    aria-label="3 tahun pengalaman"
+                    >0</span
+                  >
                   <span class="about-stat-label">Tahun Pengalaman</span>
                 </div>
                 <div class="about-stat-divider" aria-hidden="true"></div>
                 <div class="about-stat">
-                  <span class="about-stat-num" data-count="30">0</span>
+                  <span
+                    class="about-stat-num"
+                    data-count="30"
+                    aria-label="30 klien puas"
+                    >0</span
+                  >
                   <span class="about-stat-label">Klien Puas</span>
                 </div>
               </div>
@@ -186,11 +319,96 @@
         </div>
       </section>
 
+      <!-- ═══════════════════════════════════════════
+           LAYANAN — Section baru khusus layanan
+           Keyword halaman layanan utama ada di sini
+           ═══════════════════════════════════════════ -->
       <section
-        id="portofolio"
+        id="layanan"
         class="section bg-[var(--color-bg-secondary)]"
-        aria-labelledby="porto-heading"
+        aria-labelledby="layanan-heading"
       >
+        <div class="container">
+          <div class="text-center mb-14 reveal">
+            <p class="section-tag justify-center">Layanan Kami</p>
+            <h2 id="layanan-heading" class="mb-4">
+              Solusi Digital Lengkap<br />untuk Bisnis Anda
+            </h2>
+            <p class="text-[var(--color-text-muted)] max-w-xl mx-auto">
+              Dari landing page sederhana hingga sistem kompleks — kami kerjakan
+              dengan standar kode profesional dan desain modern.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+            <!-- Layanan 1 -->
+            <article
+              class="card reveal delay-1"
+              aria-labelledby="layanan-webapp"
+            >
+              <div class="text-3xl mb-4" aria-hidden="true">🖥️</div>
+              <h3 id="layanan-webapp" class="text-xl font-bold mb-2">
+                Custom Web App
+              </h3>
+              <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
+                Aplikasi web custom sesuai proses bisnis Anda — dashboard,
+                manajemen data, portal klien, dan lebih banyak lagi.
+              </p>
+            </article>
+
+            <!-- Layanan 2 -->
+            <article
+              class="card reveal delay-2"
+              aria-labelledby="layanan-landing"
+            >
+              <div class="text-3xl mb-4" aria-hidden="true">🚀</div>
+              <h3 id="layanan-landing" class="text-xl font-bold mb-2">
+                Landing Page
+              </h3>
+              <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
+                Halaman marketing berkecepatan tinggi yang dioptimasi untuk
+                konversi dan SEO — tampil di halaman 1 Google.
+              </p>
+            </article>
+
+            <!-- Layanan 3 -->
+            <article
+              class="card reveal delay-3"
+              aria-labelledby="layanan-kasir"
+            >
+              <div class="text-3xl mb-4" aria-hidden="true">🧾</div>
+              <h3 id="layanan-kasir" class="text-xl font-bold mb-2">
+                Sistem Kasir (POS)
+              </h3>
+              <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
+                Sistem point-of-sale berbasis web — manajemen stok, laporan
+                penjualan, dan integrasi QRIS / payment gateway.
+              </p>
+            </article>
+
+            <!-- Layanan 4 -->
+            <article
+              class="card reveal delay-4"
+              aria-labelledby="layanan-maintenance"
+            >
+              <div class="text-3xl mb-4" aria-hidden="true">🔧</div>
+              <h3 id="layanan-maintenance" class="text-xl font-bold mb-2">
+                Maintenance & Support
+              </h3>
+              <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
+                Perawatan rutin, update fitur, backup berkala, dan support
+                teknis untuk menjaga website tetap cepat dan aman.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════
+           PORTOFOLIO — alt text gambar diisi deskripsi
+           yang mengandung keyword. H3 untuk judul proyek.
+           ═══════════════════════════════════════════ -->
+      <section id="portofolio" class="section" aria-labelledby="porto-heading">
         <div class="container">
           <div
             class="flex flex-col md:flex-row justify-between items-end mb-14 gap-6"
@@ -209,12 +427,13 @@
               class="porto-card reveal delay-1"
               role="button"
               tabindex="0"
+              aria-label="Lihat detail proyek Landing Page Produk X"
               onclick="
                 openModal({
                   img: '/images/porto-1.jpg',
                   title: 'Landing Page Produk X',
-                  desc: 'Website marketing super cepat untuk kampanye digital produk X.',
-                  tags: ['Landing Page', 'SEO'],
+                  desc: 'Website marketing super cepat untuk kampanye digital produk X. Dibangun dengan fokus kecepatan loading dan optimasi SEO on-page.',
+                  tags: ['Landing Page', 'SEO', 'Web Design'],
                   link: '#',
                 })
               "
@@ -222,20 +441,22 @@
               <div class="porto-img-wrap">
                 <img
                   src="/images/porto-1.jpg"
-                  alt=""
+                  alt="Screenshot landing page produk X — website marketing cepat buatan WebSukaSuka"
                   class="porto-img"
+                  width="600"
+                  height="338"
                   loading="lazy"
                   onerror="
                     this.style.display = 'none';
                     this.nextElementSibling.style.display = 'flex';
                   "
                 />
-                <div class="porto-img-placeholder">
+                <div class="porto-img-placeholder" aria-hidden="true">
                   <span>🖼️</span>
                   <p>Upload Screenshot</p>
                   <small>/images/porto-1.jpg</small>
                 </div>
-                <div class="porto-overlay">
+                <div class="porto-overlay" aria-hidden="true">
                   <span class="btn btn-primary btn-sm">Lihat Detail</span>
                 </div>
               </div>
@@ -245,6 +466,12 @@
                   <span class="badge badge-neutral">Landing Page</span>
                 </div>
                 <h3 class="text-xl porto-title">Landing Page Produk X</h3>
+                <p
+                  class="text-sm text-[var(--color-text-muted)] mt-2 leading-relaxed"
+                >
+                  Website marketing berkecepatan tinggi, dioptimasi untuk
+                  konversi dan SEO.
+                </p>
               </div>
             </article>
 
@@ -252,12 +479,13 @@
               class="porto-card reveal delay-2"
               role="button"
               tabindex="0"
+              aria-label="Lihat detail proyek Sistem Kasir POS Modern"
               onclick="
                 openModal({
                   img: '/images/porto-2.jpg',
-                  title: 'Sistem Kasir (POS)',
-                  desc: 'Manajemen stok dan kasir berbasis web yang responsif dan mudah digunakan.',
-                  tags: ['Web App', 'POS'],
+                  title: 'Sistem Kasir (POS) Modern',
+                  desc: 'Manajemen stok dan kasir berbasis web yang responsif dan mudah digunakan. Dilengkapi laporan penjualan real-time dan integrasi payment gateway.',
+                  tags: ['Web App', 'POS', 'Sistem Kasir'],
                   link: '#',
                 })
               "
@@ -265,20 +493,22 @@
               <div class="porto-img-wrap">
                 <img
                   src="/images/porto-2.jpg"
-                  alt=""
+                  alt="Screenshot sistem kasir POS modern berbasis web — manajemen stok dan laporan penjualan"
                   class="porto-img"
+                  width="600"
+                  height="338"
                   loading="lazy"
                   onerror="
                     this.style.display = 'none';
                     this.nextElementSibling.style.display = 'flex';
                   "
                 />
-                <div class="porto-img-placeholder">
+                <div class="porto-img-placeholder" aria-hidden="true">
                   <span>🖼️</span>
                   <p>Upload Screenshot</p>
                   <small>/images/porto-2.jpg</small>
                 </div>
-                <div class="porto-overlay">
+                <div class="porto-overlay" aria-hidden="true">
                   <span class="btn btn-primary btn-sm">Lihat Detail</span>
                 </div>
               </div>
@@ -288,34 +518,53 @@
                   <span class="badge badge-neutral">Web App</span>
                 </div>
                 <h3 class="text-xl porto-title">Sistem Kasir (POS) Modern</h3>
+                <p
+                  class="text-sm text-[var(--color-text-muted)] mt-2 leading-relaxed"
+                >
+                  Kasir berbasis web dengan manajemen stok, laporan real-time,
+                  dan QRIS.
+                </p>
               </div>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="paket" class="section" aria-labelledby="paket-heading">
+      <!-- ═══════════════════════════════════════════
+           PAKET HARGA — heading jelas, teks paket
+           mengandung keyword layanan spesifik
+           ═══════════════════════════════════════════ -->
+      <section
+        id="paket"
+        class="section bg-[var(--color-bg-secondary)]"
+        aria-labelledby="paket-heading"
+      >
         <div class="container max-w-[1400px]">
           <div class="text-center mb-16 reveal">
             <p class="section-tag justify-center">Harga & Layanan</p>
             <h2 id="paket-heading" class="mb-4">
-              Pilih Paket Sesuai Kebutuhan
+              Paket Pembuatan Website<br />Sesuai Kebutuhan Bisnis Anda
             </h2>
             <p class="text-[var(--color-text-muted)] max-w-2xl mx-auto">
-              Dari paket praktis untuk UMKM, hingga paket kerjasama VIP jangka
-              panjang tanpa batas untuk Perusahaan Anda.
+              Dari paket landing page praktis untuk UMKM, hingga kemitraan
+              eksklusif jangka panjang untuk perusahaan Anda.
             </p>
           </div>
 
-          <!-- Layout 4 Kolom -->
           <div
             class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch"
           >
             <!-- Paket 1 -->
-            <div class="card flex flex-col h-full reveal delay-1 p-6">
-              <h3 class="text-xl font-bold mb-2">Paket Suka-Suka 1</h3>
+            <article
+              class="card flex flex-col h-full reveal delay-1 p-6"
+              aria-labelledby="paket1-title"
+            >
+              <h3 id="paket1-title" class="text-xl font-bold mb-2">
+                Paket Suka-Suka 1
+              </h3>
               <p class="text-[var(--color-text-muted)] text-sm mb-6 h-10">
-                Praktis untuk UMKM, Jasa perorangan, dan Portofolio.
+                Landing page praktis untuk UMKM, jasa perorangan, dan
+                portofolio.
               </p>
               <div class="mb-6">
                 <span class="text-xs text-[var(--color-text-subtle)]"
@@ -326,64 +575,95 @@
                 </div>
               </div>
               <div class="divider mb-6"></div>
-              <ul class="flex flex-col gap-3 mb-8 flex-grow">
+              <ul
+                class="flex flex-col gap-3 mb-8 flex-grow"
+                aria-label="Fitur paket 1"
+              >
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
                 >
-                  <span class="text-[var(--color-success)] mt-0.5">✔</span> 1
-                  Halaman (Landing Page)
+                  <span
+                    class="text-[var(--color-success)] mt-0.5"
+                    aria-hidden="true"
+                    >✔</span
+                  >
+                  1 Halaman (Landing Page) SEO-Ready
                 </li>
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
                 >
-                  <span class="text-[var(--color-success)] mt-0.5">✔</span>
-                  Gratis Domain & Hosting 1 Thn
+                  <span
+                    class="text-[var(--color-success)] mt-0.5"
+                    aria-hidden="true"
+                    >✔</span
+                  >
+                  Gratis Domain &amp; Hosting 1 Tahun
                 </li>
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
                 >
-                  <span class="text-[var(--color-success)] mt-0.5">✔</span>
-                  Desain Mobile-Friendly & SSL
+                  <span
+                    class="text-[var(--color-success)] mt-0.5"
+                    aria-hidden="true"
+                    >✔</span
+                  >
+                  Desain Mobile-Friendly &amp; SSL
                 </li>
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
                 >
-                  <span class="text-[var(--color-success)] mt-0.5">✔</span>
-                  Tombol langsung ke WhatsApp
+                  <span
+                    class="text-[var(--color-success)] mt-0.5"
+                    aria-hidden="true"
+                    >✔</span
+                  >
+                  Tombol Langsung ke WhatsApp
                 </li>
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
                 >
-                  <span class="text-[var(--color-success)] mt-0.5">✔</span>
-                  Revisi maksimal 2x
+                  <span
+                    class="text-[var(--color-success)] mt-0.5"
+                    aria-hidden="true"
+                    >✔</span
+                  >
+                  Revisi Maksimal 2x
                 </li>
               </ul>
               <a
-                href="https://wa.me/6285706193924?text=Halo%20Suka-Suka%20Web,%20saya%20tertarik%20dengan%20Paket%20Suka-Suka%201"
+                href="https://wa.me/6285706193924?text=Halo%20WebSukaSuka,%20saya%20tertarik%20dengan%20Paket%20Suka-Suka%201"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="btn btn-secondary w-full text-sm"
+                aria-label="Pilih Paket 1 — Landing Page mulai Rp 1,2 juta"
                 >Pilih Paket 1</a
               >
-            </div>
+            </article>
 
-            <!-- Paket 2 -->
-            <div
+            <!-- Paket 2 — Most Popular -->
+            <article
               class="card relative flex flex-col h-full reveal delay-2 p-6"
               style="
                 border-color: var(--color-brand-500);
                 box-shadow: var(--shadow-brand);
               "
+              aria-labelledby="paket2-title"
             >
               <div
                 class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[var(--color-brand-500)] text-white text-[0.65rem] font-bold px-4 py-1 rounded-full uppercase tracking-widest whitespace-nowrap shadow-md"
+                aria-label="Paket paling laris"
               >
                 Paling Laris
               </div>
-              <h3 class="text-xl font-bold mb-2 text-gradient">
+              <h3
+                id="paket2-title"
+                class="text-xl font-bold mb-2 text-gradient"
+              >
                 Paket Suka-Suka 2
               </h3>
               <p class="text-[var(--color-text-muted)] text-sm mb-6 h-10">
-                Profil profesional untuk Klinik, Sekolah, & Perusahaan.
+                Company profile profesional untuk klinik, sekolah, &amp;
+                perusahaan.
               </p>
               <div class="mb-6">
                 <span class="text-xs text-[var(--color-text-subtle)]"
@@ -394,51 +674,81 @@
                 </div>
               </div>
               <div class="divider-brand mb-6"></div>
-              <ul class="flex flex-col gap-3 mb-8 flex-grow">
+              <ul
+                class="flex flex-col gap-3 mb-8 flex-grow"
+                aria-label="Fitur paket 2"
+              >
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
                 >
-                  <span class="text-[var(--color-brand-500)] mt-0.5">✔</span> 5
-                  – 7 Halaman Web
+                  <span
+                    class="text-[var(--color-brand-500)] mt-0.5"
+                    aria-hidden="true"
+                    >✔</span
+                  >
+                  5–7 Halaman Web Company Profile
                 </li>
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
                 >
-                  <span class="text-[var(--color-brand-500)] mt-0.5">✔</span>
-                  Domain & Hosting Besar
+                  <span
+                    class="text-[var(--color-brand-500)] mt-0.5"
+                    aria-hidden="true"
+                    >✔</span
+                  >
+                  Domain &amp; Hosting Kapasitas Besar
                 </li>
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
                 >
-                  <span class="text-[var(--color-brand-500)] mt-0.5">✔</span>
-                  Form Kontak & Sosmed
+                  <span
+                    class="text-[var(--color-brand-500)] mt-0.5"
+                    aria-hidden="true"
+                    >✔</span
+                  >
+                  Form Kontak &amp; Integrasi Media Sosial
                 </li>
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
                 >
-                  <span class="text-[var(--color-brand-500)] mt-0.5">✔</span>
-                  Fitur Artikel/Blog & SEO
+                  <span
+                    class="text-[var(--color-brand-500)] mt-0.5"
+                    aria-hidden="true"
+                    >✔</span
+                  >
+                  Blog/Artikel + Optimasi SEO On-Page
                 </li>
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
                 >
-                  <span class="text-[var(--color-brand-500)] mt-0.5">✔</span>
+                  <span
+                    class="text-[var(--color-brand-500)] mt-0.5"
+                    aria-hidden="true"
+                    >✔</span
+                  >
                   Revisi 4x + Video Tutorial
                 </li>
               </ul>
               <a
-                href="https://wa.me/6285706193924?text=Halo%20Suka-Suka%20Web,%20saya%20tertarik%20dengan%20Paket%20Suka-Suka%202"
+                href="https://wa.me/6285706193924?text=Halo%20WebSukaSuka,%20saya%20tertarik%20dengan%20Paket%20Suka-Suka%202"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="btn btn-primary w-full text-sm"
+                aria-label="Pilih Paket 2 — Company Profile mulai Rp 3,5 juta"
                 >Pilih Paket 2</a
               >
-            </div>
+            </article>
 
             <!-- Paket 3 -->
-            <div class="card flex flex-col h-full reveal delay-3 p-6">
-              <h3 class="text-xl font-bold mb-2">Paket Suka-Suka 3</h3>
+            <article
+              class="card flex flex-col h-full reveal delay-3 p-6"
+              aria-labelledby="paket3-title"
+            >
+              <h3 id="paket3-title" class="text-xl font-bold mb-2">
+                Paket Suka-Suka 3
+              </h3>
               <p class="text-[var(--color-text-muted)] text-sm mb-6 h-10">
-                Advanced sistem untuk Toko Online & Sistem Booking.
+                Sistem advanced untuk toko online &amp; sistem booking digital.
               </p>
               <div class="mb-6">
                 <span class="text-xs text-[var(--color-text-subtle)]"
@@ -449,57 +759,83 @@
                 </div>
               </div>
               <div class="divider mb-6"></div>
-              <ul class="flex flex-col gap-3 mb-8 flex-grow">
+              <ul
+                class="flex flex-col gap-3 mb-8 flex-grow"
+                aria-label="Fitur paket 3"
+              >
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
                 >
-                  <span class="text-[var(--color-success)] mt-0.5">✔</span>
-                  Halaman & Fitur Kustom Bebas
+                  <span
+                    class="text-[var(--color-success)] mt-0.5"
+                    aria-hidden="true"
+                    >✔</span
+                  >
+                  Halaman &amp; Fitur Kustom Bebas
                 </li>
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
                 >
-                  <span class="text-[var(--color-success)] mt-0.5">✔</span>
+                  <span
+                    class="text-[var(--color-success)] mt-0.5"
+                    aria-hidden="true"
+                    >✔</span
+                  >
                   Server VPS Kinerja Tinggi
                 </li>
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
                 >
-                  <span class="text-[var(--color-success)] mt-0.5">✔</span>
-                  Payment Gateway (QRIS, VA)
+                  <span
+                    class="text-[var(--color-success)] mt-0.5"
+                    aria-hidden="true"
+                    >✔</span
+                  >
+                  Payment Gateway (QRIS, Virtual Account)
                 </li>
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
                 >
-                  <span class="text-[var(--color-success)] mt-0.5">✔</span> Cek
-                  Ongkir Otomatis
+                  <span
+                    class="text-[var(--color-success)] mt-0.5"
+                    aria-hidden="true"
+                    >✔</span
+                  >
+                  Cek Ongkir Otomatis
                 </li>
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
                 >
-                  <span class="text-[var(--color-success)] mt-0.5">✔</span>
-                  Revisi 7x + Garansi Bug 3 Bln
+                  <span
+                    class="text-[var(--color-success)] mt-0.5"
+                    aria-hidden="true"
+                    >✔</span
+                  >
+                  Revisi 7x + Garansi Bug 3 Bulan
                 </li>
               </ul>
               <a
-                href="https://wa.me/6285706193924?text=Halo%20Suka-Suka%20Web,%20saya%20tertarik%20dengan%20Paket%20Suka-Suka%203"
+                href="https://wa.me/6285706193924?text=Halo%20WebSukaSuka,%20saya%20tertarik%20dengan%20Paket%20Suka-Suka%203"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="btn btn-secondary w-full text-sm"
+                aria-label="Pilih Paket 3 — Web App / Toko Online mulai Rp 7,5 juta"
                 >Pilih Paket 3</a
               >
-            </div>
+            </article>
 
-            <!-- Paket 4: VIP / Kerjasama -->
-            <div
+            <!-- Paket 4: VIP -->
+            <article
               class="card relative flex flex-col h-full reveal delay-4 p-6 bg-[var(--color-brand-900)] text-white border-none overflow-hidden"
               style="box-shadow: var(--shadow-xl)"
+              aria-labelledby="paket4-title"
             >
-              <!-- Latar Glowing -->
               <div
                 class="absolute top-[-50px] right-[-50px] w-32 h-32 bg-[var(--color-accent-500)] rounded-full mix-blend-screen filter blur-[60px] opacity-40"
+                aria-hidden="true"
               ></div>
-
               <h3
+                id="paket4-title"
                 class="text-xl font-bold mb-2 relative z-10 text-[var(--color-brand-200)]"
               >
                 Paket Suka-Suka <br /><span class="text-white text-2xl"
@@ -509,55 +845,75 @@
               <p
                 class="text-[var(--color-brand-200)] opacity-90 text-sm mb-6 h-10 relative z-10"
               >
-                Kemitraan eksklusif untuk maintenance & pengembangan jangka
-                panjang.
+                Kemitraan eksklusif untuk maintenance &amp; pengembangan sistem
+                jangka panjang.
               </p>
-
               <div class="mb-6 relative z-10">
                 <span class="text-xs text-[var(--color-brand-200)] opacity-70"
                   >Sistem Kontrak Berjalan</span
                 >
                 <div class="text-3xl font-black text-white mt-3">Negosiasi</div>
               </div>
-
-              <!-- Garis Divider Transparan -->
               <div class="w-full h-[1px] bg-white/20 mb-6 relative z-10"></div>
-
-              <ul class="flex flex-col gap-3 mb-8 flex-grow relative z-10">
+              <ul
+                class="flex flex-col gap-3 mb-8 flex-grow relative z-10"
+                aria-label="Fitur paket VIP"
+              >
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-brand-50)]"
                 >
-                  <span class="text-[var(--color-accent-400)] mt-0.5">✦</span>
-                  Super Unlimited Revisi & Fitur
+                  <span
+                    class="text-[var(--color-accent-400)] mt-0.5"
+                    aria-hidden="true"
+                    >✦</span
+                  >
+                  Super Unlimited Revisi &amp; Fitur
                 </li>
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-brand-50)]"
                 >
-                  <span class="text-[var(--color-accent-400)] mt-0.5">✦</span>
+                  <span
+                    class="text-[var(--color-accent-400)] mt-0.5"
+                    aria-hidden="true"
+                    >✦</span
+                  >
                   Bebas Request Custom Sistem
                 </li>
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-brand-50)]"
                 >
-                  <span class="text-[var(--color-accent-400)] mt-0.5">✦</span>
-                  Dedicated Management (Misal: 1 Thn)
+                  <span
+                    class="text-[var(--color-accent-400)] mt-0.5"
+                    aria-hidden="true"
+                    >✦</span
+                  >
+                  Dedicated Management (mis. 1 Tahun)
                 </li>
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-brand-50)]"
                 >
-                  <span class="text-[var(--color-accent-400)] mt-0.5">✦</span>
-                  Setup & Rawat Infrastruktur Server
+                  <span
+                    class="text-[var(--color-accent-400)] mt-0.5"
+                    aria-hidden="true"
+                    >✦</span
+                  >
+                  Setup &amp; Rawat Infrastruktur Server
                 </li>
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-brand-50)]"
                 >
-                  <span class="text-[var(--color-accent-400)] mt-0.5">✦</span>
+                  <span
+                    class="text-[var(--color-accent-400)] mt-0.5"
+                    aria-hidden="true"
+                    >✦</span
+                  >
                   Prioritas Utama Teknisi 24/7
                 </li>
               </ul>
               <a
-                href="https://wa.me/6285706193924?text=Halo%20Suka-Suka%20Web,%20saya%20ingin%20mengajukan%20kerjasama%20untuk%20Paket%20Suka-Suka%20Banget"
+                href="https://wa.me/6285706193924?text=Halo%20WebSukaSuka,%20saya%20ingin%20mengajukan%20kerjasama%20Paket%20VIP"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="btn relative z-10 w-full text-sm"
                 style="
                   background: var(--color-accent-500);
@@ -565,65 +921,75 @@
                   border: none;
                   box-shadow: 0 4px 15px rgba(249, 115, 22, 0.4);
                 "
+                aria-label="Ajukan kerjasama Paket VIP via WhatsApp"
               >
                 Ajukan Kerjasama
               </a>
-            </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <section
-        id="proses"
-        class="section bg-[var(--color-bg-secondary)]"
-        aria-labelledby="proses-heading"
-      >
+      <!-- ═══════════════════════════════════════════
+           PROSES KERJA
+           ═══════════════════════════════════════════ -->
+      <section id="proses" class="section" aria-labelledby="proses-heading">
         <div class="container">
           <p class="section-tag reveal">Cara Kerja</p>
           <h2 id="proses-heading" class="reveal delay-1 mb-14">
-            Dari Ide ke Produk<br />dalam 4 Langkah
+            Dari Ide ke Website Jadi<br />dalam 4 Langkah Mudah
           </h2>
-          <div class="proses-grid">
-            <div class="proses-item reveal delay-1">
-              <div class="proses-num">01</div>
-              <h3 class="text-lg mb-2">Pilih Paket & Diskusi</h3>
+          <ol
+            class="proses-grid"
+            aria-label="Langkah-langkah pembuatan website di WebSukaSuka"
+          >
+            <li class="proses-item reveal delay-1">
+              <div class="proses-num" aria-hidden="true">01</div>
+              <h3 class="text-lg mb-2">Pilih Paket &amp; Diskusi</h3>
               <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
-                Pilih paket Suka-Suka yang sesuai. Kami akan kirimkan proposal
-                resmi dan mendiskusikan kebutuhan detail Anda.
+                Pilih paket yang sesuai. Kami kirimkan proposal resmi dan
+                diskusikan kebutuhan detail Anda via WhatsApp.
               </p>
-            </div>
+            </li>
             <div class="proses-connector" aria-hidden="true"></div>
-            <div class="proses-item reveal delay-2">
-              <div class="proses-num">02</div>
+            <li class="proses-item reveal delay-2">
+              <div class="proses-num" aria-hidden="true">02</div>
               <h3 class="text-lg mb-2">Pembayaran DP 50%</h3>
               <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
-                Setelah sepakat, pembayaran DP 50% dilakukan untuk pembelian
-                domain, hosting, dan dimulainya proses desain UI/UX.
+                Setelah sepakat, DP 50% dilakukan untuk pembelian domain,
+                hosting, dan dimulainya proses desain UI/UX.
               </p>
-            </div>
+            </li>
             <div class="proses-connector" aria-hidden="true"></div>
-            <div class="proses-item reveal delay-3">
-              <div class="proses-num">03</div>
+            <li class="proses-item reveal delay-3">
+              <div class="proses-num" aria-hidden="true">03</div>
               <h3 class="text-lg mb-2">Tahap Development</h3>
               <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
-                Proses coding dimulai. Kami akan memberikan update berkala dan
-                revisi sesuai kuota paket yang dipilih.
+                Proses coding dimulai dengan update berkala dan revisi sesuai
+                kuota paket yang dipilih.
               </p>
-            </div>
+            </li>
             <div class="proses-connector" aria-hidden="true"></div>
-            <div class="proses-item reveal delay-4">
-              <div class="proses-num">04</div>
-              <h3 class="text-lg mb-2">Pelunasan & Launching</h3>
+            <li class="proses-item reveal delay-4">
+              <div class="proses-num" aria-hidden="true">04</div>
+              <h3 class="text-lg mb-2">Pelunasan &amp; Launch</h3>
               <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
-                Setelah website disetujui 100%, pelunasan 50% dilakukan dan
-                website siap di-launching ke publik beserta serah terima akses.
+                Website disetujui 100%, pelunasan dilakukan, dan website siap
+                di-launching beserta serah terima akses penuh.
               </p>
-            </div>
-          </div>
+            </li>
+          </ol>
         </div>
       </section>
 
-      <section id="faq" class="section" aria-labelledby="faq-heading">
+      <!-- ═══════════════════════════════════════════
+           FAQ — Schema FAQPage sudah di head
+           ═══════════════════════════════════════════ -->
+      <section
+        id="faq"
+        class="section bg-[var(--color-bg-secondary)]"
+        aria-labelledby="faq-heading"
+      >
         <div class="container max-w-3xl mx-auto">
           <p class="section-tag reveal">FAQ</p>
           <h2 id="faq-heading" class="reveal delay-1 mb-12">
@@ -633,7 +999,7 @@
           <div class="faq-list reveal delay-2">
             <details class="faq-item">
               <summary class="faq-question">
-                Bagaimana sistem pembayarannya?
+                Bagaimana sistem pembayaran pembuatan website?
               </summary>
               <div class="faq-answer">
                 <p>
@@ -653,8 +1019,7 @@
                   <strong>Ya, ada.</strong> Biaya yang Anda bayarkan di awal
                   sudah termasuk gratis Domain dan Hosting untuk tahun pertama.
                   Untuk tahun kedua dan seterusnya, akan ada biaya perpanjangan
-                  server dan domain yang nominalnya bergantung pada paket yang
-                  Anda pilih.
+                  server dan domain.
                 </p>
               </div>
             </details>
@@ -664,20 +1029,21 @@
               </summary>
               <div class="faq-answer">
                 <p>
-                  Paket Praktis (Landing Page) memakan waktu
+                  Paket Landing Page memakan waktu
                   <strong>3–7 hari kerja</strong>. Paket Bisnis 1-2 minggu, dan
                   Paket Kustom menyesuaikan tingkat kerumitan sistem.
                 </p>
               </div>
             </details>
             <details class="faq-item">
-              <summary class="faq-question">Apakah ada proposal resmi?</summary>
+              <summary class="faq-question">
+                Apakah ada proposal resmi sebelum memulai?
+              </summary>
               <div class="faq-answer">
                 <p>
                   Tentu. Setelah Anda menghubungi kami via WhatsApp, kami akan
-                  mengirimkan format penawaran (proposal) ringkas namun
-                  profesional yang mencakup keuntungan, detail paket, dan
-                  langkah kerja.
+                  mengirimkan format penawaran resmi yang mencakup detail paket,
+                  estimasi harga, dan langkah kerja.
                 </p>
               </div>
             </details>
@@ -685,13 +1051,20 @@
         </div>
       </section>
 
+      <!-- ═══════════════════════════════════════════
+           MULAI PROYEK — CTA form checklist
+           ═══════════════════════════════════════════ -->
       <section
+        aria-labelledby="mulai-heading"
         class="py-16 bg-[var(--color-brand-50)] border-y border-[var(--color-border-brand)]"
       >
         <div class="container max-w-4xl mx-auto reveal">
           <div class="text-center mb-10">
-            <h2 class="text-3xl text-[var(--color-brand-900)] mb-4">
-              Mulai Proyek Anda Hari Ini
+            <h2
+              id="mulai-heading"
+              class="text-3xl text-[var(--color-brand-900)] mb-4"
+            >
+              Siap Mulai Proyek Website Anda?
             </h2>
             <p class="text-[var(--color-text-muted)]">
               Untuk mempercepat proses, silakan siapkan jawaban dari 6
@@ -702,98 +1075,93 @@
           <div
             class="bg-white p-8 rounded-[var(--radius-xl)] shadow-sm border border-[var(--color-border-soft)]"
           >
-            <ul class="space-y-4">
+            <ol class="space-y-4">
               <li class="flex gap-4">
                 <div
                   class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-brand-100)] text-[var(--color-brand-600)] flex items-center justify-center font-bold"
+                  aria-hidden="true"
                 >
                   1
                 </div>
-                <div>
-                  <p class="text-[var(--color-text)] font-medium">
-                    Apa nama bisnis / perusahaan Anda?
-                  </p>
-                </div>
+                <p class="text-[var(--color-text)] font-medium">
+                  Apa nama bisnis / perusahaan Anda?
+                </p>
               </li>
               <li class="flex gap-4">
                 <div
                   class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-brand-100)] text-[var(--color-brand-600)] flex items-center justify-center font-bold"
+                  aria-hidden="true"
                 >
                   2
                 </div>
-                <div>
-                  <p class="text-[var(--color-text)] font-medium">
-                    Nama domain (alamat web) apa yang diinginkan?
-                    <span
-                      class="text-sm text-[var(--color-text-subtle)] font-normal"
-                      >(Contoh: bisnisanda.com)</span
-                    >
-                  </p>
-                </div>
+                <p class="text-[var(--color-text)] font-medium">
+                  Nama domain yang diinginkan?
+                  <span
+                    class="text-sm text-[var(--color-text-subtle)] font-normal"
+                    >(contoh: bisnisanda.com)</span
+                  >
+                </p>
               </li>
               <li class="flex gap-4">
                 <div
                   class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-brand-100)] text-[var(--color-brand-600)] flex items-center justify-center font-bold"
+                  aria-hidden="true"
                 >
                   3
                 </div>
-                <div>
-                  <p class="text-[var(--color-text)] font-medium">
-                    Paket Suka-Suka mana yang Anda pilih?
-                    <span
-                      class="text-sm text-[var(--color-text-subtle)] font-normal"
-                      >(Praktis / Bisnis / Kustom)</span
-                    >
-                  </p>
-                </div>
+                <p class="text-[var(--color-text)] font-medium">
+                  Paket mana yang Anda pilih?
+                  <span
+                    class="text-sm text-[var(--color-text-subtle)] font-normal"
+                    >(Paket 1 / 2 / 3 / VIP)</span
+                  >
+                </p>
               </li>
               <li class="flex gap-4">
                 <div
                   class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-brand-100)] text-[var(--color-brand-600)] flex items-center justify-center font-bold"
+                  aria-hidden="true"
                 >
                   4
                 </div>
-                <div>
-                  <p class="text-[var(--color-text)] font-medium">
-                    Apa tujuan utama website ini?
-                    <span
-                      class="text-sm text-[var(--color-text-subtle)] font-normal"
-                      >(Jualan produk / Profil / Cari Leads WA)</span
-                    >
-                  </p>
-                </div>
+                <p class="text-[var(--color-text)] font-medium">
+                  Tujuan utama website ini?
+                  <span
+                    class="text-sm text-[var(--color-text-subtle)] font-normal"
+                    >(Jualan / Company Profile / Cari Leads)</span
+                  >
+                </p>
               </li>
               <li class="flex gap-4">
                 <div
                   class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-brand-100)] text-[var(--color-brand-600)] flex items-center justify-center font-bold"
+                  aria-hidden="true"
                 >
                   5
                 </div>
-                <div>
-                  <p class="text-[var(--color-text)] font-medium">
-                    Punya 2-3 contoh website kompetitor yang Anda sukai
-                    tampilannya?
-                  </p>
-                </div>
+                <p class="text-[var(--color-text)] font-medium">
+                  Punya 2-3 contoh website yang Anda sukai tampilannya?
+                </p>
               </li>
               <li class="flex gap-4">
                 <div
                   class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-brand-100)] text-[var(--color-brand-600)] flex items-center justify-center font-bold"
+                  aria-hidden="true"
                 >
                   6
                 </div>
-                <div>
-                  <p class="text-[var(--color-text)] font-medium">
-                    Apakah aset seperti Logo, Foto Produk, dan Teks Penjelasan
-                    sudah siap?
-                  </p>
-                </div>
+                <p class="text-[var(--color-text)] font-medium">
+                  Aset (logo, foto produk, teks konten) sudah siap?
+                </p>
               </li>
-            </ul>
+            </ol>
           </div>
         </div>
       </section>
 
+      <!-- ═══════════════════════════════════════════
+           KONTAK / CTA FINAL
+           ═══════════════════════════════════════════ -->
       <section
         id="kontak"
         class="section pt-10"
@@ -803,31 +1171,32 @@
           <div class="cta-box reveal">
             <div class="cta-blob cta-blob-1" aria-hidden="true"></div>
             <div class="cta-blob cta-blob-2" aria-hidden="true"></div>
-
             <div class="relative z-10 max-w-2xl mx-auto text-center">
               <h2
                 id="kontak-heading"
                 class="text-white text-3xl md:text-5xl mb-6 leading-tight"
               >
-                Sudah Menyiapkan Jawabannya?
+                Hubungi WebSukaSuka Sekarang
               </h2>
               <p
                 class="text-[var(--color-brand-200)] text-lg mb-10 leading-relaxed"
               >
-                Klik tombol di bawah ini. Mari wujudkan aset digital yang akan
-                meningkatkan kredibilitas dan omzet bisnis Anda.
+                Klik tombol di bawah ini dan ceritakan kebutuhan website bisnis
+                Anda. Kami siap membantu wujudkan aset digital yang meningkatkan
+                omzet Anda.
               </p>
               <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="https://wa.me/6285706193924?text=Halo%20Suka-Suka%20Web,%20saya%20ingin%20berkonsultasi%20mengenai%20pembuatan%20website."
+                  href="https://wa.me/6285706193924?text=Halo%20WebSukaSuka,%20saya%20ingin%20berkonsultasi%20mengenai%20pembuatan%20website."
                   target="_blank"
-                  rel="noopener"
+                  rel="noopener noreferrer"
                   class="btn btn-lg"
                   style="
                     background: white;
                     color: var(--color-brand-900);
                     font-weight: 700;
                   "
+                  aria-label="Hubungi WebSukaSuka via WhatsApp untuk konsultasi pembuatan website"
                 >
                   💬 Hubungi via WhatsApp
                 </a>
@@ -840,6 +1209,9 @@
 
     <%- include('partials/footer') %>
 
+    <!-- ═══════════════════════════════════════════
+         MODAL PORTOFOLIO
+         ═══════════════════════════════════════════ -->
     <div
       id="projectModal"
       class="modal-backdrop"
@@ -857,7 +1229,7 @@
         <button
           class="modal-close"
           onclick="closeModal()"
-          aria-label="Tutup modal"
+          aria-label="Tutup modal detail proyek"
         >
           ✕
         </button>
@@ -867,6 +1239,7 @@
             class="modal-img-placeholder"
             id="modalImgPlaceholder"
             style="display: none"
+            aria-hidden="true"
           >
             <span>🖼️</span>
             <p>Screenshot belum tersedia</p>
@@ -887,7 +1260,7 @@
               id="modalLink"
               href="#"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               class="btn btn-primary btn-sm"
               >🔗 Lihat Live Demo</a
             >
@@ -1003,28 +1376,8 @@
           transform-origin: bottom;
         }
       }
-
-      /* LOGO PLACEHOLDER */
       .logo-img-wrap {
         display: inline-block;
-      }
-      .logo-placeholder {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.25rem;
-        background: var(--color-bg-tertiary);
-        border: 2px dashed var(--color-border-strong);
-        border-radius: var(--radius-md);
-        padding: 0.75rem 2rem;
-        color: var(--color-text-subtle);
-        font-size: 0.75rem;
-        font-family: var(--font-mono);
-      }
-      .logo-placeholder span {
-        font-size: 1rem;
-        font-weight: 700;
-        color: var(--color-text-muted);
       }
 
       /* MARQUEE */
@@ -1083,20 +1436,10 @@
         border: 1px solid var(--color-border);
         aspect-ratio: 4/5;
       }
-      .about-img-placeholder {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        inset: 0;
-        position: absolute;
-        gap: 0.5rem;
-        color: var(--color-text-subtle);
-        font-size: 0.75rem;
-        font-family: var(--font-mono);
-      }
-      .about-img-placeholder span {
-        font-size: 2.5rem;
+      .about-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
       .about-frame-deco {
         position: absolute;
@@ -1161,7 +1504,7 @@
         flex-shrink: 0;
       }
 
-      /* PORTOFOLIO */
+      /* PORTO */
       .porto-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -1252,6 +1595,9 @@
         grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
         gap: 0;
         align-items: start;
+        list-style: none;
+        padding: 0;
+        margin: 0;
       }
       @media (max-width: 768px) {
         .proses-grid {
@@ -1477,7 +1823,6 @@
     <script>
       // ── MODAL
       const modalEl = document.getElementById("projectModal");
-      const modalBox = document.getElementById("modalBox");
       const modalImg = document.getElementById("modalImage");
       const modalImgPh = document.getElementById("modalImgPlaceholder");
       const modalTitle = document.getElementById("modalTitle");
@@ -1487,7 +1832,7 @@
 
       function openModal({ img, title, desc, tags = [], link = "#" }) {
         modalImg.src = img;
-        modalImg.alt = title;
+        modalImg.alt = title + " — proyek WebSukaSuka";
         modalImg.style.display = "block";
         modalImgPh.style.display = "none";
         modalImg.onerror = () => {

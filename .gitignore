@@ -13,3 +13,15 @@ yarn-error.log*
 # 4. File Sampah Sistem Operasi (Mac / Windows)
 .DS_Store
 Thumbs.db
+
+# ─── TAMBAHAN BARU ───
+
+# 5. Konfigurasi Vercel Local (Jika kamu tes build di komputer sendiri)
+.vercel/
+
+# 6. Konfigurasi IDE / Text Editor (Biar settingan VSCode kamu nggak ikut ke-push)
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
