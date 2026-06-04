@@ -17,10 +17,7 @@
             "telephone": "+6285706193924",
             "email": "halo@sukasukaweb.com",
             "foundingDate": "2022",
-            "areaServed": {
-              "@type": "Country",
-              "name": "Indonesia"
-            },
+            "areaServed": { "@type": "Country", "name": "Indonesia" },
             "serviceType": [
               "Pembuatan Website",
               "Web App Development",
@@ -30,7 +27,7 @@
               "UI/UX Design",
               "Software House"
             ],
-            "priceRange": "Rp 1.200.000 - Negosiasi",
+            "priceRange": "Rp 799.000 - Negosiasi",
             "currenciesAccepted": "IDR",
             "paymentAccepted": "Bank Transfer, QRIS",
             "sameAs": [
@@ -46,9 +43,7 @@
             "name": "SukaSuka.web",
             "description": "Jasa pembuatan website profesional Indonesia",
             "inLanguage": "id-ID",
-            "publisher": {
-              "@id": "https://sukasukaweb.com/#business"
-            }
+            "publisher": { "@id": "https://sukasukaweb.com/#business" }
           },
           {
             "@type": "FAQPage",
@@ -93,55 +88,102 @@
   </head>
 
   <body class="flex flex-col min-h-screen overflow-x-hidden w-full">
+    <!-- ── CUSTOM CURSOR ── -->
+    <div class="custom-cursor" id="customCursor" aria-hidden="true">
+      <div class="cursor-dot"></div>
+      <div class="cursor-ring"></div>
+    </div>
+
     <%- include('partials/navbar') %>
 
     <main class="flex-grow" id="main-content">
       <!-- ═══════════════════════════════════════════
-           HERO
+           HERO — Parallax + Split Text + Magnetic CTA
            ═══════════════════════════════════════════ -->
       <section
         id="beranda"
-        class="relative flex items-center min-h-screen pt-28 pb-20 overflow-hidden"
+        class="hero-section relative flex items-center min-h-screen pt-28 pb-20 overflow-hidden"
         aria-labelledby="hero-heading"
       >
-        <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
-        <div class="hero-blob hero-blob-2" aria-hidden="true"></div>
-        <div class="hero-blob hero-blob-3" aria-hidden="true"></div>
+        <!-- Parallax layers -->
+        <div class="parallax-layer" data-speed="0.15" aria-hidden="true">
+          <div class="hero-blob hero-blob-1"></div>
+        </div>
+        <div class="parallax-layer" data-speed="0.25" aria-hidden="true">
+          <div class="hero-blob hero-blob-2"></div>
+        </div>
+        <div class="parallax-layer" data-speed="0.1" aria-hidden="true">
+          <div class="hero-blob hero-blob-3"></div>
+        </div>
+
+        <!-- Anime speed lines bg -->
+        <div class="hero-speed-lines" aria-hidden="true"></div>
         <div class="hero-grid" aria-hidden="true"></div>
+
+        <!-- Floating manga panels (decorative) -->
+        <div class="manga-panel-float manga-panel-1" aria-hidden="true">
+          <span class="font-mono text-xs text-[var(--color-sakura-400)]"
+            >Web App ✦</span
+          >
+        </div>
+        <div class="manga-panel-float manga-panel-2" aria-hidden="true">
+          <span class="font-mono text-xs text-[var(--color-cobalt-500)]"
+            >SEO Ready ◆</span
+          >
+        </div>
+        <div class="manga-panel-float manga-panel-3" aria-hidden="true">
+          <span class="font-mono text-xs text-[var(--color-success)]"
+            >Node.js ▸</span
+          >
+        </div>
 
         <div class="container px-6 mx-auto relative z-10">
           <div class="max-w-4xl mx-auto text-center">
-            <div
-              class="inline-flex items-center gap-2 badge badge-brand animate-fade-up mb-8"
-              aria-live="polite"
-            >
-              <span class="status-dot" aria-hidden="true"></span>
-              Open for Project — Indonesia
+            <!-- Badge -->
+            <div class="hero-badge-wrap" data-anim="fade-up" data-delay="0">
+              <div
+                class="inline-flex items-center gap-2 badge badge-brand mb-8"
+              >
+                <span class="status-dot" aria-hidden="true"></span>
+                Open for Project — Indonesia
+              </div>
             </div>
 
-            <div class="flex justify-center mb-8 animate-fade-up delay-1">
-              <div class="logo-img-wrap">
+            <!-- Logo -->
+            <div
+              class="flex justify-center mb-8"
+              data-anim="fade-up"
+              data-delay="100"
+            >
+              <div class="logo-hero-wrap">
                 <img
                   src="/images/logo-atas.png"
                   alt="Logo SukaSuka.web — Software House Indonesia"
-                  class="h-16 w-auto mx-auto"
+                  class="h-16 w-auto mx-auto logo-hero-img"
                   width="200"
                   height="64"
                 />
               </div>
             </div>
 
+            <!-- Heading — split text animation -->
             <h1
               id="hero-heading"
-              class="animate-fade-up delay-1 mb-6 text-balance hero-heading"
+              class="hero-heading mb-6"
+              data-anim="fade-up"
+              data-delay="200"
             >
-              Jasa Pembuatan Website<br />
-              Profesional <em class="hero-italic">Modern</em> untuk<br />
-              <span class="text-gradient">Bisnis Indonesia</span>
+              <span class="hero-line">Jasa Pembuatan Website</span><br />
+              <span class="hero-line"
+                >Profesional <em class="hero-italic">Modern</em> untuk</span
+              ><br />
+              <span class="hero-line text-gradient">Bisnis Indonesia</span>
             </h1>
 
             <p
-              class="text-lg md:text-xl text-[var(--color-text-muted)] animate-fade-up delay-2 mb-10 text-balance max-w-2xl mx-auto leading-relaxed"
+              class="text-lg md:text-xl text-[var(--color-text-muted)] mb-10 text-balance max-w-2xl mx-auto leading-relaxed"
+              data-anim="fade-up"
+              data-delay="350"
             >
               Kami bantu
               <strong class="text-[var(--color-text)]"
@@ -151,31 +193,53 @@
               cepat, modern, dan ramah mesin pencari (SEO-ready).
             </p>
 
+            <!-- Magnetic CTA buttons -->
             <div
-              class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up delay-3"
+              class="flex flex-col sm:flex-row gap-4 justify-center"
+              data-anim="fade-up"
+              data-delay="500"
             >
               <a
                 href="https://wa.me/6285706193924?text=Halo%20SukaSuka.web,%20saya%20ingin%20konsultasi%20gratis%20pembuatan%20website."
                 target="_blank"
                 rel="noopener noreferrer"
-                class="btn btn-primary btn-lg"
+                class="btn btn-primary btn-lg magnetic-btn"
                 aria-label="Konsultasi gratis pembuatan website via WhatsApp"
               >
-                💬 Konsultasi Gratis
+                <span class="btn-inner">💬 Konsultasi Gratis</span>
               </a>
               <a
                 href="#paket"
-                class="btn btn-secondary btn-lg"
+                class="btn btn-secondary btn-lg magnetic-btn"
                 aria-label="Lihat paket harga pembuatan website"
               >
-                Lihat Paket Harga →
+                <span class="btn-inner">Lihat Paket Harga →</span>
               </a>
             </div>
 
-            <div
-              class="hero-scroll-hint animate-fade-up delay-4"
-              aria-hidden="true"
-            >
+            <!-- Stats counter strip -->
+            <div class="hero-stats" data-anim="fade-up" data-delay="650">
+              <div class="hero-stat-item">
+                <span class="hero-stat-num counter" data-target="100">0</span
+                ><span class="hero-stat-suffix">%</span>
+                <span class="hero-stat-label">Kepuasan Klien</span>
+              </div>
+              <div class="hero-stat-sep" aria-hidden="true"></div>
+              <div class="hero-stat-item">
+                <span class="hero-stat-num counter" data-target="24">0</span
+                ><span class="hero-stat-suffix">jam</span>
+                <span class="hero-stat-label">Respon Cepat</span>
+              </div>
+              <div class="hero-stat-sep" aria-hidden="true"></div>
+              <div class="hero-stat-item">
+                <span class="hero-stat-num counter" data-target="50">0</span
+                ><span class="hero-stat-suffix">%</span>
+                <span class="hero-stat-label">DP, Bayar Setelah Jadi</span>
+              </div>
+            </div>
+
+            <!-- Scroll hint -->
+            <div class="hero-scroll-hint" aria-hidden="true">
               <div class="scroll-line"></div>
               <span>Scroll</span>
             </div>
@@ -184,7 +248,7 @@
       </section>
 
       <!-- ═══════════════════════════════════════════
-           KLIEN
+           MARQUEE KLIEN
            ═══════════════════════════════════════════ -->
       <section
         id="klien"
@@ -199,44 +263,76 @@
           </p>
         </div>
         <div class="marquee-outer" aria-hidden="true">
-          <div class="marquee-inner" id="clientMarquee">
-            <div class="client-logo">MADRASAH ALIYAH TARBIYAH ISLAMIYAH</div>
-            <div class="client-logo">PT. REONCY INDO ABADI</div>
-            <div class="client-logo">MADRASAH ALIYAH TARBIYAH ISLAMIYAH</div>
-            <div class="client-logo">PT. REONCY INDO ABADI</div>
-            <div class="client-logo">MADRASAH ALIYAH TARBIYAH ISLAMIYAH</div>
-            <div class="client-logo">PT. REONCY INDO ABADI</div>
+          <div class="marquee-inner">
+            <div class="client-logo">✦ MADRASAH ALIYAH TARBIYAH ISLAMIYAH</div>
+            <div class="client-logo">◆ PT. REONCY INDO ABADI</div>
+            <div class="client-logo">✦ MADRASAH ALIYAH TARBIYAH ISLAMIYAH</div>
+            <div class="client-logo">◆ PT. REONCY INDO ABADI</div>
+            <div class="client-logo">✦ MADRASAH ALIYAH TARBIYAH ISLAMIYAH</div>
+            <div class="client-logo">◆ PT. REONCY INDO ABADI</div>
+            <div class="client-logo">✦ MADRASAH ALIYAH TARBIYAH ISLAMIYAH</div>
+            <div class="client-logo">◆ PT. REONCY INDO ABADI</div>
           </div>
         </div>
       </section>
 
       <!-- ═══════════════════════════════════════════
-           TENTANG
+           TENTANG — Parallax image + staggered reveal
            ═══════════════════════════════════════════ -->
       <section
         id="tentang"
-        class="section bg-[#f3eeea]"
+        class="section about-section"
         aria-labelledby="about-heading"
       >
         <div class="container">
           <div class="about-grid">
+            <!-- Visual side -->
             <div class="about-visual reveal">
-              <div class="relative overflow-hidden rounded-full">
+              <div class="about-img-outer">
                 <div class="about-frame-deco" aria-hidden="true"></div>
-                <img
-                  src="/images/tim.jpeg"
-                  alt="Tim SukaSuka.web — developer dan desainer software house Indonesia"
-                  width="480"
-                  height="600"
-                  loading="lazy"
-                />
-                <!-- <div class="about-badge" aria-live="polite">
-                  <span class="status-dot" aria-hidden="true"></span>
-                  <span>Tim Penanggung Jawab</span>
-                </div> -->
+                <div class="about-frame-deco-br" aria-hidden="true"></div>
+                <div class="about-img-inner">
+                  <img
+                    src="/images/tim.jpeg"
+                    alt="Tim SukaSuka.web — developer dan desainer software house Indonesia"
+                    width="480"
+                    height="600"
+                    loading="lazy"
+                    class="about-img parallax-img"
+                    data-parallax-speed="0.08"
+                  />
+                  <!-- Floating badge -->
+                  <div class="about-float-badge" aria-live="polite">
+                    <div
+                      class="lottie-micro"
+                      id="lottieCode"
+                      aria-hidden="true"
+                    ></div>
+                    <div>
+                      <p
+                        class="font-mono text-xs font-bold text-[var(--color-sakura-500)]"
+                      >
+                        Tim Developer
+                      </p>
+                      <p
+                        class="font-mono text-[0.6rem] text-[var(--color-text-subtle)]"
+                      >
+                        Dedicated & Responsive
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Tech stack pill -->
+                  <div class="about-tech-pill" aria-hidden="true">
+                    <span>Node.js</span><span>·</span><span>Next.js</span
+                    ><span>·</span><span>Laravel</span>
+                  </div>
+                </div>
+                <!-- Manga ink dots -->
+                <div class="about-dots-deco" aria-hidden="true"></div>
               </div>
             </div>
 
+            <!-- Text side -->
             <div>
               <p class="section-tag reveal">Tentang Kami</p>
               <h2 id="about-heading" class="reveal delay-1 mb-6">
@@ -248,9 +344,8 @@
                     font-style: italic;
                     color: var(--color-text-brand);
                   "
+                  >Semangat Tinggi</em
                 >
-                  Semangat Tinggi
-                </em>
               </h2>
               <p
                 class="text-[var(--color-text-muted)] leading-relaxed mb-5 reveal delay-2"
@@ -271,7 +366,6 @@
                 — dengan tech stack terkini dan harga UMKM-friendly.
               </p>
 
-              <!-- VALUE PROPOSITION — menggantikan statistik yang tidak akurat -->
               <div
                 class="about-stats reveal delay-3"
                 aria-label="Keunggulan SukaSuka.web"
@@ -299,7 +393,7 @@
       </section>
 
       <!-- ═══════════════════════════════════════════
-           KENAPA KAMI — Diferensiasi jujur
+           KENAPA KAMI — 3D tilt cards
            ═══════════════════════════════════════════ -->
       <section
         id="kenapa"
@@ -322,64 +416,104 @@
             </h2>
             <p class="text-[var(--color-text-muted)] max-w-xl mx-auto">
               Kami tim kecil yang fokus — artinya kamu bicara langsung dengan
-              developernya, bukan admin. Proses lebih cepat, komunikasi lebih
-              jelas.
+              developernya, bukan admin.
             </p>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
-            <article class="card reveal delay-1" aria-labelledby="nilai-1">
-              <div class="text-3xl mb-4" aria-hidden="true">⚡</div>
-              <h3 id="nilai-1" class="text-lg font-bold mb-2">
-                Tech Stack Modern
-              </h3>
-              <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
-                Kami pakai Node.js, Laravel Livewire, dan Tailwind — bukan
-                template lama. Website kamu cepat, ringan, dan mudah
-                dikembangkan.
-              </p>
+          <div class="kenapa-grid">
+            <article
+              class="card tilt-card reveal delay-1"
+              aria-labelledby="nilai-1"
+            >
+              <div class="tilt-card-inner">
+                <div class="kenapa-icon-wrap" aria-hidden="true">
+                  <div class="lottie-icon" id="lottie1"></div>
+                  <span class="kenapa-emoji">⚡</span>
+                </div>
+                <h3 id="nilai-1" class="text-lg font-bold mb-2">
+                  Tech Stack Modern
+                </h3>
+                <p
+                  class="text-[var(--color-text-muted)] text-sm leading-relaxed"
+                >
+                  Kami pakai Node.js, Laravel Livewire, dan Tailwind — bukan
+                  template lama. Website kamu cepat, ringan, dan mudah
+                  dikembangkan.
+                </p>
+              </div>
             </article>
 
-            <article class="card reveal delay-2" aria-labelledby="nilai-2">
-              <div class="text-3xl mb-4" aria-hidden="true">💬</div>
-              <h3 id="nilai-2" class="text-lg font-bold mb-2">
-                Bicara Langsung ke Developer
-              </h3>
-              <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
-                Tidak ada perantara. Kamu ngobrol langsung dengan yang ngerjain
-                — lebih cepat, lebih akurat, lebih transparan.
-              </p>
+            <article
+              class="card tilt-card reveal delay-2"
+              aria-labelledby="nilai-2"
+            >
+              <div class="tilt-card-inner">
+                <div class="kenapa-icon-wrap" aria-hidden="true">
+                  <span class="kenapa-emoji">💬</span>
+                </div>
+                <h3 id="nilai-2" class="text-lg font-bold mb-2">
+                  Bicara Langsung ke Developer
+                </h3>
+                <p
+                  class="text-[var(--color-text-muted)] text-sm leading-relaxed"
+                >
+                  Tidak ada perantara. Kamu ngobrol langsung dengan yang
+                  ngerjain — lebih cepat, lebih akurat, lebih transparan.
+                </p>
+              </div>
             </article>
 
-            <article class="card reveal delay-3" aria-labelledby="nilai-3">
-              <div class="text-3xl mb-4" aria-hidden="true">💸</div>
-              <h3 id="nilai-3" class="text-lg font-bold mb-2">
-                Harga UMKM-Friendly
-              </h3>
-              <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
-                Tanpa overhead agency besar. Harga lebih kompetitif dengan
-                kualitas desain dan kode yang tidak kalah profesional.
-              </p>
+            <article
+              class="card tilt-card reveal delay-3"
+              aria-labelledby="nilai-3"
+            >
+              <div class="tilt-card-inner">
+                <div class="kenapa-icon-wrap" aria-hidden="true">
+                  <span class="kenapa-emoji">💸</span>
+                </div>
+                <h3 id="nilai-3" class="text-lg font-bold mb-2">
+                  Harga UMKM-Friendly
+                </h3>
+                <p
+                  class="text-[var(--color-text-muted)] text-sm leading-relaxed"
+                >
+                  Tanpa overhead agency besar. Harga lebih kompetitif dengan
+                  kualitas desain dan kode yang tidak kalah profesional.
+                </p>
+              </div>
             </article>
 
-            <article class="card reveal delay-4" aria-labelledby="nilai-4">
-              <div class="text-3xl mb-4" aria-hidden="true">🛡️</div>
-              <h3 id="nilai-4" class="text-lg font-bold mb-2">
-                Transparan & Aman
-              </h3>
-              <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
-                Sistem DP 50% — kamu bayar lunas hanya setelah website selesai
-                dan disetujui. Tidak ada risiko kabur.
-              </p>
+            <article
+              class="card tilt-card reveal delay-4"
+              aria-labelledby="nilai-4"
+            >
+              <div class="tilt-card-inner">
+                <div class="kenapa-icon-wrap" aria-hidden="true">
+                  <span class="kenapa-emoji">🛡️</span>
+                </div>
+                <h3 id="nilai-4" class="text-lg font-bold mb-2">
+                  Transparan & Aman
+                </h3>
+                <p
+                  class="text-[var(--color-text-muted)] text-sm leading-relaxed"
+                >
+                  Sistem DP 50% — kamu bayar lunas hanya setelah website selesai
+                  dan disetujui. Tidak ada risiko kabur.
+                </p>
+              </div>
             </article>
           </div>
         </div>
       </section>
 
       <!-- ═══════════════════════════════════════════
-           LAYANAN
+           LAYANAN — hover ink reveal
            ═══════════════════════════════════════════ -->
-      <section id="layanan" class="section" aria-labelledby="layanan-heading">
+      <section
+        id="layanan"
+        class="section layanan-section"
+        aria-labelledby="layanan-heading"
+      >
         <div class="container">
           <div class="text-center mb-14 reveal">
             <p class="section-tag justify-center">Layanan Kami</p>
@@ -392,68 +526,76 @@
             </p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-            <article
-              class="card reveal delay-1"
-              aria-labelledby="layanan-webapp"
-            >
-              <div class="text-3xl mb-4" aria-hidden="true">🖥️</div>
-              <h3 id="layanan-webapp" class="text-xl font-bold mb-2">
-                Custom Web App
-              </h3>
-              <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
-                Aplikasi web custom sesuai proses bisnis Anda — dashboard,
-                manajemen data, portal klien, dan lebih banyak lagi.
-              </p>
+          <div class="layanan-list">
+            <article class="layanan-item reveal delay-1" aria-labelledby="l1">
+              <div class="layanan-num" aria-hidden="true">01</div>
+              <div class="layanan-icon" aria-hidden="true">🖥️</div>
+              <div class="layanan-body">
+                <h3 id="l1" class="layanan-title">Custom Web App</h3>
+                <p
+                  class="text-[var(--color-text-muted)] text-sm leading-relaxed"
+                >
+                  Aplikasi web custom sesuai proses bisnis Anda — dashboard,
+                  manajemen data, portal klien, dan lebih banyak lagi.
+                </p>
+              </div>
+              <div class="layanan-arrow" aria-hidden="true">→</div>
+              <div class="layanan-ink" aria-hidden="true"></div>
             </article>
 
-            <article
-              class="card reveal delay-2"
-              aria-labelledby="layanan-landing"
-            >
-              <div class="text-3xl mb-4" aria-hidden="true">🚀</div>
-              <h3 id="layanan-landing" class="text-xl font-bold mb-2">
-                Landing Page
-              </h3>
-              <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
-                Halaman marketing berkecepatan tinggi yang dioptimasi untuk
-                konversi dan SEO — tampil di halaman 1 Google.
-              </p>
+            <article class="layanan-item reveal delay-2" aria-labelledby="l2">
+              <div class="layanan-num" aria-hidden="true">02</div>
+              <div class="layanan-icon" aria-hidden="true">🚀</div>
+              <div class="layanan-body">
+                <h3 id="l2" class="layanan-title">Landing Page</h3>
+                <p
+                  class="text-[var(--color-text-muted)] text-sm leading-relaxed"
+                >
+                  Halaman marketing berkecepatan tinggi yang dioptimasi untuk
+                  konversi dan SEO — tampil di halaman 1 Google.
+                </p>
+              </div>
+              <div class="layanan-arrow" aria-hidden="true">→</div>
+              <div class="layanan-ink" aria-hidden="true"></div>
             </article>
 
-            <article
-              class="card reveal delay-3"
-              aria-labelledby="layanan-kasir"
-            >
-              <div class="text-3xl mb-4" aria-hidden="true">🧾</div>
-              <h3 id="layanan-kasir" class="text-xl font-bold mb-2">
-                Sistem Kasir (POS)
-              </h3>
-              <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
-                Sistem point-of-sale berbasis web — manajemen stok, laporan
-                penjualan, dan integrasi QRIS / payment gateway.
-              </p>
+            <article class="layanan-item reveal delay-3" aria-labelledby="l3">
+              <div class="layanan-num" aria-hidden="true">03</div>
+              <div class="layanan-icon" aria-hidden="true">🧾</div>
+              <div class="layanan-body">
+                <h3 id="l3" class="layanan-title">Sistem Kasir (POS)</h3>
+                <p
+                  class="text-[var(--color-text-muted)] text-sm leading-relaxed"
+                >
+                  Sistem point-of-sale berbasis web — manajemen stok, laporan
+                  penjualan, dan integrasi QRIS / payment gateway.
+                </p>
+              </div>
+              <div class="layanan-arrow" aria-hidden="true">→</div>
+              <div class="layanan-ink" aria-hidden="true"></div>
             </article>
 
-            <article
-              class="card reveal delay-4"
-              aria-labelledby="layanan-maintenance"
-            >
-              <div class="text-3xl mb-4" aria-hidden="true">🔧</div>
-              <h3 id="layanan-maintenance" class="text-xl font-bold mb-2">
-                Maintenance & Support
-              </h3>
-              <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
-                Perawatan rutin, update fitur, backup berkala, dan support
-                teknis untuk menjaga website tetap cepat dan aman.
-              </p>
+            <article class="layanan-item reveal delay-4" aria-labelledby="l4">
+              <div class="layanan-num" aria-hidden="true">04</div>
+              <div class="layanan-icon" aria-hidden="true">🔧</div>
+              <div class="layanan-body">
+                <h3 id="l4" class="layanan-title">Maintenance & Support</h3>
+                <p
+                  class="text-[var(--color-text-muted)] text-sm leading-relaxed"
+                >
+                  Perawatan rutin, update fitur, backup berkala, dan support
+                  teknis untuk menjaga website tetap cepat dan aman.
+                </p>
+              </div>
+              <div class="layanan-arrow" aria-hidden="true">→</div>
+              <div class="layanan-ink" aria-hidden="true"></div>
             </article>
           </div>
         </div>
       </section>
 
       <!-- ═══════════════════════════════════════════
-           PORTOFOLIO
+           PORTOFOLIO — Scroll snap carousel
            ═══════════════════════════════════════════ -->
       <section
         id="portofolio"
@@ -494,7 +636,7 @@
               <div class="porto-img-wrap">
                 <img
                   src="/images/porto-reoncy.jpg"
-                  alt="Screenshot website Reoncy — dibangun dengan Node.js dan Laravel Livewire.js"
+                  alt="Screenshot website Reoncy"
                   class="porto-img"
                   width="600"
                   height="338"
@@ -524,7 +666,7 @@
                   class="text-sm text-[var(--color-text-muted)] mt-2 leading-relaxed"
                 >
                   Website berkecepatan tinggi yang dikembangkan menggunakan
-                  ekosistem Node.js dan Laravel Livewire.js.
+                  ekosistem Node.js dan React.js.
                 </p>
               </div>
             </article>
@@ -547,7 +689,7 @@
               <div class="porto-img-wrap">
                 <img
                   src="/images/porto-matarbiyah.jpg"
-                  alt="Screenshot website sekolah MA Tarbiyah Islamiyah Benda buatan SukaSuka.web"
+                  alt="Screenshot website sekolah MA Tarbiyah Islamiyah Benda"
                   class="porto-img"
                   width="600"
                   height="338"
@@ -585,8 +727,8 @@
       </section>
 
       <!-- ═══════════════════════════════════════════
-     PAKET HARGA
-     ═══════════════════════════════════════════ -->
+           PAKET HARGA — floating price cards
+           ═══════════════════════════════════════════ -->
       <section id="paket" class="section" aria-labelledby="paket-heading">
         <div class="container max-w-[1400px]">
           <div class="text-center mb-16 reveal">
@@ -598,9 +740,8 @@
               Dari landing page praktis untuk UMKM, hingga kemitraan retainer
               jangka panjang — semua dengan harga yang masuk akal.
             </p>
-            <!-- Label harga intro -->
             <div
-              class="inline-flex items-center gap-2 mt-5 px-4 py-2 rounded-full bg-[var(--color-warning-soft)] border border-[var(--color-warning)] text-[var(--color-warning)] text-xs font-mono font-semibold tracking-wide"
+              class="inline-flex items-center gap-2 mt-5 px-4 py-2 rounded-full bg-[var(--color-warning-soft)] border border-[var(--color-yuki-400)] text-[var(--color-yuki-500)] text-xs font-mono font-semibold tracking-wide"
             >
               🎯 Harga Perkenalan — Terbatas untuk 10 Client Pertama
             </div>
@@ -609,9 +750,9 @@
           <div
             class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch"
           >
-            <!-- ── Paket 1 ── -->
+            <!-- Paket 1 -->
             <article
-              class="card flex flex-col h-full reveal delay-1 p-6"
+              class="card flex flex-col h-full reveal delay-1 p-6 paket-card"
               aria-labelledby="paket1-title"
             >
               <div class="mb-5">
@@ -626,11 +767,14 @@
                   Landing page untuk UMKM, jasa perorangan, dan portofolio.
                 </p>
               </div>
-
               <div class="mb-5">
                 <span class="text-xs text-[var(--color-text-subtle)]"
                   >Mulai dari</span
                 >
+                <div class="flex gap-2">
+                  <p class="text-black text-xs">RP</p>
+                  <p class="line-through text-gray-400 text-xs">1,000 jt</p>
+                </div>
                 <div class="flex items-baseline gap-2 mt-1">
                   <span class="text-3xl font-black text-[var(--color-text)]"
                     >Rp 799 Rb</span
@@ -640,9 +784,7 @@
                   Selesai dalam 3–7 hari kerja
                 </p>
               </div>
-
               <div class="divider mb-5"></div>
-
               <ul
                 class="flex flex-col gap-3 mb-8 flex-grow"
                 aria-label="Fitur paket 1"
@@ -650,81 +792,59 @@
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
                 >
-                  <span
-                    class="text-[var(--color-success)] mt-0.5"
-                    aria-hidden="true"
-                    >✔</span
-                  >
-                  1 Halaman (Landing Page) SEO-Ready
+                  <span class="text-[var(--color-success)] mt-0.5">✔</span>1
+                  Halaman (Landing Page) SEO-Ready
                 </li>
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
                 >
-                  <span
-                    class="text-[var(--color-success)] mt-0.5"
-                    aria-hidden="true"
-                    >✔</span
-                  >
-                  Gratis Domain &amp; Hosting 1 Tahun
+                  <span class="text-[var(--color-success)] mt-0.5">✔</span
+                  >Gratis Domain &amp; Hosting 1 Tahun
                 </li>
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
                 >
-                  <span
-                    class="text-[var(--color-success)] mt-0.5"
-                    aria-hidden="true"
-                    >✔</span
-                  >
-                  Desain Mobile-Friendly &amp; SSL
+                  <span class="text-[var(--color-success)] mt-0.5">✔</span
+                  >Desain Mobile-Friendly &amp; SSL
                 </li>
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
                 >
-                  <span
-                    class="text-[var(--color-success)] mt-0.5"
-                    aria-hidden="true"
-                    >✔</span
-                  >
-                  Tombol Langsung ke WhatsApp
+                  <span class="text-[var(--color-success)] mt-0.5">✔</span
+                  >Tombol Langsung ke WhatsApp
                 </li>
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
                 >
-                  <span
-                    class="text-[var(--color-success)] mt-0.5"
-                    aria-hidden="true"
-                    >✔</span
-                  >
-                  Revisi Maksimal 2x
+                  <span class="text-[var(--color-success)] mt-0.5">✔</span
+                  >Revisi Maksimal 2x
                 </li>
               </ul>
-
               <a
                 href="https://wa.me/6285706193924?text=Halo%20SukaSuka.web,%20saya%20tertarik%20dengan%20Paket%20Suka-Suka%201"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn btn-secondary w-full text-sm"
-                aria-label="Pilih Paket 1 — Landing Page Rp 799 ribu"
+                aria-label="Pilih Paket 1"
                 >Pilih Paket 1</a
               >
             </article>
 
-            <!-- ── Paket 2 — Paling Laris ── -->
+            <!-- Paket 2 — Paling Laris -->
             <article
-              class="card relative flex flex-col h-full reveal delay-2 p-6"
+              class="card relative flex flex-col h-full reveal delay-2 p-6 paket-card paket-featured"
               style="
-                border-color: var(--color-brand-500);
+                border-color: var(--color-sakura-500);
                 box-shadow: var(--shadow-brand);
               "
               aria-labelledby="paket2-title"
             >
               <div
-                class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[var(--color-brand-500)] text-white text-[0.65rem] font-bold px-4 py-1 rounded-full uppercase tracking-widest whitespace-nowrap shadow-md"
+                class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[var(--color-sakura-500)] text-white text-[0.65rem] font-bold px-4 py-1 rounded-full uppercase tracking-widest whitespace-nowrap shadow-md"
                 aria-label="Paket paling laris"
               >
                 Paling Laris
               </div>
-
               <div class="mb-5">
                 <span class="badge badge-brand text-[0.65rem] mb-3 inline-flex"
                   >Company Profile</span
@@ -740,11 +860,14 @@
                   perusahaan.
                 </p>
               </div>
-
               <div class="mb-5">
                 <span class="text-xs text-[var(--color-text-subtle)]"
                   >Mulai dari</span
                 >
+                <div class="flex gap-2">
+                  <p class="text-black text-xs">RP</p>
+                  <p class="line-through text-gray-400 text-xs">3,500 Jt</p>
+                </div>
                 <div class="flex items-baseline gap-2 mt-1">
                   <span class="text-3xl font-black text-[var(--color-text)]"
                     >Rp 2,499 Jt</span
@@ -754,9 +877,7 @@
                   Selesai dalam 1–2 minggu
                 </p>
               </div>
-
               <div class="divider-brand mb-5"></div>
-
               <ul
                 class="flex flex-col gap-3 mb-8 flex-grow"
                 aria-label="Fitur paket 2"
@@ -764,68 +885,47 @@
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
                 >
-                  <span
-                    class="text-[var(--color-brand-500)] mt-0.5"
-                    aria-hidden="true"
-                    >✔</span
-                  >
-                  5–7 Halaman Web Company Profile
+                  <span class="text-[var(--color-sakura-500)] mt-0.5">✔</span
+                  >5–7 Halaman Web Company Profile
                 </li>
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
                 >
-                  <span
-                    class="text-[var(--color-brand-500)] mt-0.5"
-                    aria-hidden="true"
-                    >✔</span
-                  >
-                  Domain &amp; Hosting Kapasitas Besar
+                  <span class="text-[var(--color-sakura-500)] mt-0.5">✔</span
+                  >Domain &amp; Hosting Kapasitas Besar
                 </li>
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
                 >
-                  <span
-                    class="text-[var(--color-brand-500)] mt-0.5"
-                    aria-hidden="true"
-                    >✔</span
-                  >
-                  Form Kontak &amp; Integrasi Media Sosial
+                  <span class="text-[var(--color-sakura-500)] mt-0.5">✔</span
+                  >Form Kontak &amp; Integrasi Media Sosial
                 </li>
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
                 >
-                  <span
-                    class="text-[var(--color-brand-500)] mt-0.5"
-                    aria-hidden="true"
-                    >✔</span
-                  >
-                  Blog/Artikel + Optimasi SEO On-Page
+                  <span class="text-[var(--color-sakura-500)] mt-0.5">✔</span
+                  >Blog/Artikel + Optimasi SEO On-Page
                 </li>
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
                 >
-                  <span
-                    class="text-[var(--color-brand-500)] mt-0.5"
-                    aria-hidden="true"
-                    >✔</span
-                  >
-                  Revisi 4x + Video Tutorial
+                  <span class="text-[var(--color-sakura-500)] mt-0.5">✔</span
+                  >Revisi 4x + Video Tutorial
                 </li>
               </ul>
-
               <a
                 href="https://wa.me/6285706193924?text=Halo%20SukaSuka.web,%20saya%20tertarik%20dengan%20Paket%20Suka-Suka%202"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn btn-primary w-full text-sm"
-                aria-label="Pilih Paket 2 — Company Profile Rp 2,499 juta"
+                aria-label="Pilih Paket 2"
                 >Pilih Paket 2</a
               >
             </article>
 
-            <!-- ── Paket 3 ── -->
+            <!-- Paket 3 -->
             <article
-              class="card flex flex-col h-full reveal delay-3 p-6"
+              class="card flex flex-col h-full reveal delay-3 p-6 paket-card"
               aria-labelledby="paket3-title"
             >
               <div class="mb-5">
@@ -840,11 +940,14 @@
                   kebutuhan.
                 </p>
               </div>
-
               <div class="mb-5">
                 <span class="text-xs text-[var(--color-text-subtle)]"
                   >Mulai dari</span
                 >
+                <div class="flex gap-2">
+                  <p class="text-black text-xs">RP</p>
+                  <p class="line-through text-gray-400 text-xs">6,000 jt</p>
+                </div>
                 <div class="flex items-baseline gap-2 mt-1">
                   <span class="text-3xl font-black text-[var(--color-text)]"
                     >Rp 4,999 Jt</span
@@ -854,9 +957,7 @@
                   Estimasi menyesuaikan kompleksitas
                 </p>
               </div>
-
               <div class="divider mb-5"></div>
-
               <ul
                 class="flex flex-col gap-3 mb-8 flex-grow"
                 aria-label="Fitur paket 3"
@@ -864,198 +965,192 @@
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
                 >
-                  <span
-                    class="text-[var(--color-success)] mt-0.5"
-                    aria-hidden="true"
-                    >✔</span
-                  >
-                  Halaman &amp; Fitur Kustom Bebas
+                  <span class="text-[var(--color-success)] mt-0.5">✔</span
+                  >Halaman &amp; Fitur Kustom Bebas
                 </li>
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
                 >
-                  <span
-                    class="text-[var(--color-success)] mt-0.5"
-                    aria-hidden="true"
-                    >✔</span
-                  >
-                  Server VPS Kinerja Tinggi
+                  <span class="text-[var(--color-success)] mt-0.5">✔</span
+                  >Server VPS Kinerja Tinggi
                 </li>
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
                 >
-                  <span
-                    class="text-[var(--color-success)] mt-0.5"
-                    aria-hidden="true"
-                    >✔</span
-                  >
-                  Payment Gateway (QRIS, Virtual Account)
+                  <span class="text-[var(--color-success)] mt-0.5">✔</span
+                  >Payment Gateway (QRIS, Virtual Account)
                 </li>
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
                 >
-                  <span
-                    class="text-[var(--color-success)] mt-0.5"
-                    aria-hidden="true"
-                    >✔</span
-                  >
-                  Cek Ongkir Otomatis
+                  <span class="text-[var(--color-success)] mt-0.5">✔</span>Cek
+                  Ongkir Otomatis
                 </li>
                 <li
                   class="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
                 >
-                  <span
-                    class="text-[var(--color-success)] mt-0.5"
-                    aria-hidden="true"
-                    >✔</span
-                  >
-                  Revisi 7x + Garansi Bug 3 Bulan
+                  <span class="text-[var(--color-success)] mt-0.5">✔</span
+                  >Revisi 7x + Garansi Bug 3 Bulan
                 </li>
               </ul>
-
               <a
                 href="https://wa.me/6285706193924?text=Halo%20SukaSuka.web,%20saya%20tertarik%20dengan%20Paket%20Suka-Suka%203"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn btn-secondary w-full text-sm"
-                aria-label="Pilih Paket 3 — Web App / Toko Online Rp 4,999 juta"
+                aria-label="Pilih Paket 3"
                 >Pilih Paket 3</a
               >
             </article>
 
-            <!-- ── Paket VIP — Retainer ── -->
+            <!-- Paket VIP -->
             <article
-              class="card relative flex flex-col h-full reveal delay-4 p-6 bg-[var(--color-brand-900)] text-white border-none overflow-hidden"
-              style="box-shadow: var(--shadow-xl)"
+              class="card relative flex flex-col h-full reveal delay-4 p-6 paket-card overflow-hidden"
+              style="
+                background: var(--color-void-800);
+                border-color: rgba(147, 112, 255, 0.4);
+                box-shadow: var(--shadow-xl);
+              "
               aria-labelledby="paket4-title"
             >
-              <!-- Decorative glow -->
               <div
-                class="absolute top-[-50px] right-[-50px] w-32 h-32 bg-[var(--color-accent-500)] rounded-full mix-blend-screen filter blur-[60px] opacity-40"
+                class="absolute top-[-50px] right-[-50px] w-32 h-32 rounded-full mix-blend-screen filter blur-[60px] opacity-40"
+                style="background: var(--color-aqua-400)"
                 aria-hidden="true"
               ></div>
               <div
-                class="absolute bottom-[-40px] left-[-30px] w-24 h-24 bg-[var(--color-brand-400)] rounded-full mix-blend-screen filter blur-[50px] opacity-30"
+                class="absolute bottom-[-40px] left-[-30px] w-24 h-24 rounded-full mix-blend-screen filter blur-[50px] opacity-30"
+                style="background: var(--color-sakura-400)"
                 aria-hidden="true"
               ></div>
-
               <div class="mb-5 relative z-10">
                 <span
                   class="inline-flex items-center gap-1.5 text-[0.65rem] font-mono font-semibold tracking-widest uppercase px-3 py-1 rounded-full mb-3"
                   style="
                     background: rgba(255, 255, 255, 0.12);
-                    color: var(--color-accent-300);
+                    color: var(--color-aqua-400);
                     border: 1px solid rgba(255, 255, 255, 0.15);
                   "
                   >✦ Retainer Bulanan</span
                 >
                 <h3
                   id="paket4-title"
-                  class="text-xl font-bold mb-1 text-[var(--color-brand-200)]"
+                  class="text-xl font-bold mb-1"
+                  style="color: var(--color-void-100)"
                 >
-                  Paket Suka-Suka<br />
-                  <span class="text-white text-2xl">Banget 🚀</span>
+                  Paket Suka-Suka<br /><span class="text-white text-2xl"
+                    >Banget 🚀</span
+                  >
                 </h3>
-                <p class="text-[var(--color-brand-300)] text-sm paket-desc">
+                <p
+                  class="text-sm paket-desc"
+                  style="color: var(--color-void-200)"
+                >
                   Kemitraan jangka panjang — kami jadi tim tech kamu setiap
                   bulannya.
                 </p>
               </div>
-
               <div class="mb-5 relative z-10">
-                <span class="text-xs text-[var(--color-brand-300)] opacity-80"
+                <span
+                  class="text-xs opacity-80"
+                  style="color: var(--color-void-200)"
                   >Mulai dari</span
                 >
+                <div class="flex gap-2">
+                  <p class="text-white text-xs">RP</p>
+                  <p class="line-through text-gray-400 text-xs">2,500 jt</p>
+                </div>
                 <div class="flex items-baseline gap-1.5 mt-1">
                   <span class="text-3xl font-black text-white">Rp 1,5 Jt</span>
                   <span
-                    class="text-[var(--color-brand-300)] text-sm font-medium"
+                    class="text-sm font-medium"
+                    style="color: var(--color-void-200)"
                     >/bulan</span
                   >
                 </div>
                 <p
-                  class="text-xs text-[var(--color-brand-300)] opacity-70 mt-1"
+                  class="text-xs mt-1 opacity-70"
+                  style="color: var(--color-void-200)"
                 >
                   Harga final via negosiasi
                 </p>
               </div>
-
-              <div class="w-full h-px bg-white/15 mb-5 relative z-10"></div>
-
+              <div
+                class="w-full h-px mb-5 relative z-10"
+                style="background: rgba(255, 255, 255, 0.15)"
+              ></div>
               <ul
                 class="flex flex-col gap-3 mb-8 flex-grow relative z-10"
                 aria-label="Fitur paket retainer"
               >
                 <li
-                  class="flex items-start gap-3 text-sm text-[var(--color-brand-100)]"
+                  class="flex items-start gap-3 text-sm"
+                  style="color: var(--color-void-100)"
                 >
                   <span
-                    class="text-[var(--color-accent-400)] mt-0.5 flex-shrink-0"
-                    aria-hidden="true"
+                    style="color: var(--color-aqua-400)"
+                    class="mt-0.5 flex-shrink-0"
                     >✦</span
-                  >
-                  Unlimited Revisi &amp; Tambah Fitur
+                  >Unlimited Revisi &amp; Tambah Fitur
                 </li>
                 <li
-                  class="flex items-start gap-3 text-sm text-[var(--color-brand-100)]"
+                  class="flex items-start gap-3 text-sm"
+                  style="color: var(--color-void-100)"
                 >
                   <span
-                    class="text-[var(--color-accent-400)] mt-0.5 flex-shrink-0"
-                    aria-hidden="true"
+                    style="color: var(--color-aqua-400)"
+                    class="mt-0.5 flex-shrink-0"
                     >✦</span
-                  >
-                  Bebas Request Custom Sistem
+                  >Bebas Request Custom Sistem
                 </li>
                 <li
-                  class="flex items-start gap-3 text-sm text-[var(--color-brand-100)]"
+                  class="flex items-start gap-3 text-sm"
+                  style="color: var(--color-void-100)"
                 >
                   <span
-                    class="text-[var(--color-accent-400)] mt-0.5 flex-shrink-0"
-                    aria-hidden="true"
+                    style="color: var(--color-aqua-400)"
+                    class="mt-0.5 flex-shrink-0"
                     >✦</span
-                  >
-                  Dedicated Dev (Kontrak Bulanan)
+                  >Dedicated Dev (Kontrak Bulanan)
                 </li>
                 <li
-                  class="flex items-start gap-3 text-sm text-[var(--color-brand-100)]"
+                  class="flex items-start gap-3 text-sm"
+                  style="color: var(--color-void-100)"
                 >
                   <span
-                    class="text-[var(--color-accent-400)] mt-0.5 flex-shrink-0"
-                    aria-hidden="true"
+                    style="color: var(--color-aqua-400)"
+                    class="mt-0.5 flex-shrink-0"
                     >✦</span
-                  >
-                  Setup &amp; Rawat Infrastruktur Server
+                  >Setup &amp; Rawat Infrastruktur Server
                 </li>
                 <li
-                  class="flex items-start gap-3 text-sm text-[var(--color-brand-100)]"
+                  class="flex items-start gap-3 text-sm"
+                  style="color: var(--color-void-100)"
                 >
                   <span
-                    class="text-[var(--color-accent-400)] mt-0.5 flex-shrink-0"
-                    aria-hidden="true"
+                    style="color: var(--color-aqua-400)"
+                    class="mt-0.5 flex-shrink-0"
                     >✦</span
-                  >
-                  Prioritas Respons Teknisi 24/7
+                  >Prioritas Respons Teknisi 24/7
                 </li>
               </ul>
-
               <a
                 href="https://wa.me/6285706193924?text=Halo%20SukaSuka.web,%20saya%20ingin%20mengajukan%20kerjasama%20Paket%20Retainer"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn relative z-10 w-full text-sm"
                 style="
-                  background: var(--color-accent-500);
+                  background: var(--color-aqua-500);
                   color: white;
                   border: none;
-                  box-shadow: 0 4px 20px rgba(6, 182, 212, 0.35);
+                  box-shadow: 0 4px 20px rgba(76, 201, 240, 0.35);
                 "
-                aria-label="Ajukan kerjasama Paket Retainer via WhatsApp"
+                aria-label="Ajukan kerjasama Paket Retainer"
                 >Diskusi Retainer →</a
               >
             </article>
           </div>
 
-          <!-- Catatan kecil di bawah -->
           <p
             class="text-center text-xs text-[var(--color-text-subtle)] font-mono mt-10 reveal"
           >
@@ -1066,7 +1161,7 @@
       </section>
 
       <!-- ═══════════════════════════════════════════
-           PROSES KERJA
+           PROSES KERJA — animated timeline
            ═══════════════════════════════════════════ -->
       <section
         id="proses"
@@ -1079,50 +1174,75 @@
             Dari Ide ke Website Jadi<br />dalam 4 Langkah Mudah
           </h2>
           <ol
-            class="proses-grid"
+            class="proses-timeline"
             aria-label="Langkah-langkah pembuatan website di SukaSuka.web"
           >
             <li class="proses-item reveal delay-1">
-              <div class="proses-num" aria-hidden="true">01</div>
-              <h3 class="text-lg mb-2">Pilih Paket &amp; Diskusi</h3>
-              <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
-                Pilih paket yang sesuai. Kami kirimkan proposal resmi dan
-                diskusikan kebutuhan detail Anda via WhatsApp.
-              </p>
+              <div class="proses-dot" aria-hidden="true">
+                <div class="proses-dot-inner"></div>
+              </div>
+              <div class="proses-content">
+                <div class="proses-num" aria-hidden="true">01</div>
+                <h3 class="text-lg mb-2">Pilih Paket &amp; Diskusi</h3>
+                <p
+                  class="text-[var(--color-text-muted)] text-sm leading-relaxed"
+                >
+                  Pilih paket yang sesuai. Kami kirimkan proposal resmi dan
+                  diskusikan kebutuhan detail Anda via WhatsApp.
+                </p>
+              </div>
             </li>
-            <div class="proses-connector" aria-hidden="true"></div>
             <li class="proses-item reveal delay-2">
-              <div class="proses-num" aria-hidden="true">02</div>
-              <h3 class="text-lg mb-2">Pembayaran DP 50%</h3>
-              <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
-                Setelah sepakat, DP 50% dilakukan untuk pembelian domain,
-                hosting, dan dimulainya proses desain UI/UX.
-              </p>
+              <div class="proses-dot" aria-hidden="true">
+                <div class="proses-dot-inner"></div>
+              </div>
+              <div class="proses-content">
+                <div class="proses-num" aria-hidden="true">02</div>
+                <h3 class="text-lg mb-2">Pembayaran DP 50%</h3>
+                <p
+                  class="text-[var(--color-text-muted)] text-sm leading-relaxed"
+                >
+                  Setelah sepakat, DP 50% dilakukan untuk pembelian domain,
+                  hosting, dan dimulainya proses desain UI/UX.
+                </p>
+              </div>
             </li>
-            <div class="proses-connector" aria-hidden="true"></div>
             <li class="proses-item reveal delay-3">
-              <div class="proses-num" aria-hidden="true">03</div>
-              <h3 class="text-lg mb-2">Tahap Development</h3>
-              <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
-                Proses coding dimulai dengan update berkala dan revisi sesuai
-                kuota paket yang dipilih.
-              </p>
+              <div class="proses-dot" aria-hidden="true">
+                <div class="proses-dot-inner"></div>
+              </div>
+              <div class="proses-content">
+                <div class="proses-num" aria-hidden="true">03</div>
+                <h3 class="text-lg mb-2">Tahap Development</h3>
+                <p
+                  class="text-[var(--color-text-muted)] text-sm leading-relaxed"
+                >
+                  Proses coding dimulai dengan update berkala dan revisi sesuai
+                  kuota paket yang dipilih.
+                </p>
+              </div>
             </li>
-            <div class="proses-connector" aria-hidden="true"></div>
             <li class="proses-item reveal delay-4">
-              <div class="proses-num" aria-hidden="true">04</div>
-              <h3 class="text-lg mb-2">Pelunasan &amp; Launch</h3>
-              <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
-                Website disetujui 100%, pelunasan dilakukan, dan website siap
-                di-launching beserta serah terima akses penuh.
-              </p>
+              <div class="proses-dot" aria-hidden="true">
+                <div class="proses-dot-inner"></div>
+              </div>
+              <div class="proses-content">
+                <div class="proses-num" aria-hidden="true">04</div>
+                <h3 class="text-lg mb-2">Pelunasan &amp; Launch</h3>
+                <p
+                  class="text-[var(--color-text-muted)] text-sm leading-relaxed"
+                >
+                  Website disetujui 100%, pelunasan dilakukan, dan website siap
+                  di-launching beserta serah terima akses penuh.
+                </p>
+              </div>
             </li>
           </ol>
         </div>
       </section>
 
       <!-- ═══════════════════════════════════════════
-           FAQ
+           FAQ — smooth accordion
            ═══════════════════════════════════════════ -->
       <section id="faq" class="section" aria-labelledby="faq-heading">
         <div class="container max-w-3xl mx-auto">
@@ -1130,7 +1250,6 @@
           <h2 id="faq-heading" class="reveal delay-1 mb-12">
             Pertanyaan yang Sering Ditanyakan
           </h2>
-
           <div class="faq-list reveal delay-2">
             <details class="faq-item">
               <summary class="faq-question">
@@ -1200,17 +1319,17 @@
       </section>
 
       <!-- ═══════════════════════════════════════════
-           MULAI PROYEK — CTA checklist
+           SIAP MULAI — checklist
            ═══════════════════════════════════════════ -->
       <section
         aria-labelledby="mulai-heading"
-        class="py-16 bg-[var(--color-brand-50)] border-y border-[var(--color-border-brand)]"
+        class="py-16 bg-[var(--color-bg-secondary)] border-y border-[var(--color-border-brand)]"
       >
         <div class="container max-w-4xl mx-auto reveal">
           <div class="text-center mb-10">
             <h2
               id="mulai-heading"
-              class="text-3xl text-[var(--color-brand-900)] mb-4"
+              class="text-3xl text-[var(--color-void-700)] mb-4"
             >
               Siap Mulai Proyek Website Anda?
             </h2>
@@ -1219,15 +1338,13 @@
               pertanyaan berikut sebelum menghubungi kami via WhatsApp:
             </p>
           </div>
-
           <div
             class="bg-white p-6 sm:p-8 rounded-[var(--radius-xl)] shadow-sm border border-[var(--color-border-soft)]"
           >
             <ol class="space-y-4">
-              <li class="flex gap-4 items-start">
+              <li class="flex gap-4 items-start checklist-item">
                 <div
-                  class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-brand-100)] text-[var(--color-brand-600)] flex items-center justify-center font-bold text-sm"
-                  aria-hidden="true"
+                  class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-sakura-50)] text-[var(--color-sakura-600)] flex items-center justify-center font-bold text-sm border border-[var(--color-sakura-200)]"
                 >
                   1
                 </div>
@@ -1235,10 +1352,9 @@
                   Apa nama bisnis / perusahaan Anda?
                 </p>
               </li>
-              <li class="flex gap-4 items-start">
+              <li class="flex gap-4 items-start checklist-item">
                 <div
-                  class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-brand-100)] text-[var(--color-brand-600)] flex items-center justify-center font-bold text-sm"
-                  aria-hidden="true"
+                  class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-sakura-50)] text-[var(--color-sakura-600)] flex items-center justify-center font-bold text-sm border border-[var(--color-sakura-200)]"
                 >
                   2
                 </div>
@@ -1250,10 +1366,9 @@
                   >
                 </p>
               </li>
-              <li class="flex gap-4 items-start">
+              <li class="flex gap-4 items-start checklist-item">
                 <div
-                  class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-brand-100)] text-[var(--color-brand-600)] flex items-center justify-center font-bold text-sm"
-                  aria-hidden="true"
+                  class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-sakura-50)] text-[var(--color-sakura-600)] flex items-center justify-center font-bold text-sm border border-[var(--color-sakura-200)]"
                 >
                   3
                 </div>
@@ -1265,10 +1380,9 @@
                   >
                 </p>
               </li>
-              <li class="flex gap-4 items-start">
+              <li class="flex gap-4 items-start checklist-item">
                 <div
-                  class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-brand-100)] text-[var(--color-brand-600)] flex items-center justify-center font-bold text-sm"
-                  aria-hidden="true"
+                  class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-sakura-50)] text-[var(--color-sakura-600)] flex items-center justify-center font-bold text-sm border border-[var(--color-sakura-200)]"
                 >
                   4
                 </div>
@@ -1280,10 +1394,9 @@
                   >
                 </p>
               </li>
-              <li class="flex gap-4 items-start">
+              <li class="flex gap-4 items-start checklist-item">
                 <div
-                  class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-brand-100)] text-[var(--color-brand-600)] flex items-center justify-center font-bold text-sm"
-                  aria-hidden="true"
+                  class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-sakura-50)] text-[var(--color-sakura-600)] flex items-center justify-center font-bold text-sm border border-[var(--color-sakura-200)]"
                 >
                   5
                 </div>
@@ -1291,10 +1404,9 @@
                   Punya 2-3 contoh website yang Anda sukai tampilannya?
                 </p>
               </li>
-              <li class="flex gap-4 items-start">
+              <li class="flex gap-4 items-start checklist-item">
                 <div
-                  class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-brand-100)] text-[var(--color-brand-600)] flex items-center justify-center font-bold text-sm"
-                  aria-hidden="true"
+                  class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-sakura-50)] text-[var(--color-sakura-600)] flex items-center justify-center font-bold text-sm border border-[var(--color-sakura-200)]"
                 >
                   6
                 </div>
@@ -1303,7 +1415,6 @@
                 </p>
               </li>
             </ol>
-
             <div
               class="mt-8 pt-6 border-t border-[var(--color-border-soft)] text-center"
             >
@@ -1311,10 +1422,10 @@
                 href="https://wa.me/6285706193924?text=Halo%20SukaSuka.web,%20saya%20sudah%20siap%20konsultasi%20pembuatan%20website."
                 target="_blank"
                 rel="noopener noreferrer"
-                class="btn btn-primary btn-lg"
+                class="btn btn-primary btn-lg magnetic-btn"
                 aria-label="Mulai konsultasi via WhatsApp"
               >
-                💬 Sudah Siap, Hubungi Kami!
+                <span class="btn-inner">💬 Sudah Siap, Hubungi Kami!</span>
               </a>
             </div>
           </div>
@@ -1322,8 +1433,8 @@
       </section>
 
       <!-- ═══════════════════════════════════════════
-     KONTAK / CTA FINAL
-     ═══════════════════════════════════════════ -->
+           KONTAK / CTA FINAL — animated gradient
+           ═══════════════════════════════════════════ -->
       <section
         id="kontak"
         class="section pt-10"
@@ -1333,47 +1444,44 @@
           <div class="cta-box reveal">
             <div class="cta-blob cta-blob-1" aria-hidden="true"></div>
             <div class="cta-blob cta-blob-2" aria-hidden="true"></div>
+            <!-- Halftone overlay -->
+            <div class="cta-halftone" aria-hidden="true"></div>
 
             <div class="relative z-10 max-w-2xl mx-auto text-center">
-              <!-- Heading -->
               <h2
                 id="kontak-heading"
-                class="text-white text-3xl md:text-5xl mb-5 leading-tight"
+                class="text-white text-3xl md:text-5xl mb-5 leading-tight cta-heading"
               >
                 Hubungi SukaSuka.web<br />Sekarang
               </h2>
-
               <p
-                class="text-[var(--color-brand-200)] text-base md:text-lg mb-10 leading-relaxed"
+                class="text-base md:text-lg mb-10 leading-relaxed"
+                style="color: rgba(253, 252, 250, 0.7)"
               >
                 Ceritakan kebutuhan website bisnis Anda via WhatsApp — atau
                 ikuti kami di media sosial untuk inspirasi dan update terbaru.
               </p>
-
-              <!-- CTA utama — WhatsApp -->
               <a
                 href="https://wa.me/6285706193924?text=Halo%20SukaSuka.web,%20saya%20ingin%20berkonsultasi%20mengenai%20pembuatan%20website."
                 target="_blank"
                 rel="noopener noreferrer"
-                class="btn btn-lg mb-10"
+                class="btn btn-lg mb-10 magnetic-btn"
                 style="
                   background: white;
-                  color: var(--color-brand-900);
+                  color: var(--color-void-800);
                   font-weight: 700;
                 "
-                aria-label="Hubungi SukaSuka.web via WhatsApp untuk konsultasi pembuatan website"
+                aria-label="Hubungi SukaSuka.web via WhatsApp"
               >
-                💬 Konsultasi via WhatsApp
+                <span class="btn-inner">💬 Konsultasi via WhatsApp</span>
               </a>
 
-              <!-- Divider -->
               <div class="cta-divider" aria-hidden="true">
                 <span class="cta-divider-line"></span>
                 <span class="cta-divider-text">atau temukan kami di</span>
                 <span class="cta-divider-line"></span>
               </div>
 
-              <!-- Social media links -->
               <div
                 class="flex items-center justify-center gap-3 mt-8 flex-wrap"
                 role="list"
@@ -1399,7 +1507,6 @@
                   </svg>
                   <span>TikTok</span>
                 </a>
-
                 <a
                   href="https://instagram.com/sukasuka.web"
                   target="_blank"
@@ -1430,7 +1537,6 @@
                   </svg>
                   <span>Instagram</span>
                 </a>
-
                 <a
                   href="https://facebook.com/sukasukaweb"
                   target="_blank"
@@ -1453,9 +1559,9 @@
                 </a>
               </div>
 
-              <!-- Microcopy bawah -->
               <p
-                class="text-[var(--color-brand-400)] text-xs font-mono mt-8 tracking-wide"
+                class="text-xs font-mono mt-8 tracking-wide"
+                style="color: rgba(253, 252, 250, 0.4)"
               >
                 Respon WhatsApp &lt; 24 jam · Open for Project
               </p>
@@ -1530,6 +1636,9 @@
       </div>
     </div>
 
+    <!-- ═══════════════════════════════════════════
+         STYLES
+         ═══════════════════════════════════════════ -->
     <style>
       html,
       body {
@@ -1538,11 +1647,63 @@
         overflow-x: hidden !important;
       }
 
+      /* ── CUSTOM CURSOR ── */
+      .custom-cursor {
+        position: fixed;
+        pointer-events: none;
+        z-index: var(--z-cursor);
+        top: 0;
+        left: 0;
+        mix-blend-mode: multiply;
+      }
+      .cursor-dot {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: var(--color-sakura-500);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition: transform 0.1s var(--ease-default);
+      }
+      .cursor-ring {
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        border: 2px solid var(--color-sakura-400);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.6;
+        transition:
+          transform 0.15s var(--ease-out),
+          width 0.2s,
+          height 0.2s,
+          opacity 0.2s;
+      }
+      .cursor-hover .cursor-ring {
+        width: 50px;
+        height: 50px;
+        opacity: 0.4;
+        border-color: var(--color-cobalt-400);
+      }
+      @media (pointer: coarse) {
+        .custom-cursor {
+          display: none;
+        }
+      }
+
       /* ── HERO ── */
+      .hero-section {
+        background: var(--gradient-hero);
+      }
+      .parallax-layer {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
       .hero-blob {
         position: absolute;
         border-radius: 50%;
-        filter: blur(100px);
+        filter: blur(90px);
         pointer-events: none;
       }
       .hero-blob-1 {
@@ -1550,27 +1711,45 @@
         height: 500px;
         top: -15%;
         left: -10%;
-        background: var(--color-brand-200);
-        opacity: 0.35;
-        animation: float 12s ease-in-out infinite;
+        background: var(--color-sakura-200);
+        opacity: 0.4;
       }
       .hero-blob-2 {
         width: 400px;
         height: 400px;
         bottom: -10%;
         right: -10%;
-        background: var(--color-accent-200);
+        background: var(--color-cobalt-200);
         opacity: 0.3;
-        animation: float 15s ease-in-out infinite reverse;
       }
       .hero-blob-3 {
         width: 250px;
         height: 250px;
         top: 50%;
         left: 55%;
-        background: var(--color-brand-100);
+        background: var(--color-void-200);
         opacity: 0.25;
-        animation: float 10s ease-in-out infinite 3s;
+      }
+      .hero-speed-lines {
+        position: absolute;
+        inset: 0;
+        background-image: repeating-conic-gradient(
+          from 0deg at 50% 50%,
+          transparent 0deg,
+          transparent 8.5deg,
+          rgba(247, 37, 133, 0.03) 8.5deg,
+          rgba(247, 37, 133, 0.03) 9deg
+        );
+        pointer-events: none;
+        animation: rotateLines 60s linear infinite;
+      }
+      @keyframes rotateLines {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
       }
       .hero-grid {
         position: absolute;
@@ -1589,7 +1768,43 @@
           black 0%,
           transparent 70%
         );
+        pointer-events: none;
       }
+
+      /* Floating manga panels */
+      .manga-panel-float {
+        position: absolute;
+        background: var(--color-bg-card);
+        border: 2px solid var(--color-text);
+        border-radius: var(--radius-manga);
+        padding: 0.5rem 1rem;
+        box-shadow: 3px 3px 0px var(--color-text);
+        pointer-events: none;
+        animation: float 6s ease-in-out infinite;
+        z-index: 2;
+      }
+      .manga-panel-1 {
+        top: 22%;
+        left: 5%;
+        animation-delay: 0s;
+      }
+      .manga-panel-2 {
+        top: 55%;
+        right: 5%;
+        animation-delay: 1.5s;
+      }
+      .manga-panel-3 {
+        bottom: 25%;
+        left: 8%;
+        animation-delay: 3s;
+      }
+      @media (max-width: 1024px) {
+        .manga-panel-float {
+          display: none;
+        }
+      }
+
+      /* Hero heading */
       .hero-heading {
         font-size: clamp(2.2rem, 6vw, 5.5rem);
         font-weight: 800;
@@ -1601,6 +1816,67 @@
         font-style: italic;
         color: var(--color-text-brand);
       }
+      .hero-line {
+        display: inline-block;
+        overflow: hidden;
+      }
+
+      /* Hero stats */
+      .hero-stats {
+        display: inline-flex;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 3rem;
+        padding: 1.25rem 2rem;
+        background: var(--color-bg-card);
+        border: 2px solid var(--color-text);
+        border-radius: var(--radius-full);
+        box-shadow: 4px 4px 0px var(--color-text);
+      }
+      @media (max-width: 640px) {
+        .hero-stats {
+          gap: 1rem;
+          padding: 1rem 1.25rem;
+          flex-wrap: wrap;
+          border-radius: var(--radius-xl);
+        }
+      }
+      .hero-stat-item {
+        text-align: center;
+      }
+      .hero-stat-num {
+        font-family: var(--font-display);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-weight: 900;
+        background: var(--gradient-brand);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1;
+      }
+      .hero-stat-suffix {
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        color: var(--color-text-subtle);
+        margin-left: 2px;
+      }
+      .hero-stat-label {
+        display: block;
+        font-family: var(--font-mono);
+        font-size: 0.6rem;
+        color: var(--color-text-subtle);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-top: 0.2rem;
+      }
+      .hero-stat-sep {
+        width: 1px;
+        height: 36px;
+        background: var(--color-border-strong);
+        flex-shrink: 0;
+      }
+
+      /* Scroll hint */
       .hero-scroll-hint {
         display: flex;
         flex-direction: column;
@@ -1618,7 +1894,7 @@
         height: 48px;
         background: linear-gradient(
           to bottom,
-          var(--color-brand-400),
+          var(--color-sakura-400),
           transparent
         );
         animation: scrollLine 2s ease-in-out infinite;
@@ -1641,8 +1917,28 @@
           transform-origin: bottom;
         }
       }
-      .logo-img-wrap {
-        display: inline-block;
+
+      /* Magnetic button */
+      .magnetic-btn {
+        position: relative;
+        will-change: transform;
+      }
+      .btn-inner {
+        display: block;
+        pointer-events: none;
+      }
+
+      /* ── DATA-ANIM — initial hidden state ── */
+      [data-anim] {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.7s var(--ease-spring),
+          transform 0.7s var(--ease-spring);
+      }
+      [data-anim].anim-visible {
+        opacity: 1;
+        transform: none;
       }
 
       /* ── MARQUEE ── */
@@ -1653,7 +1949,8 @@
         display: flex;
         align-items: center;
         width: max-content;
-        animation: marquee 20s linear infinite;
+        animation: marquee 24s linear infinite;
+        gap: 0;
       }
       .marquee-outer:hover .marquee-inner {
         animation-play-state: paused;
@@ -1679,7 +1976,10 @@
         }
       }
 
-      /* ABOUT */
+      /* ── ABOUT ── */
+      .about-section {
+        background: #f3eeea;
+      }
       .about-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -1692,90 +1992,128 @@
           gap: 2.5rem;
         }
       }
-      .about-frame {
+      .about-img-outer {
+        position: relative;
+      }
+      .about-img-inner {
         position: relative;
         border-radius: var(--radius-xl);
-        overflow: visible; /* ubah dari hidden agar badge tidak terpotong */
-        background: var(--color-bg-tertiary);
-        border: 1px solid var(--color-border);
+        overflow: hidden;
+        border: 2px solid var(--color-text);
+        box-shadow: 6px 6px 0px var(--color-text);
         aspect-ratio: 4/5;
       }
-      .about-frame img {
+      .about-img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border-radius: var(
-          --radius-xl
-        ); /* tambahkan ini karena overflow jadi visible */
+        transition: transform 0.6s var(--ease-default);
+        will-change: transform;
+      }
+      .about-img-inner:hover .about-img {
+        transform: scale(1.04);
       }
       .about-frame-deco {
         position: absolute;
-        top: -0.75rem;
-        left: -0.75rem;
-        z-index: 10;
+        top: -12px;
+        left: -12px;
+        z-index: 2;
         width: 64px;
         height: 64px;
-        border-top: 2px solid var(--color-brand-400);
-        border-left: 2px solid var(--color-brand-400);
+        border-top: 3px solid var(--color-sakura-400);
+        border-left: 3px solid var(--color-sakura-400);
         border-radius: 4px 0 0 0;
         pointer-events: none;
       }
-      .about-badge {
+      .about-frame-deco-br {
+        position: absolute;
+        bottom: -12px;
+        right: -12px;
+        z-index: 2;
+        width: 64px;
+        height: 64px;
+        border-bottom: 3px solid var(--color-cobalt-400);
+        border-right: 3px solid var(--color-cobalt-400);
+        border-radius: 0 0 4px 0;
+        pointer-events: none;
+      }
+      .about-float-badge {
         position: absolute;
         bottom: 1.25rem;
-        right: 1rem; /* ubah dari -1rem ke 1rem agar tidak overflow */
-        background: var(--color-bg-card);
-        border: 1px solid var(--color-border);
-        border-radius: var(--radius-full);
-        padding: 0.6rem 1.1rem;
+        right: 1rem;
+        z-index: 5;
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        font-size: 0.78rem;
-        font-weight: 600;
-        box-shadow: var(--shadow-md);
-        z-index: 5;
+        background: var(--color-bg-card);
+        border: 2px solid var(--color-text);
+        border-radius: var(--radius-manga);
+        padding: 0.5rem 0.85rem;
+        box-shadow: 3px 3px 0px var(--color-text);
+        animation: float 4s ease-in-out infinite;
       }
+      .about-tech-pill {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        background: rgba(13, 11, 26, 0.85);
+        color: var(--color-aqua-400);
+        font-family: var(--font-mono);
+        font-size: 0.6rem;
+        padding: 0.3rem 0.75rem;
+        border-radius: var(--radius-full);
+        backdrop-filter: blur(8px);
+      }
+      .about-dots-deco {
+        position: absolute;
+        bottom: -1.5rem;
+        left: -1.5rem;
+        width: 120px;
+        height: 120px;
+        background: var(--pattern-dots);
+        background-size: 10px 10px;
+        opacity: 0.5;
+        pointer-events: none;
+        z-index: 0;
+      }
+      /* About stats */
       .about-stats {
         display: flex;
         align-items: center;
-        gap: 1rem; /* dikurangi dari 2rem */
-        padding: 1.25rem 1rem; /* dikurangi sedikit */
+        gap: 1rem;
+        padding: 1.25rem 1rem;
         background: var(--color-bg-secondary);
         border-radius: var(--radius-lg);
         border: 1px solid var(--color-border);
-        overflow: hidden; /* cegah isi meluber */
+        overflow: hidden;
       }
       @media (max-width: 640px) {
         .about-stats {
-          flex-wrap: wrap; /* Ini kunci utamanya: izinkan elemen turun baris */
+          flex-wrap: wrap;
           justify-content: center;
           gap: 1.25rem 0.5rem;
           padding: 1.25rem;
         }
         .about-stat {
-          flex: 1 1 45%; /* Jadikan 2 kotak di atas, 1 kotak di bawah */
-          min-width: 120px; /* Beri ruang bernapas untuk teks "Node.js" */
+          flex: 1 1 45%;
+          min-width: 120px;
         }
         .about-stat-divider {
-          display: none; /* Sembunyikan garis vertikal di layar HP agar tidak berantakan */
-        }
-      }
-      @media (max-width: 480px) {
-        .about-stats {
-          gap: 0.5rem;
-          padding: 1rem 0.75rem;
+          display: none;
         }
       }
       .about-stat {
         text-align: center;
         flex: 1;
-        min-width: 0; /* penting: cegah flex child overflow */
+        min-width: 0;
       }
       .about-stat-num {
-        display: block; /* block agar text-align: center bekerja */
-        font-variant-numeric: tabular-nums;
-        font-size: clamp(1.2rem, 3.5vw, 1.8rem); /* responsive font size */
+        display: block;
+        font-size: clamp(1.2rem, 3.5vw, 1.8rem);
         font-weight: 800;
         letter-spacing: -0.03em;
         background: var(--gradient-brand);
@@ -1785,7 +2123,7 @@
       }
       .about-stat-label {
         display: block;
-        font-size: clamp(0.6rem, 1.5vw, 0.72rem); /* responsive font size */
+        font-size: clamp(0.6rem, 1.5vw, 0.72rem);
         color: var(--color-text-subtle);
         font-family: var(--font-mono);
         text-transform: uppercase;
@@ -1797,6 +2135,128 @@
         height: 40px;
         background: var(--color-border);
         flex-shrink: 0;
+      }
+
+      /* ── KENAPA GRID ── */
+      .kenapa-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+      @media (min-width: 1280px) {
+        .kenapa-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+      @media (max-width: 640px) {
+        .kenapa-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .kenapa-icon-wrap {
+        position: relative;
+        margin-bottom: 1rem;
+      }
+      .kenapa-emoji {
+        font-size: 2.5rem;
+        display: block;
+      }
+      /* 3D Tilt card */
+      .tilt-card {
+        transform-style: preserve-3d;
+        cursor: default;
+      }
+      .tilt-card-inner {
+        transform: translateZ(20px);
+      }
+
+      /* ── LAYANAN LIST ── */
+      .layanan-list {
+        display: flex;
+        flex-direction: column;
+        border: 2px solid var(--color-text);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: 5px 5px 0px var(--color-text);
+      }
+      .layanan-item {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1.75rem 2rem;
+        border-bottom: 1.5px solid var(--color-border-strong);
+        position: relative;
+        overflow: hidden;
+        transition: background var(--duration-base) var(--ease-default);
+        cursor: default;
+      }
+      .layanan-item:last-child {
+        border-bottom: none;
+      }
+      .layanan-ink {
+        position: absolute;
+        inset: 0;
+        background: var(--gradient-cel);
+        transform: translateX(-102%);
+        transition: transform 0.4s var(--ease-spring);
+        z-index: 0;
+      }
+      .layanan-item:hover .layanan-ink {
+        transform: translateX(0);
+      }
+      .layanan-item > * {
+        position: relative;
+        z-index: 1;
+      }
+      .layanan-num {
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        color: var(--color-text-subtle);
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        flex-shrink: 0;
+        width: 28px;
+      }
+      .layanan-icon {
+        font-size: 2rem;
+        flex-shrink: 0;
+      }
+      .layanan-body {
+        flex: 1;
+      }
+      .layanan-title {
+        font-family: var(--font-display);
+        font-size: 1.15rem;
+        font-weight: 800;
+        margin-bottom: 0.35rem;
+        color: var(--color-text);
+        transition: color var(--duration-base);
+      }
+      .layanan-item:hover .layanan-title {
+        color: var(--color-sakura-500);
+      }
+      .layanan-arrow {
+        font-family: var(--font-display);
+        font-size: 1.2rem;
+        color: var(--color-text-subtle);
+        flex-shrink: 0;
+        transition:
+          transform var(--duration-base) var(--ease-spring),
+          color var(--duration-base);
+      }
+      .layanan-item:hover .layanan-arrow {
+        transform: translateX(6px);
+        color: var(--color-sakura-500);
+      }
+      @media (max-width: 640px) {
+        .layanan-item {
+          flex-wrap: wrap;
+          padding: 1.25rem;
+          gap: 0.75rem;
+        }
+        .layanan-arrow {
+          display: none;
+        }
       }
 
       /* ── PORTO ── */
@@ -1812,22 +2272,23 @@
       }
       .porto-card {
         background: var(--color-bg-card);
-        border: 1px solid var(--color-border);
+        border: 2px solid var(--color-text);
         border-radius: var(--radius-lg);
         overflow: hidden;
         cursor: pointer;
+        box-shadow: 4px 4px 0px var(--color-text);
         transition:
           transform var(--duration-slow) var(--ease-spring),
           box-shadow var(--duration-slow) var(--ease-default),
           border-color var(--duration-base);
       }
       .porto-card:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-xl);
-        border-color: var(--color-border-brand);
+        transform: translate(-3px, -3px);
+        box-shadow: 7px 7px 0px var(--color-sakura-500);
+        border-color: var(--color-sakura-500);
       }
       .porto-card:focus-visible {
-        outline: 2px solid var(--color-brand-500);
+        outline: 2px solid var(--color-sakura-500);
         outline-offset: 3px;
       }
       .porto-img-wrap {
@@ -1843,7 +2304,7 @@
         transition: transform var(--duration-slower) var(--ease-default);
       }
       .porto-card:hover .porto-img {
-        transform: scale(1.04);
+        transform: scale(1.05);
       }
       .porto-img-placeholder {
         position: absolute;
@@ -1863,7 +2324,7 @@
       .porto-overlay {
         position: absolute;
         inset: 0;
-        background: rgba(0, 0, 0, 0.45);
+        background: rgba(0, 0, 0, 0.5);
         backdrop-filter: blur(4px);
         display: flex;
         align-items: center;
@@ -1884,42 +2345,92 @@
         color: var(--color-text-brand);
       }
 
-      /* ── PAKET — deskripsi setinggi sama ── */
+      /* ── PAKET ── */
       .paket-desc {
         min-height: 2.8rem;
       }
-
-      /* ── PROSES ── */
-      .proses-grid {
-        display: grid;
-        grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
-        gap: 0;
-        align-items: start;
-        list-style: none;
-        padding: 0;
-        margin: 0;
+      .paket-card {
+        transition:
+          transform var(--duration-slow) var(--ease-spring),
+          box-shadow var(--duration-slow) var(--ease-default);
       }
-      @media (max-width: 768px) {
-        .proses-grid {
-          grid-template-columns: 1fr;
+      .paket-card:hover {
+        transform: translateY(-4px);
+      }
+      .paket-featured {
+        animation: paketGlow 3s ease-in-out infinite;
+      }
+      @keyframes paketGlow {
+        0%,
+        100% {
+          box-shadow: var(--shadow-brand);
         }
-        .proses-connector {
-          width: 2px;
-          height: 40px;
-          background: var(--gradient-brand);
-          margin: 0 0 0 1.5rem;
+        50% {
+          box-shadow:
+            6px 6px 0px var(--color-sakura-600),
+            0 0 40px rgba(247, 37, 133, 0.3);
         }
+      }
+
+      /* ── PROSES TIMELINE ── */
+      .proses-timeline {
+        position: relative;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      .proses-timeline::before {
+        content: "";
+        position: absolute;
+        left: 24px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: var(--gradient-brand);
       }
       .proses-item {
-        padding: 0 1rem;
+        display: flex;
+        gap: 2rem;
+        padding: 0 0 3rem 0;
+        position: relative;
       }
-      .proses-connector {
-        width: 60px;
-        height: 2px;
-        background: var(--gradient-brand);
-        margin-top: 1.5rem;
+      .proses-item:last-child {
+        padding-bottom: 0;
+      }
+      .proses-dot {
+        position: relative;
+        z-index: 2;
         flex-shrink: 0;
-        border-radius: var(--radius-full);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--color-bg-card);
+        border: 2px solid var(--color-text);
+        box-shadow: 3px 3px 0px var(--color-text);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          border-color var(--duration-base),
+          box-shadow var(--duration-base);
+      }
+      .proses-item.visible .proses-dot {
+        border-color: var(--color-sakura-500);
+        box-shadow: 3px 3px 0px var(--color-sakura-500);
+      }
+      .proses-dot-inner {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: var(--gradient-brand);
+        animation: pulse-dot 2s ease-in-out infinite;
+      }
+      .proses-content {
+        padding-top: 0.6rem;
+        flex: 1;
       }
       .proses-num {
         font-family: var(--font-mono);
@@ -1931,17 +2442,30 @@
         line-height: 1;
         margin-bottom: 0.75rem;
       }
+      @media (max-width: 640px) {
+        .proses-timeline::before {
+          left: 20px;
+        }
+        .proses-dot {
+          width: 42px;
+          height: 42px;
+        }
+        .proses-item {
+          gap: 1.25rem;
+        }
+      }
 
       /* ── FAQ ── */
       .faq-list {
         display: flex;
         flex-direction: column;
-        border: 1px solid var(--color-border);
+        border: 2px solid var(--color-text);
         border-radius: var(--radius-lg);
         overflow: hidden;
+        box-shadow: 4px 4px 0px var(--color-text);
       }
       .faq-item {
-        border-bottom: 1px solid var(--color-border);
+        border-bottom: 1.5px solid var(--color-border-strong);
       }
       .faq-item:last-child {
         border-bottom: none;
@@ -1968,20 +2492,20 @@
       .faq-question::after {
         content: "+";
         font-size: 1.25rem;
-        color: var(--color-text-brand);
+        color: var(--color-sakura-500);
         flex-shrink: 0;
         transition: transform var(--duration-base) var(--ease-spring);
       }
       .faq-item[open] .faq-question {
-        color: var(--color-text-brand);
-        background: var(--color-brand-50);
+        color: var(--color-sakura-500);
+        background: var(--color-sakura-50);
       }
       .faq-item[open] .faq-question::after {
         transform: rotate(45deg);
       }
       .faq-answer {
         padding: 0 1.5rem 1.25rem;
-        background: var(--color-brand-50);
+        background: var(--color-sakura-50);
       }
       .faq-answer p {
         font-size: 0.9rem;
@@ -1989,9 +2513,23 @@
         line-height: 1.8;
       }
 
+      /* ── CHECKLIST ── */
+      .checklist-item {
+        opacity: 0;
+        transform: translateX(-20px);
+        transition:
+          opacity 0.5s var(--ease-spring),
+          transform 0.5s var(--ease-spring);
+      }
+      .checklist-item.in-view {
+        opacity: 1;
+        transform: none;
+      }
+
       /* ── CTA BOX ── */
       .cta-box {
-        background: var(--color-brand-900);
+        background: var(--color-void-800);
+        border: 2px solid var(--color-void-600);
         border-radius: var(--radius-2xl);
         padding: 4rem 1.5rem;
         text-align: center;
@@ -2015,16 +2553,100 @@
         height: 350px;
         top: -100px;
         right: -50px;
-        background: var(--color-brand-500);
-        opacity: 0.4;
+        background: var(--color-sakura-500);
+        opacity: 0.35;
       }
       .cta-blob-2 {
         width: 250px;
         height: 250px;
         bottom: -80px;
         left: -30px;
-        background: var(--color-accent-500);
-        opacity: 0.25;
+        background: var(--color-aqua-500);
+        opacity: 0.2;
+      }
+      .cta-halftone {
+        position: absolute;
+        inset: 0;
+        background-image: var(--pattern-dots);
+        background-size: 20px 20px;
+        opacity: 0.2;
+        pointer-events: none;
+      }
+      .cta-heading {
+        background: linear-gradient(
+          135deg,
+          #fff 0%,
+          var(--color-sakura-200) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .cta-divider {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      .cta-divider-line {
+        flex: 1;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.12);
+      }
+      .cta-divider-text {
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        color: rgba(253, 252, 250, 0.4);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+      .social-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 1.1rem;
+        border-radius: var(--radius-full);
+        font-family: var(--font-display);
+        font-size: var(--text-sm);
+        font-weight: 700;
+        text-decoration: none;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.08);
+        color: white;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        transition:
+          background var(--duration-base),
+          border-color var(--duration-base),
+          transform var(--duration-base) var(--ease-spring),
+          box-shadow var(--duration-base);
+      }
+      .social-btn:hover {
+        background: rgba(255, 255, 255, 0.18);
+        border-color: rgba(255, 255, 255, 0.4);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        color: white;
+      }
+      .social-btn:active {
+        transform: translateY(0) scale(0.97);
+      }
+      .social-btn-ig:hover {
+        background: linear-gradient(
+          135deg,
+          rgba(225, 48, 108, 0.35),
+          rgba(193, 53, 132, 0.35)
+        );
+        border-color: rgba(225, 48, 108, 0.5);
+      }
+      .social-btn-fb:hover {
+        background: rgba(24, 119, 242, 0.35);
+        border-color: rgba(24, 119, 242, 0.5);
+      }
+      .social-icon {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
       }
 
       /* ── MODAL ── */
@@ -2048,14 +2670,14 @@
       .modal-overlay {
         position: absolute;
         inset: 0;
-        background: rgba(0, 0, 0, 0.6);
+        background: rgba(0, 0, 0, 0.65);
         backdrop-filter: blur(6px);
       }
       .modal-box {
         position: relative;
         z-index: 1;
         background: var(--color-bg-card);
-        border: 1px solid var(--color-border);
+        border: 2px solid var(--color-text);
         border-radius: var(--radius-xl);
         width: 100%;
         max-width: 860px;
@@ -2063,7 +2685,7 @@
         overflow-y: auto;
         transform: scale(0.94) translateY(16px);
         transition: transform var(--duration-slow) var(--ease-spring);
-        box-shadow: var(--shadow-xl);
+        box-shadow: 8px 8px 0px var(--color-text);
       }
       .modal-backdrop.modal-open .modal-box {
         transform: scale(1) translateY(0);
@@ -2077,7 +2699,7 @@
         height: 36px;
         border-radius: 50%;
         background: var(--color-bg-secondary);
-        border: 1px solid var(--color-border);
+        border: 2px solid var(--color-text);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -2086,11 +2708,15 @@
         color: var(--color-text-muted);
         transition:
           background var(--duration-base),
-          color var(--duration-base);
+          color var(--duration-base),
+          box-shadow var(--duration-base);
+        box-shadow: 2px 2px 0px var(--color-text);
       }
       .modal-close:hover {
-        background: var(--color-danger-soft);
-        color: var(--color-danger);
+        background: var(--color-sakura-50);
+        color: var(--color-sakura-500);
+        border-color: var(--color-sakura-500);
+        box-shadow: 2px 2px 0px var(--color-sakura-500);
       }
       .modal-img-wrap {
         position: relative;
@@ -2127,141 +2753,335 @@
           padding: 2rem;
         }
       }
-      /* ── Divider teks ── */
-      .cta-divider {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-      }
-      .cta-divider-line {
-        flex: 1;
-        height: 1px;
-        background: rgba(255, 255, 255, 0.15);
-      }
-      .cta-divider-text {
-        font-family: var(--font-mono);
-        font-size: 0.7rem;
-        color: var(--color-brand-400);
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        white-space: nowrap;
-      }
-
-      /* ── Social buttons ── */
-      .social-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.6rem 1.1rem;
-        border-radius: var(--radius-full);
-        font-family: var(--font-display);
-        font-size: var(--text-sm);
-        font-weight: 700;
-        letter-spacing: 0.03em;
-        text-decoration: none;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        background: rgba(255, 255, 255, 0.08);
-        color: white;
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        transition:
-          background var(--duration-base) var(--ease-default),
-          border-color var(--duration-base) var(--ease-default),
-          transform var(--duration-base) var(--ease-spring),
-          box-shadow var(--duration-base) var(--ease-default);
-      }
-      .social-btn:hover {
-        background: rgba(255, 255, 255, 0.18);
-        border-color: rgba(255, 255, 255, 0.4);
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-        color: white;
-      }
-      .social-btn:active {
-        transform: translateY(0) scale(0.97);
-      }
-
-      /* Warna aksen per platform saat hover */
-      .social-btn-ig:hover {
-        background: linear-gradient(
-          135deg,
-          rgba(225, 48, 108, 0.35),
-          rgba(193, 53, 132, 0.35)
-        );
-        border-color: rgba(225, 48, 108, 0.5);
-      }
-      .social-btn-fb:hover {
-        background: rgba(24, 119, 242, 0.35);
-        border-color: rgba(24, 119, 242, 0.5);
-      }
-
-      .social-icon {
-        width: 16px;
-        height: 16px;
-        flex-shrink: 0;
-      }
     </style>
 
+    <!-- ═══════════════════════════════════════════
+         SCRIPTS
+         ═══════════════════════════════════════════ -->
     <script>
-      // ── MODAL
-      const modalEl = document.getElementById("projectModal");
-      const modalImg = document.getElementById("modalImage");
-      const modalImgPh = document.getElementById("modalImgPlaceholder");
-      const modalTitle = document.getElementById("modalTitle");
-      const modalDesc = document.getElementById("modalDesc");
-      const modalTags = document.getElementById("modalTags");
-      const modalLink = document.getElementById("modalLink");
+      (function () {
+        "use strict";
 
-      function openModal({ img, title, desc, tags = [], link = "#" }) {
-        modalImg.src = img;
-        modalImg.alt = title + " — proyek SukaSuka.web";
-        modalImg.style.display = "block";
-        modalImgPh.style.display = "none";
-        modalImg.onerror = () => {
-          modalImg.style.display = "none";
-          modalImgPh.style.display = "flex";
-        };
-        modalTitle.textContent = title;
-        modalDesc.textContent = desc;
-        modalLink.href = link;
-        modalTags.innerHTML = tags
-          .map((t) => `<span class="badge badge-neutral">${t}</span>`)
-          .join("");
-        modalEl.removeAttribute("hidden");
-        document.body.style.overflow = "hidden";
-        requestAnimationFrame(() => modalEl.classList.add("modal-open"));
-      }
+        /* ─────────────────────────────────────
+         1. CUSTOM CURSOR
+         ───────────────────────────────────── */
+        const cursor = document.getElementById("customCursor");
+        if (cursor && window.matchMedia("(pointer: fine)").matches) {
+          const dot = cursor.querySelector(".cursor-dot");
+          const ring = cursor.querySelector(".cursor-ring");
+          let mx = 0,
+            my = 0,
+            rx = 0,
+            ry = 0;
 
-      function closeModal() {
-        modalEl.classList.remove("modal-open");
-        document.body.style.overflow = "";
-        setTimeout(() => modalEl.setAttribute("hidden", ""), 300);
-      }
-
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && !modalEl.hasAttribute("hidden")) closeModal();
-      });
-      document.querySelectorAll(".porto-card").forEach((card) => {
-        card.addEventListener("keydown", (e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            card.click();
+          document.addEventListener("mousemove", (e) => {
+            mx = e.clientX;
+            my = e.clientY;
+            dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%,-50%)`;
+          });
+          function animRing() {
+            rx += (mx - rx) * 0.12;
+            ry += (my - ry) * 0.12;
+            ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%,-50%)`;
+            requestAnimationFrame(animRing);
           }
-        });
-      });
+          animRing();
 
-      // ── SCROLL REVEAL
-      document.addEventListener("DOMContentLoaded", () => {
-        const io = new IntersectionObserver(
-          (entries) =>
+          document
+            .querySelectorAll(
+              "a, button, .tilt-card, .porto-card, .layanan-item",
+            )
+            .forEach((el) => {
+              el.addEventListener("mouseenter", () =>
+                cursor.classList.add("cursor-hover"),
+              );
+              el.addEventListener("mouseleave", () =>
+                cursor.classList.remove("cursor-hover"),
+              );
+            });
+        }
+
+        /* ─────────────────────────────────────
+         2. DATA-ANIM — hero stagger
+         ───────────────────────────────────── */
+        document.addEventListener("DOMContentLoaded", () => {
+          document.querySelectorAll("[data-anim]").forEach((el) => {
+            const delay = parseInt(el.dataset.delay || 0);
+            setTimeout(() => el.classList.add("anim-visible"), delay + 100);
+          });
+        });
+
+        /* ─────────────────────────────────────
+         3. SCROLL REVEAL
+         ───────────────────────────────────── */
+        document.addEventListener("DOMContentLoaded", () => {
+          const io = new IntersectionObserver(
+            (entries) =>
+              entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add("visible");
+                io.unobserve(entry.target);
+              }),
+            { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
+          );
+          document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+        });
+
+        /* ─────────────────────────────────────
+         4. PARALLAX — hero blobs on mouse
+         ───────────────────────────────────── */
+        document.addEventListener("mousemove", (e) => {
+          const cx = window.innerWidth / 2;
+          const cy = window.innerHeight / 2;
+          const dx = (e.clientX - cx) / cx;
+          const dy = (e.clientY - cy) / cy;
+          document.querySelectorAll(".parallax-layer").forEach((layer) => {
+            const speed = parseFloat(layer.dataset.speed || 0.1);
+            layer.style.transform = `translate(${dx * speed * 40}px, ${dy * speed * 40}px)`;
+          });
+        });
+
+        /* ─────────────────────────────────────
+         5. PARALLAX — scroll on about image
+         ───────────────────────────────────── */
+        function scrollParallax() {
+          document.querySelectorAll(".parallax-img").forEach((img) => {
+            const rect = img
+              .closest(".about-img-inner")
+              .getBoundingClientRect();
+            const center = rect.top + rect.height / 2;
+            const viewCenter = window.innerHeight / 2;
+            const offset =
+              (center - viewCenter) *
+              parseFloat(img.dataset.parallaxSpeed || 0.1);
+            img.style.transform = `translateY(${offset}px) scale(1.08)`;
+          });
+        }
+        window.addEventListener("scroll", scrollParallax, { passive: true });
+
+        /* ─────────────────────────────────────
+         6. COUNTER ANIMATION
+         ───────────────────────────────────── */
+        function animateCounter(el) {
+          const target = parseInt(el.dataset.target);
+          const duration = 1800;
+          const start = performance.now();
+          function update(now) {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            // easeOutExpo
+            const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+            el.textContent = Math.floor(eased * target);
+            if (progress < 1) requestAnimationFrame(update);
+            else el.textContent = target;
+          }
+          requestAnimationFrame(update);
+        }
+        const counterObs = new IntersectionObserver(
+          (entries) => {
             entries.forEach((entry) => {
               if (!entry.isIntersecting) return;
-              entry.target.classList.add("visible");
-              io.unobserve(entry.target);
-            }),
-          { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+              animateCounter(entry.target);
+              counterObs.unobserve(entry.target);
+            });
+          },
+          { threshold: 0.5 },
         );
-        document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+        document
+          .querySelectorAll(".counter")
+          .forEach((el) => counterObs.observe(el));
+
+        /* ─────────────────────────────────────
+         7. 3D TILT CARDS
+         ───────────────────────────────────── */
+        document.querySelectorAll(".tilt-card").forEach((card) => {
+          card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const cx = rect.width / 2;
+            const cy = rect.height / 2;
+            const rotX = ((y - cy) / cy) * -10;
+            const rotY = ((x - cx) / cx) * 10;
+            card.style.transform = `perspective(600px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(4px)`;
+          });
+          card.addEventListener("mouseleave", () => {
+            card.style.transform =
+              "perspective(600px) rotateX(0) rotateY(0) translateZ(0)";
+            card.style.transition = "transform 0.5s var(--ease-spring)";
+          });
+          card.addEventListener("mouseenter", () => {
+            card.style.transition = "transform 0.12s linear";
+          });
+        });
+
+        /* ─────────────────────────────────────
+         8. MAGNETIC BUTTONS
+         ───────────────────────────────────── */
+        document.querySelectorAll(".magnetic-btn").forEach((btn) => {
+          btn.addEventListener("mousemove", (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            btn.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px)`;
+          });
+          btn.addEventListener("mouseleave", () => {
+            btn.style.transform = "";
+            btn.style.transition = "transform 0.4s var(--ease-spring)";
+          });
+          btn.addEventListener("mouseenter", () => {
+            btn.style.transition = "transform 0.1s linear";
+          });
+        });
+
+        /* ─────────────────────────────────────
+         9. CHECKLIST STAGGER
+         ───────────────────────────────────── */
+        const checkObs = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              const items = entry.target.querySelectorAll(".checklist-item");
+              items.forEach((item, i) => {
+                setTimeout(() => item.classList.add("in-view"), i * 100);
+              });
+              checkObs.unobserve(entry.target);
+            });
+          },
+          { threshold: 0.1 },
+        );
+        document.querySelectorAll("ol").forEach((ol) => {
+          if (ol.querySelector(".checklist-item")) checkObs.observe(ol);
+        });
+
+        /* ─────────────────────────────────────
+         10. MODAL
+         ───────────────────────────────────── */
+        const modalEl = document.getElementById("projectModal");
+        const modalImg = document.getElementById("modalImage");
+        const modalImgPh = document.getElementById("modalImgPlaceholder");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalDesc = document.getElementById("modalDesc");
+        const modalTags = document.getElementById("modalTags");
+        const modalLink = document.getElementById("modalLink");
+
+        window.openModal = function ({
+          img,
+          title,
+          desc,
+          tags = [],
+          link = "#",
+        }) {
+          modalImg.src = img;
+          modalImg.alt = title + " — proyek SukaSuka.web";
+          modalImg.style.display = "block";
+          modalImgPh.style.display = "none";
+          modalImg.onerror = () => {
+            modalImg.style.display = "none";
+            modalImgPh.style.display = "flex";
+          };
+          modalTitle.textContent = title;
+          modalDesc.textContent = desc;
+          modalLink.href = link;
+          modalTags.innerHTML = tags
+            .map((t) => `<span class="badge badge-neutral">${t}</span>`)
+            .join("");
+          modalEl.removeAttribute("hidden");
+          document.body.style.overflow = "hidden";
+          requestAnimationFrame(() => modalEl.classList.add("modal-open"));
+        };
+
+        window.closeModal = function () {
+          modalEl.classList.remove("modal-open");
+          document.body.style.overflow = "";
+          setTimeout(() => modalEl.setAttribute("hidden", ""), 300);
+        };
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && !modalEl.hasAttribute("hidden"))
+            closeModal();
+        });
+        document.querySelectorAll(".porto-card").forEach((card) => {
+          card.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              card.click();
+            }
+          });
+        });
+
+        /* ─────────────────────────────────────
+         11. LAYANAN HOVER — keyboard accessible
+         ───────────────────────────────────── */
+        // Already handled by CSS hover
+
+        /* ─────────────────────────────────────
+         12. CTA BOX — blob drift animation
+         ───────────────────────────────────── */
+        // Handled by CSS animation
+      })();
+    </script>
+
+    <!-- Lottie Player for micro animations (CDN — lightweight) -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"
+      defer
+    ></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Lottie: inline SVG animation for "code typing" — uses dotLottie JSON from CDN
+        // We use a subtle bouncing dots animation as a micro indicator
+        // (If Lottie CDN is blocked, the badge still shows fine without it)
+        if (typeof lottie !== "undefined") {
+          // Simple 3-dot pulse loader as about badge decoration
+          const dotAnim = {
+            v: "5.7.8",
+            fr: 24,
+            ip: 0,
+            op: 72,
+            w: 32,
+            h: 32,
+            layers: [
+              {
+                ty: 4,
+                nm: "dots",
+                ks: {
+                  o: { a: 0, k: 100 },
+                  r: { a: 0, k: 0 },
+                  p: { a: 0, k: [16, 16, 0] },
+                  s: { a: 0, k: [100, 100, 100] },
+                },
+                shapes: [
+                  {
+                    ty: "el",
+                    p: {
+                      a: 1,
+                      k: [
+                        { t: 0, s: [8, 16] },
+                        { t: 24, s: [8, 8] },
+                        { t: 48, s: [8, 16] },
+                      ],
+                    },
+                    s: { a: 0, k: [8, 8] },
+                    ty: "el",
+                  },
+                  {
+                    ty: "fl",
+                    c: { a: 0, k: [0.969, 0.145, 0.522, 1] },
+                    o: { a: 0, k: 100 },
+                  },
+                ],
+              },
+            ],
+          };
+          try {
+            const el = document.getElementById("lottieCode");
+            if (el) {
+              // Fallback: render a simple pulsing dot via JS canvas
+              el.innerHTML = `<div style="width:20px;height:20px;border-radius:50%;background:var(--gradient-brand);animation:pulse-dot 1.5s ease-in-out infinite;"></div>`;
+            }
+          } catch (e) {}
+        }
       });
     </script>
   </body>

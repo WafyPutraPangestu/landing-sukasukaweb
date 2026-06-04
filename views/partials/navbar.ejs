@@ -1,192 +1,420 @@
-<header class="navbar" id="navbar">
-  <!-- Logo -->
-  <a href="/" class="nav-logo">
-    <img
-      src="/images/logo-atas.png"
-      alt="Suka-Suka Web"
-      class="h-10 w-auto mx-auto"
-    />
-  </a>
+<!-- ══════════════════════════════════════════
+     NAVBAR — Webtoon Studio / Anime Cel Art
+     ══════════════════════════════════════════ -->
+<header>
+  <nav class="navbar" id="mainNav">
+    <!-- ── Logo ── -->
+    <a href="/" class="nav-logo" aria-label="WebSukaSuka - Beranda">
+      <img
+        src="/images/logo-atas.png"
+        alt="WebSukaSuka"
+        class="nav-logo-img"
+        width="140"
+        height="40"
+        loading="eager"
+      />
+    </a>
 
-  <!-- Desktop Nav -->
-  <nav class="hidden md:flex items-center gap-1">
-    <a href="/#beranda" class="nav-link">Beranda</a>
-    <a href="/#layanan" class="nav-link">Layanan</a>
-    <a href="/#portofolio" class="nav-link">Portofolio</a>
-    <a href="/#kontak" class="nav-link">Kontak</a>
+    <!-- ── Desktop Nav Links ── -->
+    <ul class="nav-links" role="list">
+      <li><a href="/#beranda" class="nav-link">Beranda</a></li>
+      <li><a href="/#layanan" class="nav-link">Layanan</a></li>
+      <li><a href="/#portofolio" class="nav-link">Portofolio</a></li>
+      <li><a href="/#kontak" class="nav-link">Kontak</a></li>
+    </ul>
+
+    <!-- ── CTA + Hamburger ── -->
+    <div class="nav-actions">
+      <!-- Status online indicator -->
+      <span class="nav-status" aria-label="Tersedia untuk proyek baru">
+        <span class="status-dot"></span>
+        <span class="nav-status-text">Open for work</span>
+      </span>
+
+      <!-- WhatsApp CTA -->
+      <a
+        href="https://wa.me/6285706193924"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary btn-sm nav-cta"
+        aria-label="Hubungi via WhatsApp"
+      >
+        <svg
+          width="15"
+          height="15"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+          />
+        </svg>
+        Konsultasi Gratis
+      </a>
+
+      <!-- Hamburger (mobile) -->
+      <button
+        class="nav-hamburger"
+        id="navHamburger"
+        aria-label="Buka menu navigasi"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
   </nav>
 
-  <!-- Right Side -->
-  <div class="flex items-center gap-4">
-    <div class="hidden lg:flex items-center gap-2">
-      <span class="status-dot"></span>
-      <span
-        class="font-mono text-[var(--text-xs)] text-[var(--color-text-muted)] tracking-widest uppercase"
-      >
-        Open for Project
-      </span>
-    </div>
+  <!-- ── Mobile Menu ── -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <ul class="mobile-nav-links" role="list">
+      <li>
+        <a href="/#beranda" class="mobile-nav-link" data-close>Beranda</a>
+      </li>
+      <li>
+        <a href="/#layanan" class="mobile-nav-link" data-close>Layanan</a>
+      </li>
+      <li>
+        <a href="/#portofolio" class="mobile-nav-link" data-close>Portofolio</a>
+      </li>
+      <li><a href="/#kontak" class="mobile-nav-link" data-close>Kontak</a></li>
+    </ul>
     <a
       href="https://wa.me/6285706193924"
       target="_blank"
-      class="btn btn-primary btn-sm"
+      rel="noopener noreferrer"
+      class="btn btn-primary mobile-cta"
     >
-      Mulai Proyek
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+        />
+      </svg>
+      Konsultasi Gratis via WhatsApp
     </a>
-    <!-- Hamburger (mobile) -->
-    <button
-      id="menuBtn"
-      class="md:hidden flex flex-col gap-1.5 p-1.5 rounded-md hover:bg-[var(--color-bg-tertiary)] transition-colors"
-      aria-label="Menu"
-    >
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-    </button>
+    <!-- Mobile accent bar -->
+    <div class="mobile-menu-accent"></div>
   </div>
 </header>
 
-<!-- Mobile Menu -->
-<div id="mobileMenu" class="mobile-menu">
-  <nav class="flex flex-col gap-1 p-4">
-    <a href="/#beranda" class="mobile-nav-link">Beranda</a>
-    <a href="/#layanan" class="mobile-nav-link">Layanan</a>
-    <a href="/#portofolio" class="mobile-nav-link">Portofolio</a>
-    <a href="/#kontak" class="mobile-nav-link">Kontak</a>
-  </nav>
-  <div class="px-4 pb-6">
-    <a
-      href="https://wa.me/6285706193924"
-      target="_blank"
-      class="btn btn-primary w-full justify-center"
-    >
-      Mulai Proyek →
-    </a>
-  </div>
-</div>
-
+<!-- ══════════════════════════════════════════
+     NAVBAR STYLES
+     ══════════════════════════════════════════ -->
 <style>
+  /* ── Nav Links ── */
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
   .nav-link {
-    position: relative;
-    font-size: var(--text-sm);
-    font-weight: 600;
+    font-family: var(--font-display);
+    font-size: var(--text-xs);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
     color: var(--color-text-muted);
-    padding: 0.5rem 0.875rem;
-    border-radius: var(--radius-sm);
-    text-decoration: none;
+    padding: 0.5rem 0.85rem;
+    border-radius: var(--radius-full);
+    border: 2px solid transparent;
     transition:
       color var(--duration-base) var(--ease-default),
-      background var(--duration-base) var(--ease-default);
-  }
-  .nav-link:hover {
-    color: var(--color-text-brand);
-    background: rgba(123, 94, 167, 0.07);
-  }
-  .nav-link.active {
-    color: var(--color-text-brand);
+      background var(--duration-base) var(--ease-default),
+      border-color var(--duration-base) var(--ease-default),
+      box-shadow var(--duration-base) var(--ease-default);
+    position: relative;
+    text-decoration: none;
   }
 
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--color-sakura-500);
+    background: rgba(247, 37, 133, 0.07);
+    border-color: rgba(247, 37, 133, 0.22);
+    box-shadow: 2px 2px 0px rgba(247, 37, 133, 0.18);
+  }
+
+  /* ── Status Badge ── */
+  .nav-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-subtle);
+    background: rgba(6, 214, 160, 0.08);
+    border: 1px solid rgba(6, 214, 160, 0.25);
+    padding: 0.3rem 0.75rem;
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+  }
+
+  /* ── Actions ── */
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  /* ── CTA ── */
+  .nav-cta {
+    white-space: nowrap;
+  }
+
+  /* ── Logo Image ── */
+  .nav-logo-img {
+    display: block;
+    height: 36px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  /* ── Hamburger ── */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: 2px solid var(--color-text);
+    border-radius: var(--radius-sm);
+    box-shadow: 3px 3px 0px var(--color-text);
+    cursor: pointer;
+    padding: 0;
+    transition:
+      box-shadow var(--duration-base) var(--ease-bounce),
+      transform var(--duration-base) var(--ease-bounce);
+  }
+  .nav-hamburger:hover {
+    box-shadow: 4px 4px 0px var(--color-sakura-500);
+    border-color: var(--color-sakura-500);
+    transform: translate(-1px, -1px);
+  }
+  .nav-hamburger:active {
+    box-shadow: 1px 1px 0px var(--color-sakura-500);
+    transform: translate(1px, 1px);
+  }
   .hamburger-line {
     display: block;
-    width: 22px;
+    width: 18px;
     height: 2px;
-    background: var(--color-text-muted);
-    border-radius: 2px;
+    background: var(--color-text);
+    border-radius: var(--radius-full);
     transition:
       transform var(--duration-base) var(--ease-spring),
       opacity var(--duration-base) var(--ease-default);
   }
-  #menuBtn.open .hamburger-line:nth-child(1) {
+
+  /* Hamburger → X animation */
+  .nav-hamburger[aria-expanded="true"] .hamburger-line:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
   }
-  #menuBtn.open .hamburger-line:nth-child(2) {
+  .nav-hamburger[aria-expanded="true"] .hamburger-line:nth-child(2) {
     opacity: 0;
     transform: scaleX(0);
   }
-  #menuBtn.open .hamburger-line:nth-child(3) {
+  .nav-hamburger[aria-expanded="true"] .hamburger-line:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
   }
 
+  /* ── Mobile Menu ── */
   .mobile-menu {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    bottom: 0;
     background: var(--color-bg-overlay);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--color-border);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
     z-index: calc(var(--z-sticky) - 1);
-    padding-top: 5rem;
-    transform: translateY(-110%);
-    transition: transform var(--duration-slow) var(--ease-spring);
-    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    /* Halftone overlay */
+    background-image: var(--pattern-dots);
+    background-size: var(--pattern-dots-size);
+    background-color: rgba(253, 252, 250, 0.96);
+
+    /* Hidden state */
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-12px);
+    transition:
+      opacity var(--duration-slow) var(--ease-spring),
+      transform var(--duration-slow) var(--ease-spring);
   }
-  .mobile-menu.open {
+
+  .mobile-menu.is-open {
+    opacity: 1;
+    pointer-events: all;
     transform: translateY(0);
+  }
+
+  .mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 320px;
   }
 
   .mobile-nav-link {
     display: block;
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--color-text-muted);
-    padding: 0.875rem 1rem;
-    border-radius: var(--radius-md);
+    width: 100%;
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-black);
+    letter-spacing: var(--tracking-tight);
+    color: var(--color-text);
+    padding: 0.75rem 1.5rem;
+    border: 2px solid transparent;
+    border-radius: var(--radius-lg);
     text-decoration: none;
-    letter-spacing: -0.01em;
     transition:
-      color var(--duration-base),
-      background var(--duration-base);
+      color var(--duration-base) var(--ease-default),
+      background var(--duration-base) var(--ease-default),
+      border-color var(--duration-base) var(--ease-default),
+      box-shadow var(--duration-base) var(--ease-bounce),
+      transform var(--duration-base) var(--ease-bounce);
   }
+
   .mobile-nav-link:hover {
-    color: var(--color-text-brand);
-    background: rgba(123, 94, 167, 0.07);
+    color: var(--color-sakura-500);
+    background: rgba(247, 37, 133, 0.07);
+    border-color: var(--color-sakura-500);
+    box-shadow: 3px 3px 0px var(--color-sakura-500);
+    transform: translate(-1px, -1px);
+  }
+
+  .mobile-cta {
+    margin-top: 0.75rem;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* Accent bar bottom of mobile menu */
+  .mobile-menu-accent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-brand);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .nav-status-text {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nav-links,
+    .nav-status,
+    .nav-cta {
+      display: none;
+    }
+    .nav-hamburger {
+      display: flex;
+    }
   }
 </style>
 
+<!-- ══════════════════════════════════════════
+     NAVBAR SCRIPT
+     ══════════════════════════════════════════ -->
 <script>
-  // Scroll effect
-  const navbar = document.getElementById("navbar");
-  window.addEventListener("scroll", () => {
-    navbar.classList.toggle("scrolled", window.scrollY > 20);
-  });
+  (function () {
+    const nav = document.getElementById("mainNav");
+    const hamburger = document.getElementById("navHamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const closeLinks = mobileMenu.querySelectorAll("[data-close]");
 
-  // Mobile menu toggle
-  const menuBtn = document.getElementById("menuBtn");
-  const mobileMenu = document.getElementById("mobileMenu");
-  menuBtn.addEventListener("click", () => {
-    const isOpen = mobileMenu.classList.toggle("open");
-    menuBtn.classList.toggle("open", isOpen);
-    document.body.style.overflow = isOpen ? "hidden" : "";
-  });
+    /* ── Scroll: add .scrolled class ── */
+    const onScroll = () => {
+      nav.classList.toggle("scrolled", window.scrollY > 32);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
 
-  // Close on link click
-  mobileMenu.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      mobileMenu.classList.remove("open");
-      menuBtn.classList.remove("open");
-      document.body.style.overflow = "";
+    /* ── Active nav link highlight ── */
+    const navLinks = document.querySelectorAll(".nav-link");
+    const sections = ["beranda", "layanan", "portofolio", "kontak"];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            navLinks.forEach((link) => {
+              link.classList.toggle(
+                "active",
+                link.getAttribute("href") === `/#${id}`,
+              );
+            });
+          }
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: 0 },
+    );
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
     });
-  });
 
-  // Active link highlight
-  const navLinks = document.querySelectorAll(".nav-link");
-  const sections = document.querySelectorAll("section[id]");
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          navLinks.forEach((link) => {
-            link.classList.toggle(
-              "active",
-              link.getAttribute("href") === "/#" + entry.target.id,
-            );
-          });
-        }
-      });
-    },
-    { threshold: 0.4 },
-  );
-  sections.forEach((s) => observer.observe(s));
+    /* ── Mobile menu toggle ── */
+    const openMenu = () => {
+      mobileMenu.classList.add("is-open");
+      mobileMenu.setAttribute("aria-hidden", "false");
+      hamburger.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+    };
+
+    const closeMenu = () => {
+      mobileMenu.classList.remove("is-open");
+      mobileMenu.setAttribute("aria-hidden", "true");
+      hamburger.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    };
+
+    hamburger.addEventListener("click", () => {
+      const isOpen = hamburger.getAttribute("aria-expanded") === "true";
+      isOpen ? closeMenu() : openMenu();
+    });
+
+    closeLinks.forEach((link) => link.addEventListener("click", closeMenu));
+
+    /* Close on Escape */
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
+  })();
 </script>
