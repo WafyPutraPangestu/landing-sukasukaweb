@@ -2,6 +2,237 @@
 <html lang="id">
   <head>
     <%- include('partials/head') %>
+    <!-- LOADER: mencegah FOUC saat load -->
+    <style>
+      body.loading {
+        overflow: hidden;
+      }
+
+      #siteLoader {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        background: var(--ink, #0a0a0a);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        /* Speedlines bg */
+        background-image: repeating-conic-gradient(
+          from 0deg at 50% 50%,
+          transparent 0deg,
+          transparent 6deg,
+          rgba(244, 241, 234, 0.04) 6deg,
+          rgba(244, 241, 234, 0.04) 7deg
+        );
+        transition:
+          opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      #siteLoader.loader-exit {
+        opacity: 0;
+        transform: scale(1.04);
+        pointer-events: none;
+      }
+
+      /* Halftone overlay */
+      #siteLoader::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          circle,
+          rgba(244, 241, 234, 0.18) 1.5px,
+          transparent 1.5px
+        );
+        background-size: 16px 16px;
+        pointer-events: none;
+      }
+
+      /* Corner decorations */
+      #siteLoader::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80px;
+        height: 80px;
+        background: var(--pink, #e6007e);
+        clip-path: polygon(0 0, 100% 0, 0 100%);
+        pointer-events: none;
+      }
+
+      .loader-corner-br {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 80px;
+        height: 80px;
+        background: var(--cyan, #00aeef);
+        clip-path: polygon(100% 0, 100% 100%, 0 100%);
+        pointer-events: none;
+      }
+
+      .loader-inner {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+      }
+
+      /* Logo teks */
+      .loader-logo {
+        font-family: "Bangers", cursive;
+        font-size: clamp(2.8rem, 8vw, 5rem);
+        color: var(--paper-white, #fdfcf8);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        -webkit-text-stroke: 2px var(--paper-white, #fdfcf8);
+        text-shadow: 5px 5px 0 var(--pink, #e6007e);
+        line-height: 1;
+        margin-bottom: 0.3rem;
+        animation: loaderPopIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+      }
+
+      .loader-tagline {
+        font-family: "Oswald", sans-serif;
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: rgba(244, 241, 234, 0.35);
+        margin-bottom: 2.5rem;
+        animation: loaderFadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+      }
+
+      /* Progress bar */
+      .loader-bar-wrap {
+        width: min(280px, 60vw);
+        height: 20px;
+        background: rgba(244, 241, 234, 0.08);
+        border: 2.5px solid rgba(244, 241, 234, 0.7);
+        box-shadow: 3px 3px 0 var(--pink, #e6007e);
+        margin-bottom: 0.9rem;
+        overflow: hidden;
+        animation: loaderFadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+      }
+
+      .loader-bar-fill {
+        height: 100%;
+        width: 0%;
+        background: var(--pink, #e6007e);
+        background-image: repeating-linear-gradient(
+          90deg,
+          transparent 0px,
+          transparent 12px,
+          rgba(255, 255, 255, 0.22) 12px,
+          rgba(255, 255, 255, 0.22) 14px
+        );
+        border-right: 2px solid var(--yellow, #fff200);
+        transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      /* Persentase */
+      .loader-pct {
+        font-family: "Space Mono", monospace;
+        font-size: 0.65rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(244, 241, 234, 0.4);
+        margin-bottom: 1.8rem;
+        animation: loaderFadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+      }
+
+      .loader-pct-num {
+        color: var(--yellow, #fff200);
+      }
+
+      /* Step labels */
+      .loader-steps {
+        display: flex;
+        gap: 0;
+        border: 2px solid rgba(244, 241, 234, 0.12);
+        overflow: hidden;
+        animation: loaderFadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both;
+      }
+
+      .loader-step {
+        font-family: "Oswald", sans-serif;
+        font-size: 0.58rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        padding: 0.35rem 0.9rem;
+        color: rgba(244, 241, 234, 0.2);
+        border-right: 1px solid rgba(244, 241, 234, 0.08);
+        white-space: nowrap;
+        transition:
+          color 0.2s,
+          background 0.2s;
+      }
+
+      .loader-step:last-child {
+        border-right: none;
+      }
+      .loader-step.is-active {
+        color: var(--yellow, #fff200);
+        background: rgba(255, 242, 0, 0.07);
+      }
+      .loader-step.is-done {
+        color: var(--cyan, #00aeef);
+      }
+
+      /* Blinking dots */
+      .loader-live-dot {
+        position: absolute;
+        top: 1.25rem;
+        right: 1.25rem;
+        width: 8px;
+        height: 8px;
+        background: rgba(230, 0, 126, 0.8);
+        border: 2px solid var(--pink, #e6007e);
+        border-radius: 50%;
+        animation: loaderBlink 1.3s step-end infinite;
+        z-index: 3;
+      }
+
+      @keyframes loaderPopIn {
+        0% {
+          opacity: 0;
+          transform: scale(0.6) rotate(-4deg);
+        }
+        70% {
+          transform: scale(1.08) rotate(1.5deg);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1) rotate(0deg);
+        }
+      }
+      @keyframes loaderFadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @keyframes loaderBlink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.1;
+        }
+      }
+    </style>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -79,6 +310,103 @@
   </head>
 
   <body class="overflow-x-hidden">
+    <!-- ══ LOADING SCREEN ══ -->
+    <div id="siteLoader" role="status" aria-label="Memuat halaman...">
+      <div class="loader-corner-br" aria-hidden="true"></div>
+      <div class="loader-live-dot" aria-hidden="true"></div>
+
+      <div class="loader-inner">
+        <div class="loader-logo">WebSukaSuka</div>
+        <div class="loader-tagline">Software House Indonesia</div>
+
+        <div class="loader-bar-wrap">
+          <div class="loader-bar-fill" id="loaderBarFill"></div>
+        </div>
+
+        <div class="loader-pct">
+          Memuat... <span class="loader-pct-num" id="loaderPctNum">0</span>%
+        </div>
+
+        <div class="loader-steps">
+          <div class="loader-step is-active" id="lstep-1">Init</div>
+          <div class="loader-step" id="lstep-2">Style</div>
+          <div class="loader-step" id="lstep-3">Konten</div>
+          <div class="loader-step" id="lstep-4">Siap!</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        document.body.classList.add("loading");
+
+        var fill = document.getElementById("loaderBarFill");
+        var pctEl = document.getElementById("loaderPctNum");
+        var loader = document.getElementById("siteLoader");
+
+        // Step labels: aktif di range berapa persen
+        var steps = [
+          { id: "lstep-1", from: 0, to: 30 },
+          { id: "lstep-2", from: 30, to: 60 },
+          { id: "lstep-3", from: 60, to: 85 },
+          { id: "lstep-4", from: 85, to: 100 },
+        ];
+
+        var current = 0;
+
+        function setProgress(pct) {
+          fill.style.width = pct + "%";
+          pctEl.textContent = Math.round(pct);
+
+          steps.forEach(function (s) {
+            var el = document.getElementById(s.id);
+            el.classList.remove("is-active", "is-done");
+            if (pct >= s.to) {
+              el.classList.add("is-done");
+            } else if (pct >= s.from) {
+              el.classList.add("is-active");
+            }
+          });
+        }
+
+        // Animasi bar palsu sampai page load
+        var fakeInterval = setInterval(function () {
+          if (current < 75) {
+            current += Math.random() * 6 + 2;
+            setProgress(Math.min(current, 75));
+          } else {
+            clearInterval(fakeInterval);
+          }
+        }, 120);
+
+        function dismiss() {
+          clearInterval(fakeInterval);
+
+          // Lompat ke 100% dulu
+          var finishAnim = setInterval(function () {
+            current = Math.min(current + 5, 100);
+            setProgress(current);
+            if (current >= 100) {
+              clearInterval(finishAnim);
+              // Delay sedikit, lalu exit
+              setTimeout(function () {
+                loader.classList.add("loader-exit");
+                document.body.classList.remove("loading");
+                setTimeout(function () {
+                  loader.remove();
+                }, 600);
+              }, 250);
+            }
+          }, 20);
+        }
+
+        // Tunggu semua resource selesai (window.load)
+        window.addEventListener("load", dismiss);
+
+        // Fallback: kalau > 5 detik, paksa dismiss
+        setTimeout(dismiss, 5000);
+      })();
+    </script>
     <!-- ══ INK CURSOR ══ -->
     <div id="inkCursor" class="ink-cursor" aria-hidden="true">
       <svg class="cursor-nib" viewBox="0 0 32 32" fill="none">
