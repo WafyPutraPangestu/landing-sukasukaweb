@@ -1235,8 +1235,8 @@
       </section>
 
       <!-- ══════════════════════════════════════════════════════════
-           SECTION 5: PORTOFOLIO — Comic showcase panels
-           ══════════════════════════════════════════════════════════ -->
+       SECTION 5: PORTOFOLIO — Comic showcase panels
+       ══════════════════════════════════════════════════════════ -->
       <section
         id="portofolio"
         class="section porto-section"
@@ -1374,6 +1374,132 @@
                   class="stamp stamp-cyan"
                   style="font-size: 0.6rem; transform: rotate(2deg)"
                   >Completed ✔</span
+                >
+              </div>
+            </article>
+
+            <!-- PROYEK 3: GUBUK TAHFIDZ ATM -->
+            <article
+              class="porto-panel tilt-card reveal delay-3"
+              role="button"
+              tabindex="0"
+              aria-label="Lihat detail proyek GubukTahfidzATM"
+              onclick="
+                openModal({
+                  img: '/images/porto-gubuktahfidz.jpg',
+                  title: 'GubukTahfidzATM',
+                  desc: 'Sistem digital resmi Pondok Pesantren Al Ittihadul Mubarok (Rajeg, Tangerang). Dibangun untuk mencatat setiap setoran hafalan santri secara rapi dan menyajikannya secara terbuka kepada wali santri agar dapat dipantau kapan saja tanpa perlu datang ke pondok.',
+                  tags: ['Live Project', 'Sistem Informasi', 'Pendidikan'],
+                  link: 'https://gubuktahfidzatm.id/',
+                })
+              "
+            >
+              <div class="porto-panel-header">
+                <div class="flex gap-2">
+                  <span class="badge badge-pink">Live</span
+                  ><span class="badge badge-dark">Web App</span>
+                </div>
+                <span class="porto-panel-num">03</span>
+              </div>
+              <div class="porto-img-wrap">
+                <img
+                  src="/images/porto-gubuktahfidz.jpg"
+                  alt="Website GubukTahfidzATM"
+                  class="porto-img"
+                  width="600"
+                  height="338"
+                  loading="lazy"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'flex';
+                  "
+                />
+                <div class="porto-img-ph" aria-hidden="true">
+                  <span>🖼️</span><small>/images/porto-gubuktahfidz.jpg</small>
+                </div>
+                <div class="porto-ink-overlay" aria-hidden="true">
+                  <span class="btn btn-primary btn-sm">Lihat Detail ↗</span>
+                </div>
+                <div class="porto-speedlines-overlay" aria-hidden="true"></div>
+              </div>
+              <div class="porto-panel-info">
+                <h3 class="porto-title text-paper">GubukTahfidzATM</h3>
+                <p class="porto-desc">
+                  Sistem pencatatan digital setoran hafalan Al-Quran santri yang
+                  terintegrasi untuk kemudahan pantauan wali santri.
+                </p>
+              </div>
+              <div class="porto-panel-footer">
+                <span
+                  class="stamp stamp-pink"
+                  style="font-size: 0.6rem; transform: rotate(-3deg)"
+                  >Completed ✔</span
+                >
+              </div>
+            </article>
+            <!-- PROYEK 4: PLACEHOLDER / CALL TO ACTION -->
+            <article
+              class="porto-panel tilt-card reveal delay-4"
+              role="button"
+              tabindex="0"
+              aria-label="Mulai proyek Anda bersama kami"
+              onclick="
+                document
+                  .getElementById('contact')
+                  .scrollIntoView({ behavior: 'smooth' })
+              "
+            >
+              <div class="porto-panel-header">
+                <div class="flex gap-2">
+                  <span class="badge badge-cyan">Available</span>
+                  <span class="badge badge-dark">Hire Us!</span>
+                </div>
+                <span class="porto-panel-num">04</span>
+              </div>
+
+              <!-- Area Gambar Diganti dengan Teks Promosi -->
+              <div
+                class="porto-img-wrap"
+                style="
+                  background-color: #1a1a1a;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  min-height: 250px;
+                  border-bottom: 3px solid #000;
+                "
+              >
+                <span style="font-size: 3rem; margin-bottom: 10px">🚀</span>
+                <h3
+                  style="
+                    color: #fff;
+                    margin: 0;
+                    font-weight: 800;
+                    letter-spacing: 1px;
+                    transform: rotate(-3deg);
+                  "
+                >
+                  YOUR PROJECT HERE
+                </h3>
+                <div class="porto-ink-overlay" aria-hidden="true">
+                  <span class="btn btn-cyan btn-sm">Mulai Diskusi ↗</span>
+                </div>
+                <div class="porto-speedlines-overlay" aria-hidden="true"></div>
+              </div>
+
+              <div class="porto-panel-info">
+                <h3 class="porto-title text-paper">Next Project?</h3>
+                <p class="porto-desc">
+                  Ruang kosong ini sedang menunggu ide brilian Anda. Mari
+                  berkolaborasi dan wujudkan website impian Anda bersama kami!
+                </p>
+              </div>
+              <div class="porto-panel-footer">
+                <span
+                  class="stamp stamp-cyan"
+                  style="font-size: 0.6rem; transform: rotate(5deg)"
+                  >Open To Work</span
                 >
               </div>
             </article>
